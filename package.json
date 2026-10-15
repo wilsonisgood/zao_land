@@ -1,0 +1,25 @@
+{
+  "name": "zao-h5-poc",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --host"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "pinia": "^4.1.0",
+    "pixi.js": "^8.22.0",
+    "untitled-pixi-live2d-engine": "^1.4.0",
+    "vue": "^3.5.44",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.10",
+    "typescript": "5.9",
+    "vite": "^8.3.4",
+    "vue-tsc": "^3.3.13"
+  }
+}

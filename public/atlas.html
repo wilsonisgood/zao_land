@@ -1,0 +1,5186 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e9">
+  <meta name="description" content="朝霧大陸七大行政區生活百科。探索商鋪、市集、地理人文、地方特產與公共服務。">
+  <title>朝霧大陸｜七大行政區生活百科</title>
+  <style>
+    :root {
+      --paper:#f5f2e9; --paper2:#fffcf7; --ink:#1c342f; --ink2:#304e48; --muted:#6a7971; --stroke:#dedfd6;
+      --green:#2f594a; --dark:#18392f; --highlight:#e8eddd; --gold:#b79a62;
+      --sans: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, sans-serif;
+      --serif: "Songti TC", "Noto Serif TC", "Iowan Old Style", Georgia, serif;
+      --shadow: 0 10px 34px rgba(32,48,37,.045);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.7;font-size:14px;letter-spacing:.012em}
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    a{color:inherit}
+    button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #91b8a6;outline-offset:3px}
+    [hidden]{display:none!important}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+    .wrap{max-width:1510px;margin:auto;padding:0 36px}
+    .topbar{position:sticky;top:0;z-index:25;background:rgba(249,247,241,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(63,83,66,.13)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:78px}
+    .brand{display:flex;align-items:center;gap:13px;border:0;background:none;color:var(--ink);padding:0;text-align:left}
+    .brand-mark{width:42px;height:42px;border:1px solid #59776b;border-radius:50%;display:grid;place-items:center;position:relative;background:var(--dark);color:#f7ecce;font-family:var(--serif);font-size:21px;line-height:1}
+    .brand-mark:before,.brand-mark:after{content:"";position:absolute;inset:5px;border:1px solid rgba(255,255,255,.35);border-radius:50%}.brand-mark:after{inset:11px;opacity:.3}
+    .brand-name{display:block;font-family:var(--serif);font-size:21px;font-weight:800;letter-spacing:.17em;line-height:1.2}
+    .brand-sub{display:block;font:10px Georgia,serif;letter-spacing:.17em;color:#697971;margin-top:4px}
+    .toplinks{display:flex;align-items:center;gap:3px;white-space:nowrap}
+    .toplinks button{border:0;background:none;color:#5f7066;padding:11px 14px;border-radius:9px;font-size:13px}
+    .toplinks button:hover,.toplinks button.is-active{color:#164b3b;background:#e9efe7}
+    .search-open{background:#fffdf8;color:#65756c;border:1px solid #d7dcd2;border-radius:12px;display:flex;align-items:center;gap:12px;min-width:219px;justify-content:space-between;padding:10px 12px;font-size:12px}
+    .search-icon{font-size:20px;line-height:1}.shortcut{font-size:10px;border:1px solid #e0e1d8;padding:2px 5px;border-radius:5px;color:#79867e;background:#f7f6f0}
+    .overline{text-transform:uppercase;font-family:Georgia,serif;font-size:11px;font-weight:600;letter-spacing:.23em;color:#907950}
+    .mast{padding:42px 0 19px;display:flex;gap:15px;align-items:center;justify-content:space-between}
+    .mast p{margin:0;color:#879087;font-size:12px}.mast span{font-weight:700;color:#4f6a5b}
+    .work{display:grid;grid-template-columns:262px minmax(0,1fr);gap:32px;align-items:start;padding-bottom:65px}
+    .sidebar{position:sticky;top:100px;max-height:calc(100vh - 120px);overflow:auto;padding:20px 11px 16px 0;scrollbar-width:thin}
+    .aside-label{font-family:Georgia,serif;font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:#85918a;padding:0 12px;margin-bottom:12px}
+    .aside-all,.region-btn{width:100%;text-align:left;border:0;display:flex;align-items:center;border-radius:12px;color:#4b6256;background:transparent;padding:13px 12px;gap:13px}
+    .aside-all{margin-bottom:20px;font-weight:750;font-size:14px}
+    .aside-all:hover,.aside-all.current,.region-btn:hover,.region-btn.current{background:#e4ebdf;color:#153c30}
+    .region-btn{padding:12px;margin-bottom:4px}
+    .region-btn.current{background:#fffdf8;border:1px solid #d9e2d5;box-shadow:0 3px 12px rgba(35,49,38,.06)}
+    .region-number{display:grid;place-items:center;flex-shrink:0;width:32px;height:32px;border-radius:10px;color:var(--region-accent);background:var(--region-pale);font-family:Georgia,serif;font-size:12px;font-weight:bold}
+    .region-btn strong{font-size:14px;display:block;line-height:1.35}.region-btn small{font-size:11px;color:#869089;display:block;margin-top:4px}
+    .aside-bottom{border-top:1px solid var(--stroke);margin-top:22px;padding:22px 12px;color:#829087;font-size:11px;line-height:1.8}
+    .aside-bottom b{color:#4c6859;font-weight:650}
+    .main{min-width:0}
+    .paper-card{background:#fffcf7;border:1px solid #e7e5d9;border-radius:20px;box-shadow:var(--shadow)}
+    .world-hero{min-height:375px;background:#213f38;color:#fbf8ed;border-radius:22px;display:grid;grid-template-columns:1.02fr .98fr;overflow:hidden;position:relative}
+    .world-hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 41px,rgba(255,255,255,.025) 42px);pointer-events:none}
+    .world-hero .world-copy{position:relative;z-index:1;padding:62px 48px 55px}
+    .world-hero .overline{color:#c0ceaa}.world-hero h1{font-family:var(--serif);font-size:clamp(38px,4.5vw,62px);line-height:1.3;font-weight:750;letter-spacing:.05em;margin:16px 0 17px}
+    .world-hero p{color:#d2dcd2;max-width:460px;font-size:14px;line-height:2.1;margin:0 0 24px}
+    .world-illustration{min-height:340px;display:flex;align-items:stretch;justify-content:stretch;position:relative;overflow:hidden}
+    .world-illustration svg{width:100%;height:100%;min-height:360px}
+    .world-illustration .scene-note{position:absolute;bottom:16px;right:19px;font-size:9px;letter-spacing:.14em;color:#d5e4d6;opacity:.8}
+    .cta{background:#efdfb7;color:#214437;border:0;border-radius:10px;padding:11px 18px;font-weight:760;display:inline-flex;gap:12px;align-items:center}
+    .cta:hover{background:#f8e9c7}
+    .section-head{margin:40px 0 18px;display:flex;align-items:end;justify-content:space-between;gap:15px}
+    .section-head h2{margin:4px 0 0;font-family:var(--serif);letter-spacing:.04em;font-size:27px;line-height:1.3;font-weight:750}
+    .section-head p{color:var(--muted);font-size:12px;margin:0}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+    .stat{padding:21px 22px;border:1px solid #e4e4d9;border-radius:16px;background:#fffdf9}
+    .stat strong{font:700 27px Georgia,serif;color:#315646;display:block;line-height:1.1;margin-bottom:8px}.stat span{font-size:12px;color:#819087}
+    .region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .region-card{display:block;width:100%;border:1px solid #e2e4da;background:#fffdf9;border-radius:17px;overflow:hidden;text-align:left;padding:0;color:var(--ink);transition:transform .2s,box-shadow .2s}
+    .region-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(22,55,42,.08)}
+    .card-art{height:127px;overflow:hidden;background:var(--region-pale)}.card-art svg{display:block;width:100%;height:100%;object-fit:cover}
+    .rc-body{padding:17px 20px 19px}.rc-top{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#7a857b;font:11px Georgia,serif;letter-spacing:.11em}
+    .region-card h3{font:750 23px var(--serif);margin:4px 0 4px;letter-spacing:.075em}.region-card .rc-desc{color:#718079;font-size:12px;margin:0 0 12px;min-height:40px;line-height:1.75}
+    .pill-line{display:flex;flex-wrap:wrap;gap:7px}.pill{border-radius:999px;border:1px solid #e4e8de;padding:3px 10px;font-size:11px;color:#5d7667;background:#f5f7f0;white-space:nowrap}
+    .region-card .go{color:var(--region-accent);font-size:19px;font-weight:600}
+    .compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .brand-card{background:#fffdf9;border:1px solid #e1e4d9;border-radius:17px;padding:21px 21px 22px}
+    .brand-glyph{width:39px;height:39px;border:1px solid #d2dacc;background:#f1f4e9;display:grid;place-items:center;border-radius:11px;font-size:24px;color:#34624e}
+    .brand-card h3{font:750 19px var(--serif);margin:12px 0 8px}.brand-card p{font-size:12px;color:#728178;margin:0;line-height:1.95}
+    .world-note{display:flex;gap:16px;align-items:flex-start;background:#eef1e8;border:1px solid #e0e6da;border-radius:16px;padding:19px 23px;margin-top:27px;color:#53695a}
+    .world-note strong{font-size:13px;color:#365242}.world-note p{font-size:12px;margin:4px 0 0;line-height:1.9}
+    .region-hero{background:var(--region-dark);color:#fffaf0;border-radius:21px;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;min-height:286px}
+    .region-hero .hero-copy{padding:38px 41px;position:relative;z-index:1}
+    .crumb{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#c6d0c4;font-family:Georgia,serif}
+    .region-hero h1{font:750 clamp(33px,4vw,52px)/1.3 var(--serif);letter-spacing:.06em;margin:16px 0 7px}
+    .region-hero .subtitle{color:#efeadb;font-size:15px;margin:0 0 17px}
+    .region-hero .tagline{color:#e8ebdf;font-family:var(--serif);font-size:13px;letter-spacing:.075em;margin:0 0 17px}
+    .hero-spirit{display:flex;gap:8px;flex-wrap:wrap}
+    .hero-spirit span{border:1px solid #ffffff66;border-radius:999px;padding:3px 11px;color:#fffdf3;font-size:11px}
+    .region-hero .hero-art{position:relative;min-height:270px}.region-hero .hero-art svg{display:block;width:100%;height:100%}
+    .art-disclaimer{position:absolute;bottom:13px;right:18px;color:#fff8ea;font-size:10px;text-shadow:0 1px 6px #223a32}
+    .tab-scroll{display:flex;gap:5px;overflow-x:auto;border-bottom:1px solid #d9ddd2;margin-top:21px;margin-bottom:23px;scrollbar-width:thin}
+    .tab-btn{border:0;background:transparent;white-space:nowrap;padding:12px 17px 13px;font-size:13px;color:#75857a;border-bottom:3px solid transparent;font-weight:620}
+    .tab-btn:hover{color:#2d5a45;background:#edf1e9}.tab-btn.active{color:#254b3c;border-bottom-color:var(--region-accent);background:#eef3e9}
+    .page-intro{padding:22px 25px;background:#fffdf8;border:1px solid #e9e6db;border-radius:15px;font-size:13px;color:#506b5b;line-height:2}
+    .summary-row{display:grid;grid-template-columns:1.6fr 1fr;gap:16px;margin-top:18px}
+    .content-card{background:#fffdf8;border:1px solid #e8e5d9;border-radius:17px;padding:24px 27px;min-width:0}
+    .content-card h3{font:760 21px var(--serif);letter-spacing:.04em;margin:0 0 14px}
+    .content-card h4{font-size:13px;color:#455e51;margin:19px 0 8px}
+    .content-card p{font-size:12.5px;color:#64776a;line-height:2;margin:0 0 10px}
+    .content-card > :last-child{margin-bottom:0}
+    .micro-label{font-size:10px;color:#849489;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
+    .long-quote{font:700 clamp(21px,2vw,28px)/1.7 var(--serif);letter-spacing:.06em;color:#3c6451;padding-left:20px;border-left:3px solid var(--region-accent);margin:11px 0 17px}
+    .mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+    .mini-card{border:1px solid #e5e9df;border-radius:13px;background:#fcfdf8;padding:18px 19px}
+    .mini-card h4{font:700 15px var(--serif);margin:0 0 6px;color:#305645}
+    .mini-card p{color:#6b7e70;margin:0;font-size:12px;line-height:1.85}
+    .with-arrow{border:1px solid #dce2d5;text-align:left;width:100%;transition:background .2s}.with-arrow:hover{background:#edf3e8}
+    .clickline{display:flex;justify-content:space-between;align-items:center;margin-top:14px;color:#5d846f;font-size:11px}
+    .inline-tags{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.tag{display:inline-block;padding:5px 10px;border:1px solid #e1e4d9;background:#f7f8f1;border-radius:8px;font-size:12px;color:#496858;line-height:1.45}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+    .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+    .flow-list{list-style:none;padding:0;margin:0}.flow-list li{padding:9px 0 9px 18px;border-bottom:1px solid #edf0e8;color:#5d6e60;font-size:12.5px;position:relative}
+    .flow-list li:last-child{border-bottom:0}.flow-list li:before{content:"";background:var(--region-accent,#6c8c78);position:absolute;left:0;top:18px;width:5px;height:5px;border-radius:50%}
+    .service-stack{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+    .service-item{background:#fcfdf8;border:1px solid #e5e8dd;border-radius:11px;padding:14px 15px}
+    .service-item strong{display:block;color:#294a3d;font-size:13px;margin:0 0 4px}.service-item small{display:block;color:#74877b;font-size:11px;margin-bottom:6px}
+    .service-item p{font-size:11.5px;margin:0;color:#65766b;line-height:1.75}
+    .small-caps{letter-spacing:.15em;text-transform:uppercase;color:#809181;font-size:10px;font-family:Georgia,serif}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin:32px 0 14px;gap:13px}
+    .section-title h2{font:750 23px var(--serif);letter-spacing:.04em;margin:0}.section-title span{font-size:11px;color:#8a968a}
+    .icon-title{display:flex;align-items:center;gap:10px}
+    .number-square{width:26px;height:26px;border-radius:8px;background:#e6ece1;color:#46735d;display:grid;place-items:center;font:700 12px Georgia,serif}
+    .brand-region{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .brand-region .brand-card{border-top:3px solid var(--region-accent);padding:21px}
+    .brand-region .brand-card h3{margin:2px 0 9px}
+    .brand-region .brand-card .detail{display:block;margin:11px 0 4px;font-weight:760;font-size:11px;color:#54725f}
+    .brand-region .brand-card p{font-size:12px;line-height:1.85}
+    .brand-region .mini-text{color:#6b776e;font-size:11.5px;line-height:1.85}
+    .brand-region .offerings{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+    .brand-region .offerings span{background:#eaf1e8;padding:4px 7px;border-radius:6px;color:#3b6550;font-size:10.5px}
+    .market-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+    .market-item{border:1px solid #e6e5d9;background:#fffdf8;border-radius:14px;padding:20px;position:relative}
+    .market-item h3{font:750 18px var(--serif);margin:0 0 7px}.market-item p{font-size:12px;color:#6c7c70;line-height:1.85;margin:0}
+    .market-item small{color:#91a091;font-size:11px}.market-item .place-type{font-size:10px;background:#e9efe7;padding:4px 8px;border-radius:7px;color:#5b7562;margin-bottom:11px;display:inline-block}
+    .product-list{display:flex;gap:8px;flex-wrap:wrap}.product-chip{border-radius:8px;background:#f3f5ed;border:1px solid #e1e7da;padding:7px 10px;color:#486250;font-size:12px}
+    .note-block{border-left:3px solid #aabfa7;padding:11px 18px;background:#f2f6ee;color:#526a58;font-size:12px;border-radius:0 9px 9px 0;line-height:1.85}
+    .alert{background:#f5f0e5;border:1px solid #ebe2ce;border-radius:15px;padding:19px 21px;color:#786747;font-size:12px;line-height:1.9;display:flex;align-items:flex-start;gap:12px}
+    .alert strong{color:#725d34}
+    .count-badge{display:inline-block;border-radius:999px;background:#edf1e9;color:#688074;border:1px solid #e2e7dd;padding:2px 8px;font-size:10px}
+    .head-tools{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+    .head-tools input,.head-tools select{background:#fffdf8;border:1px solid #dbe1d6;border-radius:10px;padding:9px 12px;color:#526b5b;font-size:12px;min-width:175px}
+    .head-tools input{min-width:216px}
+    .place-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;align-items:start}
+    .place-details{background:#fffdf8;border:1px solid #e4e5d9;border-radius:14px;overflow:hidden}
+    .place-details[open]{border-color:#a6bdac;box-shadow:0 8px 18px rgba(37,65,50,.05)}
+    .place-details summary{padding:17px 18px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;justify-content:space-between}
+    .place-details summary::-webkit-details-marker{display:none}.place-details summary:after{content:"＋";color:#5e826b;font-size:18px;line-height:1}
+    .place-details[open] summary:after{content:"−"}
+    .place-details summary strong{display:block;font-size:13px;color:#2d5140}.place-details summary small{display:block;margin-top:4px;font-size:11px;color:#809083}
+    .place-inner{border-top:1px solid #e5eadf;padding:0 18px 19px;color:#5e7465;font-size:12px}
+    .place-inner .flow-list{margin-top:9px}.place-inner p{line-height:1.85}.place-inner .small-caps{display:block;margin-top:16px}
+    .empty{padding:35px 20px;text-align:center;border-radius:14px;border:1px dashed #d3dfcf;background:#f8faf3;color:#6a8472;font-size:13px}
+    .status-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .state{background:#f1f5ed;color:#4d705b;padding:2px 7px;border-radius:6px;font-size:10px;white-space:nowrap;border:1px solid #dfe9d8}.state.provisional{background:#fcf3e5;color:#85673c;border-color:#efdfc7}.state.draft{background:#f9ebdf;color:#936b40;border-color:#e8d9ca}
+    .unresolved{columns:2;column-gap:23px;list-style:none;padding:0;margin:0}.unresolved li{break-inside:avoid;padding:8px 0 8px 16px;position:relative;border-bottom:1px solid #edf0e8;color:#68766b;font-size:12px}
+    .unresolved li:before{content:"–";position:absolute;left:0;color:#a1b5a5}
+    .source-code{font:11px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;color:#607466;overflow-wrap:anywhere}
+    .footer{border-top:1px solid #d9ded4;padding:22px 0 36px;display:flex;justify-content:space-between;gap:20px;color:#889288;font-size:11px}
+    .footer strong{color:#5d7a67}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(13,31,27,.55);z-index:50;display:flex;justify-content:center;align-items:flex-start;padding:11vh 20px 20px}
+    .search-modal{background:#fdfcf7;max-width:750px;width:100%;max-height:80vh;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 25px 90px #101e1880}
+    .search-input-wrap{display:flex;align-items:center;gap:13px;padding:17px 22px;border-bottom:1px solid #e3e8dd}
+    .search-input-wrap span{font-size:22px;color:#78927e}.search-input-wrap input{border:0;outline:0;width:100%;background:transparent;font-size:17px;color:#253b2e}.search-input-wrap button{border:1px solid #dce4da;background:#f1f3ec;border-radius:7px;color:#788b7e;font-size:11px;padding:5px 8px}
+    .resultmeta{font-size:11px;letter-spacing:.05em;color:#879889;padding:13px 24px;border-bottom:1px solid #eef0e9}
+    .results{overflow:auto;scrollbar-width:thin;padding:7px 13px 16px}
+    .result{display:flex;align-items:start;justify-content:space-between;gap:12px;width:100%;padding:13px;border:0;background:transparent;text-align:left;border-radius:10px;color:#345241}
+    .result:hover,.result:focus{background:#eef3e9}.result strong{font-size:14px}.result small{display:block;font-size:11px;color:#87968a;margin-top:3px}.result-kind{border:1px solid #dbe6d7;background:#f2f5ed;border-radius:7px;padding:3px 7px;font-size:10px;flex-shrink:0}
+    .search-hint{font-size:12px;color:#7c8d80;padding:24px}.search-hint b{color:#587160}
+    @media(max-width:1200px){.work{grid-template-columns:220px minmax(0,1fr);gap:20px}.wrap{padding:0 24px}.region-hero .hero-copy{padding:32px}.world-hero .world-copy{padding:44px 35px}.brand-region{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:920px){.work{display:block}.sidebar{position:relative;top:0;max-height:none;margin-bottom:16px;padding:0;overflow:visible}.sidebar-list{display:flex;gap:7px;overflow:auto;padding:5px 0 9px}.aside-label,.aside-bottom{display:none}.aside-all{flex:0 0 auto;width:auto;margin:4px 0;font-size:12px}.region-btn{flex:0 0 auto;width:auto;margin:4px 0;border:1px solid #e0e6dd}.region-btn small{display:none}.region-number{width:25px;height:25px}.mast{padding:25px 0 14px}.world-hero{grid-template-columns:1fr 1fr}.world-hero .world-copy{padding:40px 30px}.toplinks{display:none}.search-open{min-width:auto}.search-open .search-text{display:none}.work{padding-bottom:35px}}
+    @media(max-width:690px){.wrap{padding:0 15px}.topbar-inner{height:65px}.brand-name{font-size:17px}.brand-sub{font-size:8px}.brand-mark{width:37px;height:37px}.search-open{padding:9px;gap:4px}.shortcut{display:none}.mast{padding:16px 0 10px}.mast p{font-size:10px}.world-hero{display:block}.world-hero .world-copy{padding:31px 25px 27px}.world-hero h1{font-size:39px}.world-hero p{font-size:12px}.world-illustration{min-height:150px;max-height:220px}.world-illustration svg{min-height:190px}.stats{grid-template-columns:repeat(2,1fr)}.stat{padding:16px}.region-grid,.compare-grid,.grid2,.grid3,.summary-row,.place-list,.market-strip,.status-row{grid-template-columns:1fr}.brand-region{grid-template-columns:1fr}.region-hero{display:flex;flex-direction:column}.region-hero .hero-copy{padding:28px 26px 20px}.region-hero .hero-art{min-height:160px;height:188px}.tab-btn{font-size:12px;padding:10px 13px}.content-card{padding:19px 18px}.section-head{margin:31px 0 14px}.section-head h2{font-size:23px}.section-title h2{font-size:21px}.service-stack,.mini-grid{grid-template-columns:1fr}.head-tools{justify-content:stretch}.head-tools input,.head-tools select{min-width:0;flex:1 1 180px}.unresolved{columns:1}.footer{display:block}.card-art{height:138px}.world-note{padding:18px}.result-kind{display:none}}
+    @media(prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <button class="brand" data-action="home" title="返回朝霧大陸總覽" aria-label="返回朝霧大陸總覽">
+      <span class="brand-mark" aria-hidden="true">朝</span>
+      <span><span class="brand-name">朝霧大陸</span><span class="brand-sub">ASAGIRI CONTINENT · WORLD ATLAS</span></span>
+    </button>
+    <nav class="toplinks" aria-label="主要導覽"><button data-action="home" class="is-active">世界總覽</button><button data-action="explore">七區探索</button><button data-action="brands">生活品牌</button></nav>
+    <button type="button" class="search-open" data-action="search" aria-haspopup="dialog"><span class="search-icon" aria-hidden="true">⌕</span><span class="search-text">搜尋地點、商鋪、文化…</span><span class="shortcut">⌘ K</span></button>
+  </div>
+</header>
+<div class="wrap">
+  <div class="mast"><p><span>世界觀資料庫・生活誌</span>　/　七大行政區專題</p><p>資料基準 <span>2026.08.06</span>　 ·　 展示版 v1.0</p></div>
+  <div class="work">
+    <aside class="sidebar" aria-label="七區選單">
+      <p class="aside-label">FIELD INDEX · 01—07</p>
+      <div class="sidebar-list" id="sidebar-list"></div>
+      <div class="aside-bottom"><b>資料使用提醒</b><br>依正式 YAML 與區域主檔整理。區域邊界、人口、店數及營業時間尚未正式設定；本站不顯示即時開放資訊。</div>
+    </aside>
+    <main id="main" class="main" tabindex="-1" aria-live="polite"></main>
+  </div>
+</div>
+<footer class="wrap footer"><span><strong>朝霧大陸 / WORLD–001</strong>　保留世界的生活細節，讓每一封信都有來處。</span><span>七區 YAML + 正式 Markdown｜離線可用的單檔 HTML</span></footer>
+<div id="searchLayer" class="modal-backdrop" hidden role="presentation">
+  <div class="search-modal" role="dialog" aria-modal="true" aria-label="搜尋朝霧大陸地點與資訊">
+    <div class="search-input-wrap"><span aria-hidden="true">⌕</span><input type="search" id="searchInput" autocomplete="off" placeholder="試試「微光郵舍」、「茶」、「診療所」…" aria-label="搜尋關鍵字"><button type="button" data-action="close-search" aria-label="關閉搜尋">ESC</button></div>
+    <div id="searchMeta" class="resultmeta">輸入關鍵字，跨七區搜尋商鋪、地點、物產與文化</div>
+    <div id="searchResults" class="results"></div>
+  </div>
+</div>
+<script type="application/json" id="worldData">{
+  "title": "朝霧大陸生活百科",
+  "id": "WORLD-001",
+  "schema": "朝霧大陸世界資料庫 Schema 與詞彙規範 v0.9",
+  "snapshot": "2026-08-06",
+  "built": "2026-10-15",
+  "description": "七個行政區的地理、人文、生活商業及公共服務。以正式 YAML 為結構化依據，Markdown 補充居民生活與敘事脈絡。",
+  "regions": [
+    {
+      "english": "MISTPORT",
+      "nature": "海霧港都",
+      "subtitle": "晴嵐城與北境風海",
+      "tag": "在海霧與船笛之間，學會遠行與等候。",
+      "lead": "天然深水港灣擁抱晴嵐城。港岸的市場、船班與郵舍，讓離別、等待和歸來成為居民熟悉的生活節奏。",
+      "symbol": "◈",
+      "accent": "#557D90",
+      "sky": "#B7CFD3",
+      "dark": "#29495A",
+      "governance": "首都行政與港口治理",
+      "safety": "海霧、強風與航運狀況會影響船班及港口作業；請勿將展示中的地標視為即時開放資訊。",
+      "centers": "晴嵐城",
+      "meaning": "港都・通信・航運",
+      "sector": "港都",
+      "id": "REGION-001",
+      "name": "霧港領",
+      "schema": "1.1-draft",
+      "version": "0.2",
+      "updated": "2026-08-06",
+      "canonicalStatus": "confirmed",
+      "sourceYaml": "REGION-001_mistport_v0.2_schema-aligned.yaml",
+      "sourceMarkdown": "REGION-001_霧港領區域主檔_v0.3_Schema說明版.md",
+      "geography": {
+        "terrain": [
+          "晴嵐城位於港灣內側",
+          "港灣東西兩岸皆有濱海高地",
+          "南側以狹長谷地通往內陸",
+          "平地集中於內港與谷地出口",
+          "舊街與住宅沿山坡層疊發展",
+          "港區、坡地與高地之間具有明顯高低差"
+        ],
+        "climate": [
+          "多雨",
+          "潮濕",
+          "海霧頻繁",
+          "秋冬強風",
+          "天候變化快速",
+          "並非終年陰暗",
+          "晴朗時段因稀少而格外受到居民珍惜"
+        ],
+        "water": [
+          "港灣",
+          "沿海潮道",
+          "山區短溪",
+          "港區排水水路"
+        ],
+        "waterStatus": "provisional",
+        "vegetation": [
+          "潮濕丘陵林",
+          "耐風濱海植物",
+          "山坡灌木",
+          "港區人工植栽"
+        ],
+        "vegetationStatus": "provisional",
+        "settlement": [
+          "內港人口與商業活動最密集",
+          "山坡分布老街、住宅與小型店舖",
+          "港岸集中市場、旅舍、郵政與交通設施",
+          "南側谷地集中物流、倉庫與轉運設施",
+          "商業與人口密度由內港向山坡及外圍遞減"
+        ],
+        "namedWater": []
+      },
+      "culture": {
+        "themes": [
+          "遠行",
+          "等待",
+          "歸來"
+        ],
+        "summary": "霧港領因港口而繁榮，也因港口而習慣離別。 居民不把遠行視為背棄故鄉，而相信真正重要的人與消息， 終究能循著風、燈與潮汐重新回到港灣。",
+        "sayings": [
+          "風會把信帶回來。"
+        ],
+        "customs": [
+          {
+            "name": "出港前向港燈致意",
+            "description": "船隻駛離晴嵐城前，船員會朝候霧燈塔方向短暫停留或鳴笛。",
+            "status": "confirmed"
+          },
+          {
+            "name": "歸港贈物",
+            "description": "長途返港者會帶回一件能代表旅程的小物贈送親友。",
+            "status": "confirmed"
+          },
+          {
+            "name": "雨下留客",
+            "description": "雨勢突然變大時，騎樓、茶館、早餐店與商店通常會讓避雨者暫留。",
+            "status": "confirmed"
+          },
+          {
+            "name": "接船與送船",
+            "description": "千帆渡是居民送行與迎接親友的重要公共場所。",
+            "status": "confirmed"
+          }
+        ],
+        "belief": "",
+        "beliefNote": "",
+        "beliefPrinciples": [],
+        "residentValues": [
+          "重視承諾與準時送達",
+          "尊重遠行者與海上工作者",
+          "珍惜返港、重逢與平安的消息",
+          "重視街坊互助與情報分享",
+          "願意接納不同地方的文化與旅人"
+        ],
+        "valuesStatus": "provisional",
+        "draft": [
+          "候歸信",
+          "燈未熄，港仍在。"
+        ]
+      },
+      "settlements": [
+        {
+          "id": "CITY-001",
+          "name": "晴嵐城",
+          "functions": [
+            "全大陸首都行政中心",
+            "主要港口與客運轉接",
+            "商業、郵政與公共生活中心"
+          ],
+          "location": [
+            "天然深水港灣內側，東西兩岸為高地，南側連通內陸谷地"
+          ],
+          "status": "confirmed"
+        }
+      ],
+      "cityZones": [
+        {
+          "name": "內港",
+          "functions": [
+            "首都行政",
+            "商業金融",
+            "客運交通",
+            "公共活動"
+          ]
+        },
+        {
+          "name": "東岸高地",
+          "functions": [
+            "日出觀景",
+            "歷史建築",
+            "住宅",
+            "城市守望"
+          ]
+        },
+        {
+          "name": "西側海灣",
+          "functions": [
+            "港灣落日",
+            "舊防禦設施",
+            "船舶維修",
+            "海岸聚落"
+          ]
+        },
+        {
+          "name": "南側谷地",
+          "functions": [
+            "陸路交通",
+            "物流倉儲",
+            "內陸轉運",
+            "與青森嶺及其他內陸地區連接"
+          ]
+        }
+      ],
+      "features": [
+        {
+          "id": "PORT-001",
+          "name": "千帆渡",
+          "kind": "地標與文化",
+          "zone": "內港",
+          "functions": [
+            "跨區與遠洋客運",
+            "小型商船停靠",
+            "旅人出入晴嵐城的主要門戶",
+            "港灣公共活動",
+            "節慶與迎船儀式"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": "晴嵐城主要客運碼頭與公共港岸，不代表整座天然港灣"
+        },
+        {
+          "id": "LANDMARK-001",
+          "name": "候霧燈塔",
+          "kind": "安全與觀測",
+          "zone": "港口入口東側岬角",
+          "functions": [
+            "為進出北境風海的船隻導航",
+            "在海霧與強風中標示港口入口",
+            "作為晴嵐城的重要城市象徵",
+            "構成潮門初旭景觀的一部分"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "DISTRICT-002",
+          "name": "雨市街",
+          "kind": "地標與文化",
+          "zone": "內港",
+          "functions": [
+            "漁獲與乾貨交易",
+            "居民日常採買",
+            "港口工作者餐飲",
+            "外地商品零售",
+            "地方消息交換"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-001",
+          "name": "微光郵舍總舍",
+          "kind": "郵政通信",
+          "zone": "內港行政商業核心",
+          "functions": [
+            "管理全大陸郵政網絡",
+            "處理跨區與跨海信件",
+            "培訓郵舍職員",
+            "保存無法投遞與等待認領的信件",
+            "統整各分舍的運送路線"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-002",
+          "name": "風行社港運中心",
+          "kind": "物流與集貨",
+          "zone": "南側物流谷地",
+          "functions": [
+            "海運與陸運轉接",
+            "貨物分揀",
+            "倉儲調度",
+            "風軌貨運接駁",
+            "向其他行政區配送物資"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-003",
+          "name": "百川集總市場",
+          "kind": "物流與集貨",
+          "zone": "內港南緣",
+          "functions": [
+            "全大陸批發交易",
+            "農產、漁獲與日用品集散",
+            "各地商販進貨",
+            "外地商品定價與拍賣",
+            "連接風行社物流網絡"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-004",
+          "name": "尋風旅會港站",
+          "kind": "旅行資訊",
+          "zone": "千帆渡港岸",
+          "functions": [
+            "旅行諮詢",
+            "導覽預約",
+            "跨區行程安排",
+            "旅宿與交通協助",
+            "尋風旅會觀光路線起點"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "SCENIC-TITLE-001",
+          "name": "海門晴嵐",
+          "kind": "歷史景觀",
+          "zone": "晴嵐城港灣",
+          "functions": [
+            "雨勢停止後，陽光穿過山間低雲與港灣霧氣， 港灣、船帆與層疊城街逐步顯現的整體景象。"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "SCENIC-PHENOMENON-001",
+          "name": "潮門初旭",
+          "kind": "代表景觀",
+          "zone": "晴嵐城東岸高地",
+          "functions": [
+            "清晨第一道陽光越過北境風海，先照亮港口入口與候霧燈塔， 再逐漸照向內港的代表性日出景觀。"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        }
+      ],
+      "commerce": {
+        "industries": [
+          "港口航運",
+          "運輸倉儲",
+          "批發零售",
+          "郵政通信",
+          "海產加工",
+          "餐飲",
+          "旅宿",
+          "觀光服務"
+        ],
+        "shopTypes": [
+          "早餐店",
+          "便利商店",
+          "茶飲店",
+          "港邊食堂",
+          "魚貨與乾貨店",
+          "雨具店",
+          "船具與旅行用品店",
+          "小型旅舍",
+          "信紙與文具店",
+          "夜間餐飲攤販"
+        ],
+        "uncommonTypes": [
+          "礦石工藝店",
+          "大型木材加工場",
+          "高階草藥療養店"
+        ],
+        "patterns": [
+          {
+            "name": "內港",
+            "activities": [
+              "行政服務",
+              "餐飲零售",
+              "郵政通信",
+              "旅客服務"
+            ]
+          },
+          {
+            "name": "雨市街",
+            "activities": [
+              "漁獲乾貨",
+              "居民採買",
+              "早餐與港工餐飲",
+              "雨具及生活用品"
+            ]
+          },
+          {
+            "name": "南側谷地",
+            "activities": [
+              "批發市場",
+              "倉儲物流",
+              "大型量販",
+              "貨運服務"
+            ]
+          }
+        ],
+        "brands": [
+          {
+            "id": "BRAND-002",
+            "name": "一盞燈",
+            "role": "港區、交通節點與山坡住宅區常見的生活補給店",
+            "primary": [],
+            "limited": [],
+            "absent": [],
+            "offerings": [],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-003",
+            "name": "晨食堂",
+            "role": "千帆渡、雨市街及通勤路線周邊常見的早餐店",
+            "primary": [],
+            "limited": [],
+            "absent": [],
+            "offerings": [],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-004",
+            "name": "茶露舖",
+            "role": "內港商街、驛站與旅客服務區常見的茶飲店",
+            "primary": [],
+            "limited": [],
+            "absent": [],
+            "offerings": [],
+            "status": "confirmed"
+          }
+        ]
+      },
+      "architecture": {
+        "core": "",
+        "materials": [
+          "紅磚",
+          "灰色石材",
+          "深色木材",
+          "鍛鐵",
+          "防潮金屬板",
+          "回收船木"
+        ],
+        "forms": [
+          "沿山坡層疊興建的住宅",
+          "一樓商店、樓上居住的狹長街屋",
+          "可供避雨與通行的連續騎樓",
+          "深屋簷與斜屋頂",
+          "港邊倉庫與貨棧",
+          "高地觀潮平台",
+          "連接不同高程的階梯與小橋"
+        ],
+        "street": [
+          "內港道路較寬且人流密集",
+          "山坡巷道狹窄、彎曲且多階梯",
+          "商業街沿騎樓連續發展",
+          "雨天路面會反射招牌與店燈",
+          "舊城區常可見港務、商會與郵舍留下的歷史建築"
+        ]
+      },
+      "products": {
+        "foods": [
+          {
+            "name": "潮鹽魚乾",
+            "description": "以港灣海鹽醃製並風乾的魚貨，是船員與居民常見的保存食物",
+            "status": "confirmed"
+          },
+          {
+            "name": "船工朝食",
+            "description": "供早班船員、搬運工與市場商販食用的高熱量早餐組合",
+            "status": "confirmed"
+          },
+          {
+            "name": "海霧茶",
+            "description": "以外地茶葉在晴嵐城調製而成，風味偏厚，適合濕冷雨天飲用",
+            "status": "confirmed"
+          }
+        ],
+        "crafts": [
+          {
+            "name": "船木信盒",
+            "description": "以退役船木製作的防潮信件與小物收納盒",
+            "status": "confirmed"
+          },
+          {
+            "name": "海玻璃飾品",
+            "description": "以海岸磨蝕玻璃製作的吊飾與首飾",
+            "status": "confirmed"
+          },
+          {
+            "name": "港燈模型",
+            "description": "以候霧燈塔與港口信號燈為原型的小型工藝品",
+            "status": "confirmed"
+          }
+        ],
+        "souvenirs": [
+          {
+            "name": "海門晴嵐景帖",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "潮門初旭紀念章",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "千帆渡船票印章",
+            "description": "",
+            "status": "confirmed"
+          }
+        ]
+      },
+      "npc": [
+        "船長",
+        "水手",
+        "港口搬運工",
+        "魚販",
+        "港邊食堂店主",
+        "微光郵舍職員",
+        "風行社物流調度員",
+        "百川集批發商",
+        "尋風旅會接待員",
+        "旅舍主人",
+        "港區巡守員",
+        "燈塔守望員"
+      ],
+      "unresolved": [
+        "霧港領與其他行政區的正式相鄰關係",
+        "晴嵐城東岸與西岸次級地名",
+        "整座天然港灣的正式名稱",
+        "代表節慶",
+        "水系與植被的最終清單",
+        "候歸信是否升級為 confirmed",
+        "「燈未熄，港仍在。」是否升級為正式銘文"
+      ],
+      "populationStatus": "deferred"
+    },
+    {
+      "english": "WARM VALLEY",
+      "nature": "河谷茶鄉",
+      "subtitle": "潤川、茶坡與溫泉",
+      "tag": "水流向哪裡，生活就從那裡開始。",
+      "lead": "潤川與支流串起映川鎮、田野、茶園和溫泉支谷。各聚落分享河水，也藉由分水議與清圳日保存共同生活的技藝。",
+      "symbol": "≈",
+      "accent": "#648465",
+      "sky": "#C1D9B8",
+      "dark": "#395B48",
+      "governance": "河谷聚落聯議制",
+      "safety": "潤川及支流水位、洪水警戒與封渡決定優先於河岸市集及旅遊；溫泉療養不取代正規醫療。",
+      "centers": "映川鎮",
+      "meaning": "農作・茶業・療養",
+      "sector": "河谷",
+      "id": "REGION-002",
+      "name": "暖谷領",
+      "schema": "1.4-draft",
+      "version": "0.2",
+      "updated": "2026-08-06",
+      "canonicalStatus": "confirmed",
+      "sourceYaml": "REGION-002_warmvalley_v0.2_schema-aligned.yaml",
+      "sourceMarkdown": "REGION-002_暖谷領區域主檔_v0.2_生活公共與金融服務增補版.md",
+      "geography": {
+        "terrain": [
+          "由群山與丘陵環抱的內陸河谷",
+          "一條主要河流貫穿全區",
+          "支流與短溪由周圍山地匯入主河",
+          "河谷兩側分布梯田、茶園與小型聚落",
+          "部分支谷具有天然溫泉",
+          "山區與河岸之間存在明顯高低差"
+        ],
+        "climate": [
+          "整體比霧港領溫暖",
+          "雨量充足",
+          "河谷濕度較高",
+          "清晨常有薄霧",
+          "山坡與谷底溫差明顯",
+          "夏季植物繁盛",
+          "冬季較少受到強烈海風影響"
+        ],
+        "water": [
+          "潤川",
+          "泉霧溪",
+          "青芽溪",
+          "禾川圳"
+        ],
+        "waterStatus": "confirmed",
+        "vegetation": [
+          "河岸林",
+          "丘陵茶園",
+          "果樹與農田",
+          "竹林",
+          "山坡闊葉林"
+        ],
+        "vegetationStatus": "confirmed",
+        "settlement": [
+          "聚落沿潤川與支流分布",
+          "平坦谷地發展農田與市場",
+          "溫泉聚落位於支谷泉源附近",
+          "教育與公共建築多設於河岸高地",
+          "大型建築較少，村鎮之間保留農地與林地"
+        ],
+        "namedWater": [
+          {
+            "name": "潤川",
+            "note": "主要天然河流，串連聚落與農業生活；目前地圖採沿區域邊緣的示意畫法。"
+          },
+          {
+            "name": "泉霧溪",
+            "note": "源於上游溫泉支谷，部分河段受地熱影響，匯入潤川。"
+          },
+          {
+            "name": "青芽溪",
+            "note": "流經茶園丘陵的天然支流，雨季水量變化明顯。"
+          },
+          {
+            "name": "禾川圳",
+            "note": "從潤川取水的人工灌溉渠道，服務禾川庄農田與果園，並非天然支流。"
+          }
+        ]
+      },
+      "culture": {
+        "themes": [
+          "滋養",
+          "傳承",
+          "記得"
+        ],
+        "summary": "暖谷領相信土地與河流提供滋養，技藝與經驗需要被傳承，而普通居民的生活與名字也值得被地方記得。",
+        "sayings": [
+          "河流記得每個人的名字。"
+        ],
+        "customs": [
+          {
+            "name": "分水議",
+            "description": "聚落代表與居民共同協調取水、修圳及上下游爭議。屬治理制度，不是節慶。",
+            "status": "confirmed"
+          },
+          {
+            "name": "清圳日",
+            "description": "居民共同清理、修補水圳，並以公共用餐延續互助關係。",
+            "status": "confirmed"
+          },
+          {
+            "name": "初焙共飲",
+            "description": "青芽庄每季首批焙茶送往書院與聚落共飲，交流氣候與製茶知識。",
+            "status": "confirmed"
+          },
+          {
+            "name": "泉前洗塵",
+            "description": "進入湯泉前洗去泥土與汗水，尊重泉源及其他使用者。",
+            "status": "confirmed"
+          }
+        ],
+        "belief": "",
+        "beliefNote": "",
+        "beliefPrinciples": [],
+        "residentValues": [
+          "長期照料與持續投入",
+          "經驗與技藝傳承",
+          "水源與土地的共同責任",
+          "跨聚落協調",
+          "普通人的生活記憶也值得保存"
+        ],
+        "valuesStatus": "confirmed",
+        "draft": [
+          "河名簿",
+          "初水禮"
+        ]
+      },
+      "settlements": [
+        {
+          "id": "SETTLEMENT-001",
+          "name": "映川鎮",
+          "functions": [
+            "暖谷領行政中心",
+            "河谷聚落聯議地點",
+            "教育與地方知識傳承中心",
+            "區域市場與交通轉接點",
+            "郵政、醫療、金融及公共服務集中地",
+            "洪水警戒與跨聚落應變協調"
+          ],
+          "location": [
+            "位於潤川與主要支流交會附近",
+            "地勢略高於河岸農田",
+            "具有跨河橋梁與主要道路節點"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-002",
+          "name": "泉霧庄",
+          "functions": [
+            "居民日常沐浴",
+            "旅人休養",
+            "草藥療養",
+            "病後復健與慢性照護",
+            "小型旅宿與溫泉飲食"
+          ],
+          "location": [
+            "位於暖谷領上游溫泉支谷",
+            "接近天然泉源與山坡闊葉林"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-003",
+          "name": "青芽庄",
+          "functions": [
+            "茶葉種植",
+            "製茶與焙茶",
+            "茶作技藝傳承",
+            "茶館與農事體驗"
+          ],
+          "location": [
+            "位於河谷兩側日照較佳的丘陵",
+            "茶園沿等高線分布"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-004",
+          "name": "禾川庄",
+          "functions": [
+            "稻作與蔬果生產",
+            "農產品初級加工",
+            "水圳管理",
+            "河谷農市與季節農事"
+          ],
+          "location": [
+            "位於較寬廣的河谷平地",
+            "周圍具有農田、水圳與果園"
+          ],
+          "status": "confirmed"
+        }
+      ],
+      "cityZones": [
+        {
+          "name": "映川河岸高地",
+          "functions": [
+            "映河書院",
+            "地方文書與水文保存",
+            "部分公共議事"
+          ]
+        },
+        {
+          "name": "映川行政生活核心",
+          "functions": [
+            "微光郵舍暖谷分舍",
+            "白羽院映川診療所",
+            "星契所映川分所",
+            "一盞燈、晨食堂與茶露舖"
+          ]
+        },
+        {
+          "name": "合溪渡河岸市集區",
+          "functions": [
+            "百川集暖谷集貨場",
+            "尋風旅會映川服務所",
+            "潤川河安站",
+            "居民交易與旅人轉乘"
+          ]
+        },
+        {
+          "name": "合溪渡外緣轉運區",
+          "functions": [
+            "風行社暖谷集運站",
+            "大型貨運與裝卸避開市集核心"
+          ]
+        },
+        {
+          "name": "泉霧庄泉源入口",
+          "functions": [
+            "尋風旅會泉霧導覽站",
+            "白羽院泉霧療養所",
+            "湯屋旅舍轉接"
+          ]
+        }
+      ],
+      "features": [
+        {
+          "id": "DISTRICT-003",
+          "name": "合溪渡",
+          "kind": "商業節點",
+          "zone": "映川鎮內的河岸市集區",
+          "functions": [
+            "跨河交通",
+            "農產品集散",
+            "小型河運",
+            "聚落間轉乘",
+            "定期市集"
+          ],
+          "status": "confirmed",
+          "constraint": "河安警戒與封渡優先於市集及觀光。",
+          "definition": "暖谷領 → 映川鎮 → 合溪渡。合溪渡是渡口與商業節點，不是第五個主要聚落。"
+        },
+        {
+          "id": "FACILITY-005",
+          "name": "映河書院",
+          "kind": "教育與研究",
+          "zone": "映川河岸高地",
+          "functions": [
+            "地方教育",
+            "教師與水利管理者培訓",
+            "河道、水位及雨量紀錄",
+            "農業、茶作與草藥知識保存",
+            "地方歷史與口述故事整理",
+            "部分聚落聯議會議"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-006",
+          "name": "微光郵舍暖谷分舍",
+          "kind": "郵政通信",
+          "zone": "映川行政生活核心",
+          "functions": [
+            "收集各聚落信件",
+            "處理跨聚落與跨區郵件",
+            "保存郵路與住戶投遞紀錄",
+            "提供書寫與等候空間"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-007",
+          "name": "百川集暖谷集貨場",
+          "kind": "物流與集貨",
+          "zone": "合溪渡河岸市集區",
+          "functions": [
+            "彙整農產品、茶葉、草藥與加工品",
+            "商品分級與秤重",
+            "地方批發交易",
+            "轉交風行社配送"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-008",
+          "name": "風行社暖谷集運站",
+          "kind": "物流與集貨",
+          "zone": "合溪渡外緣轉運區",
+          "functions": [
+            "農產與茶葉裝卸",
+            "地方商品分揀",
+            "河運與陸運轉接",
+            "連接青森嶺轉運網絡",
+            "跨區配送"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-009",
+          "name": "尋風旅會映川服務所",
+          "kind": "旅行資訊",
+          "zone": "合溪渡河岸市集區",
+          "functions": [
+            "提供聚落地圖",
+            "安排河谷與農村導覽",
+            "協助住宿與交通",
+            "發布水位、道路與季節資訊"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-010",
+          "name": "尋風旅會泉霧導覽站",
+          "kind": "旅行資訊",
+          "zone": "泉霧庄泉源入口",
+          "functions": [
+            "說明泉前洗塵禮儀",
+            "提供湯屋與旅舍資訊",
+            "安排泉霧溪與山林步道導覽",
+            "發布泉源與道路狀態"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-020",
+          "name": "白羽院映川診療所",
+          "kind": "醫療照護",
+          "zone": "映川行政生活核心",
+          "functions": [
+            "一般診療與家庭健康照護",
+            "農作、河運及日常外傷處理",
+            "兒童與長者健康服務",
+            "慢性不適與復健轉介",
+            "洪水及災害醫療協調",
+            "跨區重症轉送",
+            "青芽庄與禾川庄巡迴診療安排"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-021",
+          "name": "白羽院泉霧療養所",
+          "kind": "醫療照護",
+          "zone": "泉霧庄泉源入口",
+          "functions": [
+            "病後休養與生活調整",
+            "關節、肌肉與長期勞動不適復健",
+            "溫泉使用安全評估",
+            "草藥、飲食與既有治療的協調說明",
+            "需要進一步醫療者轉介映川診療所"
+          ],
+          "status": "confirmed",
+          "constraint": "療養所不將溫泉宣稱為萬能治療，也不取代正式診斷與急症處置。",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-022",
+          "name": "潤川河安站",
+          "kind": "安全與觀測",
+          "zone": "合溪渡河岸市集區",
+          "functions": [
+            "監測潤川水位、降雨與河岸狀況",
+            "發布封渡、封橋與洪水警戒",
+            "維持合溪渡小型河運安全",
+            "執行初步水域救援",
+            "與映河書院交換水文紀錄",
+            "協調各聚落撤離與河岸管制"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-023",
+          "name": "星契所映川分所",
+          "kind": "金融服務",
+          "zone": "映川行政生活核心",
+          "functions": [
+            "居民存提款與跨區匯款",
+            "農作季節與種苗農具資金",
+            "茶葉、農產及加工品交易結算",
+            "製茶設備與小型旅宿改善融資",
+            "水圳、農地及商業災後修復資金",
+            "合作商戶與巡迴金融服務管理"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        }
+      ],
+      "commerce": {
+        "industries": [
+          "農業",
+          "茶作與製茶",
+          "農產品加工",
+          "溫泉與療養服務",
+          "草藥整理",
+          "教育與知識服務",
+          "地方市場",
+          "小型旅宿"
+        ],
+        "shopTypes": [
+          "米糧與農產品店",
+          "種苗店",
+          "農具與水圳修繕店",
+          "茶葉店",
+          "製茶工坊",
+          "茶館",
+          "草藥店",
+          "公共湯屋",
+          "小型旅舍",
+          "早餐店",
+          "文具與書籍店",
+          "地方食品加工店"
+        ],
+        "uncommonTypes": [
+          "大型奢侈品商店",
+          "遠洋船具店",
+          "大型礦石與金屬工坊",
+          "大型夜間娛樂場所",
+          "大規模港運倉庫"
+        ],
+        "patterns": [
+          {
+            "name": "映川鎮",
+            "activities": [
+              "行政與公共服務",
+              "書籍與文具",
+              "地方市場",
+              "醫療與藥材",
+              "郵政通信",
+              "餐飲與短期住宿"
+            ]
+          },
+          {
+            "name": "合溪渡",
+            "activities": [
+              "農產品集散",
+              "定期市集",
+              "聚落間轉運",
+              "河岸餐飲",
+              "旅行補給"
+            ]
+          },
+          {
+            "name": "泉霧庄",
+            "activities": [
+              "公共湯屋",
+              "草藥店",
+              "小型旅舍",
+              "溫泉飲食",
+              "療養用品"
+            ]
+          },
+          {
+            "name": "青芽庄",
+            "activities": [
+              "茶葉交易",
+              "製茶工坊",
+              "焙茶空間",
+              "茶館",
+              "茶具與農事用品"
+            ]
+          },
+          {
+            "name": "禾川庄",
+            "activities": [
+              "米糧交易",
+              "蔬果集貨",
+              "種苗與農具",
+              "食品加工",
+              "水圳修繕用品"
+            ]
+          }
+        ],
+        "brands": [
+          {
+            "id": "BRAND-002",
+            "name": "一盞燈",
+            "role": "提供居民與旅人的日常補給、雨具、簡易農作用品、飲水及洪水期間緊急物資。",
+            "primary": [
+              "映川行政生活核心",
+              "合溪渡河岸市集區"
+            ],
+            "limited": [
+              "泉霧庄泉源入口",
+              "禾川庄主要聚落入口"
+            ],
+            "absent": [
+              "青芽庄茶園深處與農作區"
+            ],
+            "offerings": [
+              "潤川米點",
+              "河果蜜漬小包",
+              "青芽茶飲",
+              "簡易雨具",
+              "河岸防蚊用品"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-003",
+            "name": "晨食堂",
+            "role": "服務農戶、船夫、學生、集貨與早班工作者，保留各聚落自己的早食文化。",
+            "primary": [
+              "映川鎮",
+              "合溪渡",
+              "禾川庄"
+            ],
+            "limited": [
+              "青芽庄採茶集合區"
+            ],
+            "absent": [
+              "泉霧庄核心湯泉區，以地方旅舍與食堂為主"
+            ],
+            "offerings": [
+              "潤川米糰",
+              "禾香米糕朝食",
+              "青芽茶蛋",
+              "河果豆乳",
+              "泉霧草湯"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-004",
+            "name": "茶露舖",
+            "role": "以青芽庄茶葉與河谷農產開發地方飲品，但不得取代青芽庄地方茶館與製茶工坊。",
+            "primary": [
+              "映川行政生活核心",
+              "合溪渡河岸市集區"
+            ],
+            "limited": [],
+            "absent": [
+              "泉霧庄",
+              "青芽庄",
+              "禾川庄"
+            ],
+            "offerings": [
+              "青芽春露",
+              "河果蜜茶",
+              "泉霧草飲",
+              "禾香米乳"
+            ],
+            "status": "confirmed"
+          }
+        ]
+      },
+      "architecture": {
+        "core": "河石、木構、灰白牆、陶瓦與深屋簷，配合水位、濕氣及季節，保留可修補的生活尺度。",
+        "materials": [
+          "河岸石材",
+          "深淺木材",
+          "灰白石灰牆",
+          "陶瓦",
+          "竹材",
+          "編織草蓆",
+          "回收舊木料"
+        ],
+        "forms": [
+          "深屋簷與斜屋頂",
+          "面向河流或水圳的長形屋舍",
+          "可遮雨通行的木廊",
+          "略高於地面的防潮基座",
+          "以中庭或曬場為核心的農家院落",
+          "沿坡地與等高線興建的聚落",
+          "方便分段維修與擴建的木石混合建築"
+        ],
+        "street": [
+          "道路多沿河流、水圳與等高線發展",
+          "聚落內常見小橋、石階與木棧道",
+          "河岸設有洗滌、取水與停靠平台",
+          "房屋與農地之間少有明顯硬性邊界",
+          "水圳穿過街道、院落與公共空間",
+          "市街尺度較小且步行節奏較慢"
+        ]
+      },
+      "products": {
+        "foods": [
+          {
+            "name": "潤川米",
+            "description": "由潤川與禾川圳灌溉的主要糧食。",
+            "status": "confirmed"
+          },
+          {
+            "name": "青芽春茶",
+            "description": "青芽庄春季第一輪採收製成，也是初焙共飲的重要茶品。",
+            "status": "confirmed"
+          },
+          {
+            "name": "禾香米糕",
+            "description": "使用潤川米與季節配料製成，常見於公共餐會。",
+            "status": "confirmed"
+          },
+          {
+            "name": "泉霧草湯",
+            "description": "依季節使用草藥、根莖與食材熬製的溫熱湯品。",
+            "status": "confirmed"
+          },
+          {
+            "name": "河果蜜漬",
+            "description": "以河谷果園的季節水果加工，便於保存與外運。",
+            "status": "confirmed"
+          }
+        ],
+        "crafts": [
+          {
+            "name": "水紋紙",
+            "description": "映川鎮以河水與植物纖維製成，常用於書院紀錄與書信。",
+            "status": "confirmed"
+          },
+          {
+            "name": "竹水籃",
+            "description": "排水快、容易修補的河岸與農作提籃。",
+            "status": "confirmed"
+          },
+          {
+            "name": "圳尺",
+            "description": "水圳管理者測量水位、渠寬及修繕尺寸的木製工具。",
+            "status": "confirmed"
+          },
+          {
+            "name": "泉石皂",
+            "description": "泉霧庄以礦泉水與地方植物製作的清潔用品。",
+            "status": "confirmed"
+          },
+          {
+            "name": "焙茶陶罐",
+            "description": "用於保存焙茶，罐身常刻茶園、溪流或採茶日期。",
+            "status": "confirmed"
+          }
+        ],
+        "souvenirs": [
+          {
+            "name": "潤川水紋景帖",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "映河書院藏書印",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "合溪渡市集章",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "青芽庄茶園小景盒",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "泉霧庄湯牌",
+            "description": "",
+            "status": "confirmed"
+          }
+        ]
+      },
+      "npc": [
+        "農夫",
+        "茶農",
+        "製茶師",
+        "水圳管理者",
+        "河道巡查員",
+        "映河書院教師",
+        "地方紀錄員",
+        "草藥師",
+        "湯屋管理者",
+        "河運船夫",
+        "市集商販",
+        "種苗店主",
+        "農具修繕師",
+        "微光郵舍暖谷分舍職員",
+        "風行社集運調度員",
+        "一盞燈暖谷門市職員",
+        "晨食堂早班店員",
+        "茶露舖河谷飲品調製員",
+        "白羽院映川診療所醫護",
+        "泉霧療養照護員",
+        "潤川河安站巡查員",
+        "水域救援員",
+        "星契所農業金融專員",
+        "農產交易結算員"
+      ],
+      "unresolved": [
+        "暖谷領與其他行政區的正式邊界與相鄰關係",
+        "映川鎮主要跨河橋梁的正式名稱",
+        "泉霧庄核心公共湯屋的正式名稱",
+        "合溪渡定期市集的活動名稱",
+        "潤川沿岸主要步道的正式名稱",
+        "禾川圳圳首與水門的正式名稱",
+        "青芽庄代表性製茶工坊的正式名稱",
+        "河名簿是否升級為 confirmed",
+        "初水禮是否升級為 confirmed",
+        "正式代表節慶",
+        "青芽庄與禾川庄巡迴健康服務據點的正式名稱",
+        "泉霧溪、青芽溪及禾川圳水位回報點的正式名稱",
+        "星契所跨聚落巡迴服務日期與固定路線",
+        "一盞燈、晨食堂與茶露舖的精確分店數量"
+      ],
+      "populationStatus": "deferred"
+    },
+    {
+      "english": "REDROCK HIGHLAND",
+      "nature": "赤岩工匠之地",
+      "subtitle": "海崖、鍛火與守望",
+      "tag": "岩石不說話，但修復與承擔會留下痕跡。",
+      "lead": "赤褐色海崖迎向強風，砥風鎮統籌道路、蓄水與避難；石脈、火砧和崖風的工匠，以工印與合驗守住公共工程的責任。",
+      "symbol": "◇",
+      "accent": "#B06D51",
+      "sky": "#E8C1A0",
+      "dark": "#754732",
+      "governance": "高地聚落聯守制",
+      "safety": "暴風、海崖警戒與道路封閉時，救援與公共安全優先；望濤臺不是一般商街或自由參訪景點。",
+      "centers": "砥風鎮",
+      "meaning": "石工・鍛造・守望",
+      "sector": "高地",
+      "id": "REGION-003",
+      "name": "赤岩高地",
+      "schema": "1.3-draft",
+      "version": "0.1",
+      "updated": "2026-08-06",
+      "canonicalStatus": "confirmed",
+      "sourceYaml": "REGION-003_redrock-highland_v0.1_schema-aligned.yaml",
+      "sourceMarkdown": "REGION-003_赤岩高地區域主檔_v0.1_敘事與Schema說明版.md",
+      "geography": {
+        "terrain": [
+          "高地由海岸陡峭升起，形成大面積濱海峭壁",
+          "赤褐色岩層與深色岩帶交錯",
+          "海浪侵蝕形成海蝕洞、岩門與潮間岩台",
+          "高地內部具有風蝕台地、狹長岩谷與斷裂坡地",
+          "可耕平地有限，聚落多位於避風凹地或穩定岩台",
+          "採石場與工匠聚落沿可利用岩層分布",
+          "崖岸設有守望台、救援道與古老防禦遺構"
+        ],
+        "climate": [
+          "全年風勢明顯",
+          "秋冬季風與海上暴風更強",
+          "崖岸長期受到鹽霧影響",
+          "天候變化快速",
+          "雨勢多為短促而集中",
+          "高地暴露區與避風岩谷體感差異明顯"
+        ],
+        "water": [
+          "大型常流河川較少",
+          "雨水容易沿岩面快速流失",
+          "岩谷與裂隙中存在少量泉井",
+          "聚落普遍設置公共蓄水池與屋頂集水設施",
+          "水源、蓄水池及泉井屬於重要公共資源"
+        ],
+        "waterStatus": "confirmed",
+        "vegetation": [
+          "耐風矮灌木",
+          "耐鹽草本植物",
+          "岩縫植物",
+          "避風谷地中的小片林木",
+          "居民栽培的藥草與香草",
+          "風剪形成的低矮樹林"
+        ],
+        "vegetationStatus": "confirmed",
+        "settlement": [
+          "聚落多位於岩谷、背風坡與穩定岩台",
+          "行政與避難設施設於中央高地",
+          "石工及鍛造聚落靠近採石場、燃料與交通道路",
+          "守望據點沿海崖與高點分布",
+          "居住區與大型採石、鍛造作業區保持安全距離",
+          "聚落以石階、岩道、吊橋及高地道路連接"
+        ],
+        "namedWater": []
+      },
+      "culture": {
+        "themes": [
+          "守望",
+          "磨礪",
+          "承擔"
+        ],
+        "summary": "居民相信自然不會因人的意志而改變；人能做的是磨練技藝、看清限制，在危難前守望，並在錯誤與災難發生後承擔應負責任。",
+        "sayings": [
+          "岩石不說話，但從不說謊。"
+        ],
+        "customs": [
+          {
+            "name": "石誓",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "風前共固",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "鳴砧報安",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "合索日",
+            "description": "",
+            "status": "confirmed"
+          }
+        ],
+        "belief": "山海敬畏",
+        "beliefNote": "不建立統一神教，也不確認具體神祇存在。",
+        "beliefPrinciples": [
+          "山岩提供立足與材料，但不可無限索取",
+          "海洋提供航路與資源，也伴隨風險",
+          "風與海況不帶善惡，只會揭露準備是否充分",
+          "技藝不能支配自然，只能幫助人更謹慎共處",
+          "個人責任與聚落互助同樣重要"
+        ],
+        "residentValues": [
+          "實際行動勝過華麗承諾",
+          "材料、工具與建築留下的痕跡值得信任",
+          "安全、修正與補救屬於工匠責任",
+          "危險時互相照應，不鼓勵個人逞強",
+          "信任需要時間、作品與責任紀錄累積"
+        ],
+        "valuesStatus": "confirmed",
+        "draft": [
+          "岩祭"
+        ]
+      },
+      "settlements": [
+        {
+          "id": "SETTLEMENT-005",
+          "name": "砥風鎮",
+          "functions": [
+            "行政中心",
+            "聯守議事",
+            "公共市場",
+            "災害避難",
+            "蓄水及道路協調",
+            "工匠制度與爭議處理"
+          ],
+          "location": [
+            "位於赤岩高地中央較穩定的高原岩台",
+            "避開最強臨海風口",
+            "連接採石、鍛造、崖岸與對外道路",
+            "鄰近可靠泉井與公共蓄水設施"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-006",
+          "name": "石脈庄",
+          "functions": [
+            "建築石材開採",
+            "石料切割與初步加工",
+            "石工傳承",
+            "岩層安全判讀",
+            "公共建築用石供應"
+          ],
+          "location": [
+            "高地內部狹長岩谷",
+            "鄰近可穩定開採石層",
+            "避開直接外海強風帶"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-007",
+          "name": "火砧庄",
+          "functions": [
+            "採石與農用工具鍛造",
+            "港務構件製作",
+            "鎖鏈鉚釘與固定鉤加工",
+            "舊工具修復",
+            "金工傳承"
+          ],
+          "location": [
+            "背風岩谷或高地凹地",
+            "與石脈庄及主要道路交通便利",
+            "住宅與工坊設防火緩衝"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-008",
+          "name": "崖風庄",
+          "functions": [
+            "海岸巡查",
+            "海況觀測",
+            "崖岸救援",
+            "繩索器具維護",
+            "潮間帶採集",
+            "海蝕地形導覽"
+          ],
+          "location": [
+            "海崖後方穩定岩台",
+            "鄰近守望與救援道路",
+            "與危險海蝕地形保持安全距離"
+          ],
+          "status": "confirmed"
+        }
+      ],
+      "cityZones": [],
+      "features": [
+        {
+          "id": "OUTPOST-001",
+          "name": "望濤臺",
+          "kind": "觀測據點",
+          "zone": "望濤守望崖",
+          "functions": [
+            "海況與暴風觀測",
+            "航路警戒訊號",
+            "跨區海況交換",
+            "沿岸救援指揮",
+            "遠距火光旗號或其他訊號維護"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "LANDMARK-002",
+          "name": "望潮聖堂",
+          "kind": "地標與文化",
+          "zone": "砥風望海山脊",
+          "functions": [
+            "公共誓約",
+            "海難與工程事故追思",
+            "守望救援紀錄保存",
+            "工匠責任承諾",
+            "紀念石牌保存"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-011",
+          "name": "赤火鍛坊",
+          "kind": "地標與文化",
+          "zone": "火砧公共鍛造核心",
+          "functions": [
+            "大型工具與構件鍛造",
+            "工匠學徒訓練",
+            "暴風後緊急修復",
+            "公共工程金屬零件",
+            "工印與合驗示範"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-012",
+          "name": "微光郵舍赤岩分舍",
+          "kind": "郵政通信",
+          "zone": "砥風行政避難核心",
+          "functions": [
+            "跨聚落信件",
+            "暴風封路通知",
+            "工匠文書",
+            "望濤臺訊息轉送",
+            "無法投遞郵件保存"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-013",
+          "name": "百川集赤岩工料場",
+          "kind": "物流與集貨",
+          "zone": "砥風外緣工料區",
+          "functions": [
+            "石材分類交易",
+            "金屬原料接收",
+            "大型構件暫存",
+            "工料批發",
+            "材料工印合驗紀錄核對"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-014",
+          "name": "風行社赤岩轉運站",
+          "kind": "物流與集貨",
+          "zone": "砥風外道轉運口",
+          "functions": [
+            "重料與構件運輸",
+            "月礦山原料轉入",
+            "火砧庄成品配送",
+            "港務材料運送",
+            "災後物資調度"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-015",
+          "name": "尋風旅會砥風服務所",
+          "kind": "旅行資訊",
+          "zone": "砥風旅人入口",
+          "functions": [
+            "道路風勢封路資訊",
+            "工匠聚落交通",
+            "望潮聖堂禮儀",
+            "參訪安全許可",
+            "旅舍裝備飲水資訊"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-016",
+          "name": "尋風旅會崖風導覽站",
+          "kind": "旅行資訊",
+          "zone": "崖風海岸道入口",
+          "functions": [
+            "崖岸海蝕安全說明",
+            "潮汐封路資訊",
+            "望濤臺參訪安排",
+            "嚮導裝備確認",
+            "救援文化介紹"
+          ],
+          "status": "confirmed",
+          "constraint": "所有導覽活動服從望濤臺警戒、封路與救援需求。",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-017",
+          "name": "白羽院赤岩診療所",
+          "kind": "醫療照護",
+          "zone": "砥風行政避難核心",
+          "functions": [
+            "一般診療",
+            "外傷骨折",
+            "燒燙傷照護",
+            "職業健康",
+            "復健",
+            "暴風醫療協調",
+            "重症跨區轉送"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-018",
+          "name": "白羽院崖風救護站",
+          "kind": "醫療照護",
+          "zone": "崖風海岸道入口",
+          "functions": [
+            "崖岸救援後初步處置",
+            "止血固定保暖復甦",
+            "失溫溺水墜落傷害處理",
+            "救援隊健康檢查",
+            "轉送判斷"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-019",
+          "name": "星契所砥風分所",
+          "kind": "金融服務",
+          "zone": "砥風行政避難核心",
+          "functions": [
+            "存提款與跨區匯款",
+            "工坊營運資金",
+            "石材金屬交易結算",
+            "公共工程保證",
+            "災後修繕融資",
+            "事故補償金管理"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        }
+      ],
+      "commerce": {
+        "industries": [
+          "石材開採",
+          "石材切割與建築石工",
+          "金屬鍛造",
+          "工具與大型構件修復",
+          "港務及防禦設施構件製作",
+          "繩索、固定鉤與救援裝備維護",
+          "公共蓄水與防風工程",
+          "海岸巡查與救援服務",
+          "小規模崖岸觀光與地質導覽"
+        ],
+        "shopTypes": [
+          "工具修繕店",
+          "石工材料行",
+          "鍛造工坊",
+          "繩索與固定器具店",
+          "工作衣與護具店",
+          "蓄水器具店",
+          "金屬扣件與鉚釘店",
+          "救援用品店",
+          "簡易食堂",
+          "工匠旅舍",
+          "雨具與防風用品店",
+          "石材及構件運輸行"
+        ],
+        "uncommonTypes": [
+          "大型農產品市場",
+          "高級茶館",
+          "大型奢侈品商店",
+          "大型夜間娛樂場所",
+          "大型溫泉療養設施",
+          "遠洋旅客型商場"
+        ],
+        "patterns": [
+          {
+            "name": "砥風鎮",
+            "activities": [
+              "行政公共服務",
+              "工印管理",
+              "公共物資",
+              "工具生活用品",
+              "工程服務",
+              "食堂旅舍及郵政"
+            ]
+          },
+          {
+            "name": "石脈庄",
+            "activities": [
+              "建築石材",
+              "石料切割",
+              "採石工具護具",
+              "岩層測量安全",
+              "石工學徒用品"
+            ]
+          },
+          {
+            "name": "火砧庄",
+            "activities": [
+              "工具鍛造",
+              "舊工具修復",
+              "港務構件",
+              "鎖鏈鉚釘固定鉤",
+              "工坊燃料耐火材料"
+            ]
+          },
+          {
+            "name": "崖風庄",
+            "activities": [
+              "救援繩索器具",
+              "防風防鹽用品",
+              "崖岸嚮導",
+              "沿岸採集",
+              "食堂住宿",
+              "海蝕導覽"
+            ]
+          },
+          {
+            "name": "望濤臺",
+            "activities": [
+              "公共補給",
+              "警戒用品",
+              "救援裝備",
+              "值勤餐食",
+              "經核准導覽"
+            ]
+          }
+        ],
+        "brands": [
+          {
+            "id": "BRAND-002",
+            "name": "一盞燈",
+            "role": "提供生活、工作、防風與暴風緊急補給。",
+            "primary": [
+              "砥風行政避難核心",
+              "砥風旅人入口",
+              "火砧背風工坊谷"
+            ],
+            "limited": [
+              "石脈庄主要道路入口"
+            ],
+            "absent": [
+              "望濤臺"
+            ],
+            "offerings": [],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-003",
+            "name": "晨食堂",
+            "role": "",
+            "primary": [
+              "砥風鎮",
+              "石脈庄採石隊出發區",
+              "火砧庄早班工坊區"
+            ],
+            "limited": [
+              "崖風庄以地方早餐食堂為主"
+            ],
+            "absent": [
+              "望濤臺"
+            ],
+            "offerings": [
+              "砥風硬餅夾燉肉",
+              "鹽草熱湯",
+              "岩岸鹽漬飯糰",
+              "火砧燉肉朝食",
+              "岩焙茶"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-004",
+            "name": "茶露舖",
+            "role": "",
+            "primary": [
+              "砥風行政避難核心",
+              "砥風旅人入口"
+            ],
+            "limited": [],
+            "absent": [
+              "石脈庄",
+              "崖風庄",
+              "望濤臺"
+            ],
+            "offerings": [
+              "岩焙茶露",
+              "赤鹽焙茶",
+              "風草熱飲",
+              "石蜜茶"
+            ],
+            "status": "confirmed"
+          }
+        ]
+      },
+      "architecture": {
+        "core": "建築不追求永不損壞，而必須容易檢查、修復並追溯責任。",
+        "materials": [
+          "赤褐色岩材",
+          "深色耐風石材",
+          "粗面灰石",
+          "鍛鐵",
+          "防鹽金屬構件",
+          "深色硬木",
+          "編織繩索",
+          "陶製蓄水器"
+        ],
+        "forms": [
+          "低矮厚重石造",
+          "順應風向的斜面外牆",
+          "連接建築的防風石廊",
+          "內縮式門窗",
+          "背風側中庭",
+          "具有集水槽的斜屋頂",
+          "略低於地面的蓄水庭院",
+          "分隔工坊與住宅的防火石牆",
+          "沿岩台與峭壁發展的階梯道路",
+          "可見且可替換的外露接合點"
+        ],
+        "street": [
+          "主要道路避開直接風口",
+          "巷道轉折削弱風勢",
+          "高地道路設扶索、固定鉤及避風壁",
+          "公共空間有飲水槽、工具架與修繕告示",
+          "工坊區與生活區設安全緩衝",
+          "崖岸道路依風勢與海況封閉",
+          "公共工程保留工印、施工年份及合驗紀錄"
+        ]
+      },
+      "products": {
+        "foods": [
+          {
+            "name": "砥風硬餅",
+            "description": "以外地穀物烘製、耐保存，供採石、守望與長途運輸使用。",
+            "status": "confirmed"
+          },
+          {
+            "name": "岩岸鹽漬",
+            "description": "崖風庄將海菜、貝類或小型漁獲鹽漬保存。",
+            "status": "confirmed"
+          },
+          {
+            "name": "火砧燉肉",
+            "description": "適合長時間勞動後食用的濃厚燉食。",
+            "status": "confirmed"
+          },
+          {
+            "name": "岩焙茶",
+            "description": "以暖谷領茶葉在低溫石爐重新焙製，供工匠與值勤者飲用。",
+            "status": "confirmed"
+          },
+          {
+            "name": "鹽草熱湯",
+            "description": "使用耐風香草、鹽漬食材及根莖熬製，常供災後修繕與救援人員。",
+            "status": "confirmed"
+          }
+        ],
+        "crafts": [
+          {
+            "name": "赤岩砥石",
+            "description": "以細緻岩層製成，依粗細用於不同研磨工作。",
+            "status": "confirmed"
+          },
+          {
+            "name": "風扣",
+            "description": "耐風金屬固定扣件，用於屋頂、風牆、繩索與救援裝備。",
+            "status": "confirmed"
+          },
+          {
+            "name": "合索繩",
+            "description": "依救援規格製作，標記製作者、檢查日期與承載限制。",
+            "status": "confirmed"
+          },
+          {
+            "name": "崖援鉤",
+            "description": "用於崖岸救援與道路固定，須經工印與合驗。",
+            "status": "confirmed"
+          },
+          {
+            "name": "蓄水石甕",
+            "description": "以低滲水石材製成的聚落蓄水器。",
+            "status": "confirmed"
+          },
+          {
+            "name": "工印牌",
+            "description": "記錄製作者、檢查者、材料來源及維修紀錄。",
+            "status": "confirmed"
+          },
+          {
+            "name": "岩層尺",
+            "description": "石工記錄裂隙、層理與切割方向的測量工具。",
+            "status": "confirmed"
+          }
+        ],
+        "souvenirs": [
+          {
+            "name": "望潮聖堂紀念石牌",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "望濤臺風向章",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "火砧庄小鐵砧",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "石脈庄岩層樣本盒",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "崖風庄合索結飾",
+            "description": "",
+            "status": "confirmed"
+          }
+        ]
+      },
+      "npc": [
+        "石工",
+        "採石安全員",
+        "岩層測量員",
+        "鍛造師",
+        "工具修復師",
+        "合驗檢查員",
+        "工印紀錄員",
+        "防風工程工匠",
+        "蓄水維護員",
+        "崖岸救援員",
+        "繩索與固定鉤技師",
+        "望濤臺守望員",
+        "海況訊號員",
+        "高地道路巡查員",
+        "微光郵舍赤岩分舍職員",
+        "風行社重料調度員",
+        "工匠旅舍主人",
+        "白羽院赤岩診療所醫護",
+        "星契所工程金融專員"
+      ],
+      "unresolved": [
+        "赤岩高地與其他行政區的正式邊界及相鄰關係",
+        "砥風鎮中央公共蓄水池正式名稱",
+        "砥風鎮聯守議事廳正式名稱",
+        "石脈庄主要採石場正式名稱",
+        "石脈庄岩層安全紀錄所正式名稱",
+        "火砧庄公共冷卻水槽正式名稱",
+        "崖風庄救援隊本部正式名稱",
+        "望濤臺與崖風庄間主要救援道路正式名稱",
+        "各聚落暴風避難所正式名稱",
+        "岩祭是否發展為正式節慶",
+        "岩鋼工房是否另作其他工坊名稱",
+        "正式代表節慶"
+      ],
+      "populationStatus": "deferred"
+    },
+    {
+      "english": "MOONMINE",
+      "nature": "層疊礦業山城",
+      "subtitle": "微燈巷與燈階夜集",
+      "tag": "礦脈會盡，手藝與燈火仍能延續。",
+      "lead": "霧谷、舊礦道與層層石階構成月照鎮。夜市與修復工坊在山城裡延續勞動者的日常，也陪著居民思考停採後的新生活。",
+      "symbol": "✧",
+      "accent": "#9574A1",
+      "sky": "#C7BACD",
+      "dark": "#584660",
+      "governance": "山城路礦聯議制",
+      "safety": "坑道須完成安全分區後才可導覽；豪雨、落石、封坑或山城消防管制優先於商圈活動。",
+      "centers": "月照鎮",
+      "meaning": "礦業・修復・夜市",
+      "sector": "山城",
+      "id": "REGION-004",
+      "name": "月礦山",
+      "schema": "1.5-draft",
+      "version": "0.1",
+      "updated": "2026-08-06",
+      "canonicalStatus": "confirmed",
+      "sourceYaml": "REGION-004_moonmine_v0.1_schema-aligned.yaml",
+      "sourceMarkdown": "REGION-004_月礦山區域主檔_v0.1_敘事與Schema說明版.md",
+      "geography": {
+        "terrain": [
+          "陡峭山脊與狹窄霧谷交錯",
+          "聚落依等高線、岩台與山肩層層發展",
+          "山腹分布礦脈、舊坑道、通風井與排水道",
+          "舊礦場、選礦場與廢料台地部分已修復或再利用",
+          "平地稀少，大型工料與轉運集中於低坡及谷口",
+          "擋土牆、石階、坡道、索具與舊軌構成空間骨架",
+          "觀光區、居民區、作業礦帶與封閉坑道明確分區"
+        ],
+        "climate": [
+          "全年濕潤，雨霧頻繁",
+          "山腰與稜線風勢差異明顯",
+          "豪雨易造成落石、坍方、積水與道路中斷",
+          "日夜及上下坡體感差異明顯",
+          "霧氣會快速改變能見度",
+          "夜間燈火與霧形成代表性景觀"
+        ],
+        "water": [
+          "生活用水來自山泉、泉井、屋頂集水與公共蓄水池",
+          "山坡排水與坑道排水不可混作飲用水源",
+          "礦區排水須經檢查與處理",
+          "上坡聚落維持蓄水及消防用水",
+          "豪雨前後檢查排水、擋土牆與舊坑道出水"
+        ],
+        "waterStatus": "confirmed",
+        "vegetation": [
+          "霧林與山坡闊葉林",
+          "岩壁蕨類與耐濕植物",
+          "薑、香草與根莖作物",
+          "修復礦場的先驅植物",
+          "上坡聚落的小型果園與庭院作物"
+        ],
+        "vegetationStatus": "confirmed",
+        "settlement": [],
+        "namedWater": []
+      },
+      "culture": {
+        "themes": [
+          "探尋",
+          "轉化",
+          "續光"
+        ],
+        "summary": "居民從山腹尋找資源，也知道礦脈終會改變或枯竭；地方重視留下紀錄、轉化舊技藝，並讓聚落在產業變動後繼續生活。",
+        "sayings": [
+          "越往深處，越要記得回頭的光。",
+          "礦脈會盡，手藝不能斷。"
+        ],
+        "customs": [
+          {
+            "name": "交燈班",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "收坑禮",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "共修階日",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "開市點燈",
+            "description": "",
+            "status": "confirmed"
+          }
+        ],
+        "belief": "借脈觀",
+        "beliefNote": "借脈觀是地方倫理，不確認山體具有超自然意志。",
+        "beliefPrinciples": [
+          "礦脈不是可無限占有的財產，而是向山借用的資源",
+          "每次開採都留下來源、用途、安全與修復紀錄",
+          "礦坑危險或失去價值時，停止開採是一種責任",
+          "山腹保存地質、勞動與事故記憶，不能只留下觀光故事",
+          "地方可靠新產業續光，但不能抹去曾付出的代價"
+        ],
+        "residentValues": [
+          "進入山腹前保留返回路線與交班紀錄",
+          "礦料價值不能高於人命與聚落安全",
+          "停採並不等於遺忘，封閉也可以是一種負責",
+          "舊設備、建築與技藝應在安全前提下轉化再用",
+          "觀光收入不能犧牲居民通行、消防與日常生活"
+        ],
+        "valuesStatus": "confirmed",
+        "draft": []
+      },
+      "settlements": [
+        {
+          "id": "SETTLEMENT-009",
+          "name": "月照鎮",
+          "functions": [
+            "行政與路礦聯議",
+            "居民生活商業",
+            "公共醫療與金融",
+            "郵政通信",
+            "山城消防與災害應變",
+            "工業遺產教育",
+            "旅客服務與夜間商業管理"
+          ],
+          "location": [
+            "主要山肩與多條階梯道路交會處",
+            "下接軌尾庄，上通雲階庄與深脈庄",
+            "行政岩台避開最陡坡與主要坍方帶"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-010",
+          "name": "深脈庄",
+          "functions": [
+            "受管制礦業生產",
+            "坑道測量與支撐",
+            "通風及排水管理",
+            "礦料初步分類",
+            "礦坑安全及救援",
+            "舊坑道封閉與遺產管理"
+          ],
+          "location": [
+            "受管制作業礦帶外緣",
+            "居民區與重機及作業坑口保持距離",
+            "鄰近通風、排水、救援與封坑設施"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-011",
+          "name": "軌尾庄",
+          "functions": [
+            "礦料與工業物資轉運",
+            "軌道、索具及機械修復",
+            "大型零件與支撐材供應",
+            "跨區物流",
+            "舊設備拆解、分類及再利用"
+          ],
+          "location": [
+            "山城低坡與谷口轉運區",
+            "連接礦道、舊軌、索具、道路與跨區物流",
+            "具大型裝卸、機修與工料暫存空間"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-012",
+          "name": "雲階庄",
+          "functions": [
+            "上坡居民生活",
+            "泉井與公共蓄水維護",
+            "小型旅宿與山景步行服務",
+            "山路、排水及擋土牆巡查",
+            "根莖、香草與小型果園栽培"
+          ],
+          "location": [
+            "月照鎮上方泉台與背風山肩",
+            "沿緩坡、階梯與泉井形成住宅",
+            "與危險礦帶及大型轉運道路分離"
+          ],
+          "status": "confirmed"
+        }
+      ],
+      "cityZones": [],
+      "features": [
+        {
+          "id": "DISTRICT-001",
+          "name": "微燈巷",
+          "kind": "商圈",
+          "zone": "微燈巷山階商圈",
+          "functions": [
+            "居民日常採買與餐飲",
+            "山城旅宿與晚間生活",
+            "地方工藝與礦業記憶商店",
+            "連接行政岩台、夜市與上坡住宅"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "MARKET-001",
+          "name": "燈階夜集",
+          "kind": "市場／夜市",
+          "zone": "微燈巷山階商圈",
+          "functions": [
+            "居民晚餐與夜間補給",
+            "礦工、機修與運輸工作者交班後用餐",
+            "地方小吃、修繕小物與日用品交易",
+            "夜間旅遊與山城燈景體驗"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "LANDMARK-003",
+          "name": "月脈舊坑",
+          "kind": "地標與文化",
+          "zone": "深脈舊坑道區",
+          "functions": [
+            "保存舊坑道與勞動記憶",
+            "展示通風、排水、測量與運輸技術",
+            "舉行收坑禮與事故追思",
+            "提供安全分區的管制導覽"
+          ],
+          "status": "confirmed",
+          "constraint": "僅開放完成結構、通風、排水、污染與救援評估的區段。",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-024",
+          "name": "月脈工學館",
+          "kind": "教育與研究",
+          "zone": "月照行政岩台",
+          "functions": [
+            "保存坑道圖、脈冊、事故與封坑紀錄",
+            "礦業、測量、通風、排水及機修教育",
+            "工業遺產與勞動口述歷史",
+            "居民與學徒技能轉型課程"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-025",
+          "name": "微光郵舍月礦分舍",
+          "kind": "郵政通信",
+          "zone": "月照行政岩台",
+          "functions": [
+            "山城與跨區郵件",
+            "階梯住址與居民投遞",
+            "封路、停工及災害通知",
+            "脈冊、交易與商戶文書轉送"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-026",
+          "name": "百川集月礦工料場",
+          "kind": "物流與集貨",
+          "zone": "軌尾工料轉運場",
+          "functions": [
+            "礦料批次分類與秤重",
+            "通風、排水、支撐及機具用品交易",
+            "再生金屬與舊設備分類",
+            "脈冊來源與交易紀錄核對"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-027",
+          "name": "風行社月礦集運站",
+          "kind": "物流與集貨",
+          "zone": "軌尾工料轉運場",
+          "functions": [
+            "礦料、設備與大型零件裝卸",
+            "礦道、舊軌、索具及道路轉接",
+            "赤岩高地工具與構件交換",
+            "霧港領出口與外地物資輸入",
+            "豪雨與封路期間替代物流"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-028",
+          "name": "尋風旅會月照服務所",
+          "kind": "旅行資訊",
+          "zone": "月照下坡轉乘口",
+          "functions": [
+            "山城地圖與高低差路線說明",
+            "微燈巷、燈階夜集與雲階庄資訊",
+            "封路、豪雨及能見度提醒",
+            "旅宿、行李與交通協助",
+            "安全坑道導覽預約"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-029",
+          "name": "尋風旅會深脈導覽站",
+          "kind": "旅行資訊",
+          "zone": "深脈舊坑道區",
+          "functions": [
+            "月脈舊坑入場與嚮導安排",
+            "頭燈、鞋具與安全裝備檢查",
+            "封閉區、回程路線與緊急規則說明",
+            "礦業勞動、事故與封坑歷史導覽"
+          ],
+          "status": "confirmed",
+          "constraint": "無權開放被封坑合議制判定禁止進入的區域。",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-030",
+          "name": "白羽院月照診療所",
+          "kind": "醫療照護",
+          "zone": "月照行政岩台",
+          "functions": [
+            "一般診療與家庭健康",
+            "粉塵、噪音及長期勞動健康",
+            "跌落、燒燙傷、壓砸與機修外傷",
+            "事故後復健及工作轉換照護",
+            "山城與坑道事故醫療協調"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-031",
+          "name": "白羽院深脈急救站",
+          "kind": "醫療照護",
+          "zone": "深脈作業礦帶",
+          "functions": [
+            "礦區事故初步處置",
+            "止血、固定、呼吸支持與保暖",
+            "粉塵、煙霧及缺氧暴露處置",
+            "礦坑救援隊醫療支援"
+          ],
+          "status": "confirmed",
+          "constraint": "設於安全集結與坑口外緣，不設於深部作業坑道內。",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-032",
+          "name": "月照山城應變所",
+          "kind": "安全與觀測",
+          "zone": "月照行政岩台",
+          "functions": [
+            "山城消防與階梯救援",
+            "豪雨、落石、坍方及擋土牆應變",
+            "礦坑事故與坑道救援指揮",
+            "微燈巷及燈階夜集疏散管理",
+            "道路封閉與居民撤離"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-033",
+          "name": "星契所月照分所",
+          "kind": "金融服務",
+          "zone": "月照行政岩台",
+          "functions": [
+            "居民存提款與跨區匯款",
+            "安全、通風、排水與機具設備資金",
+            "微燈巷、燈階夜集、旅宿及工坊交易結算",
+            "擋土牆、排水與住宅改善資金",
+            "停採後就業、工坊轉型與遺產再利用融資",
+            "事故補償與災後修復資金"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        }
+      ],
+      "commerce": {
+        "industries": [
+          "受管制金屬礦與工業礦物開採",
+          "礦料初步分類與跨區供應",
+          "軌道、索具、通風、排水與機械修復",
+          "支撐材、照明與礦業安全用品",
+          "舊設備拆解與再生材料工藝",
+          "山城生活零售與餐飲",
+          "燈階夜集與地方夜間商業",
+          "旅宿、導覽與工業遺產教育",
+          "坡地建築、擋土牆、排水與階梯修繕"
+        ],
+        "shopTypes": [
+          "居民雜貨店",
+          "礦燈與照明用品店",
+          "機修及金工工坊",
+          "雨具與防滑用品店",
+          "山城鞋具與工作衣店",
+          "坑道與測量用品店",
+          "排水與建築修繕材料行",
+          "便當與熱湯食堂",
+          "夜市小吃攤",
+          "小型旅宿",
+          "地方歷史書店",
+          "再生金屬與礦石工藝店"
+        ],
+        "uncommonTypes": [
+          "大型平面量販店",
+          "大型停車型商場",
+          "大規模農產品批發市場",
+          "臨海水產市場",
+          "大型溫泉療養設施"
+        ],
+        "patterns": [
+          {
+            "name": "月照鎮",
+            "activities": [
+              "行政公共服務",
+              "居民商業",
+              "旅宿餐飲",
+              "夜間觀光",
+              "醫療金融",
+              "工業遺產教育"
+            ]
+          },
+          {
+            "name": "深脈庄",
+            "activities": [
+              "礦業安全用品",
+              "坑道補給",
+              "測量通風排水",
+              "礦料初分",
+              "工作者食堂"
+            ]
+          },
+          {
+            "name": "軌尾庄",
+            "activities": [
+              "礦料轉運",
+              "機械軌道索具修復",
+              "工業零件",
+              "大型裝卸",
+              "再生材料"
+            ]
+          },
+          {
+            "name": "雲階庄",
+            "activities": [
+              "居民補給",
+              "泉井蓄水用品",
+              "小型旅宿",
+              "香草根莖",
+              "山路維護用品"
+            ]
+          }
+        ],
+        "brands": [
+          {
+            "id": "BRAND-002",
+            "name": "一盞燈",
+            "role": "提供日常補給、礦燈電源、防滑雨具、熱食、飲水與災害用品。",
+            "primary": [
+              "月照行政岩台",
+              "微燈巷山階商圈",
+              "軌尾工料轉運場"
+            ],
+            "limited": [
+              "深脈庄安全入口",
+              "雲階庄主要入口"
+            ],
+            "absent": [
+              "深脈作業礦帶",
+              "封閉坑道"
+            ],
+            "offerings": [
+              "坑口炊餅",
+              "月照礦飯小盒",
+              "山霧薑飲",
+              "防滑鞋套",
+              "備用照明"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-003",
+            "name": "晨食堂",
+            "role": "",
+            "primary": [
+              "月照鎮",
+              "深脈庄交班區",
+              "軌尾庄早班工坊區"
+            ],
+            "limited": [
+              "雲階庄主要階梯入口"
+            ],
+            "absent": [
+              "深脈作業礦帶內部",
+              "封閉坑道"
+            ],
+            "offerings": [
+              "月照礦飯",
+              "坑口炊餅",
+              "軌尾燉湯",
+              "山霧薑茶",
+              "燈階薯丸"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-004",
+            "name": "茶露舖",
+            "role": "",
+            "primary": [
+              "微燈巷山階商圈",
+              "月照下坡轉乘口"
+            ],
+            "limited": [
+              "月照行政岩台"
+            ],
+            "absent": [
+              "深脈庄",
+              "軌尾機修街",
+              "雲階庄居民核心",
+              "作業與封閉坑道"
+            ],
+            "offerings": [
+              "月霧焙茶",
+              "山薑蜜飲",
+              "燈階薯乳",
+              "雲階草露"
+            ],
+            "status": "confirmed"
+          }
+        ]
+      },
+      "architecture": {
+        "core": "任何山城建築或商業活動都先處理排水、擋土、消防、居民通行與安全返程。",
+        "materials": [
+          "深色山石",
+          "赤褐磚",
+          "灰白灰泥",
+          "深色木構",
+          "波紋金屬板",
+          "鍛鐵欄杆",
+          "舊軌與再生金屬"
+        ],
+        "forms": [
+          "沿等高線層疊的山城街屋",
+          "擋土牆與岩台支撐的狹長建築",
+          "公共階梯與轉折平台",
+          "覆蓋雨棚的商街與窄巷",
+          "深屋簷、排水槽與雨水收集屋頂",
+          "舊礦業建築、機修庫與軌道空間再利用",
+          "消防水槽、避難平台與設備搬運路線"
+        ],
+        "street": [
+          "階梯是道路，也是居民公共空間",
+          "主要坡道保留消防、醫療與貨物通行",
+          "濕滑路段設扶手、防滑面與照明",
+          "排水、擋土牆與舊坑道出水口定期檢查",
+          "微燈巷不得阻塞居民入口與撤離通道"
+        ]
+      },
+      "products": {
+        "foods": [
+          {
+            "name": "月照礦飯",
+            "description": "便於輪班攜帶的米飯、醃菜、蛋與肉食組合。",
+            "status": "confirmed"
+          },
+          {
+            "name": "坑口炊餅",
+            "description": "可保溫、耐攜帶的蒸烤餅食。",
+            "status": "confirmed"
+          },
+          {
+            "name": "燈階薯丸",
+            "description": "以山地根莖製成的軟糯夜市小食。",
+            "status": "confirmed"
+          },
+          {
+            "name": "軌尾燉湯",
+            "description": "供機修與裝卸工作者食用的濃湯。",
+            "status": "confirmed"
+          },
+          {
+            "name": "山霧薑茶",
+            "description": "以雲階薑與暖谷茶調製的雨霧熱飲。",
+            "status": "confirmed"
+          }
+        ],
+        "crafts": [
+          {
+            "name": "月礦燈",
+            "description": "依工作、救援與旅人用途分級的山城照明器具。",
+            "status": "confirmed"
+          },
+          {
+            "name": "舊軌鍛件",
+            "description": "由退出使用的軌件轉製的工具與生活用品。",
+            "status": "confirmed"
+          },
+          {
+            "name": "岩粉釉器",
+            "description": "使用安全處理及可追溯礦岩粉製作的器皿。",
+            "status": "confirmed"
+          },
+          {
+            "name": "脈紋金工",
+            "description": "以礦脈線條為紋樣的金屬器物。",
+            "status": "confirmed"
+          },
+          {
+            "name": "山階門牌",
+            "description": "標記坡段、階數、住戶與救援方向的門牌。",
+            "status": "confirmed"
+          },
+          {
+            "name": "霧燈罩",
+            "description": "減少眩光並在霧中保持辨識度的燈罩。",
+            "status": "confirmed"
+          }
+        ],
+        "souvenirs": []
+      },
+      "npc": [
+        "礦工",
+        "坑道測量員",
+        "通風與排水技師",
+        "支撐結構安全員",
+        "礦料分級員",
+        "脈冊紀錄員",
+        "礦坑救援員",
+        "軌道與索具技師",
+        "機械修復師",
+        "大型裝卸調度員",
+        "擋土牆與排水維護員",
+        "山城消防救援員",
+        "夜市商戶",
+        "山階搬運員",
+        "小型旅宿主人",
+        "工業遺產研究員",
+        "坑道導覽員",
+        "白羽院職業健康醫護",
+        "星契所產業轉型金融專員"
+      ],
+      "unresolved": [
+        "正式行政邊界與相鄰關係",
+        "主要礦種、礦層名稱、儲量與年產量",
+        "受管制作業礦坑數量與名稱",
+        "主要公共階梯、坡道與擋土牆名稱",
+        "舊軌、索道、升降設備與運輸路線名稱",
+        "微燈巷及燈階夜集精確商店與攤位數",
+        "燈階夜集固定營運日期與時段",
+        "聚落蓄水池與消防水槽名稱",
+        "正式代表節慶",
+        "居民 Top 15 最終名單與燈階夜集名次"
+      ],
+      "populationStatus": "deferred"
+    },
+    {
+      "english": "WHITEWAVE CAPE",
+      "nature": "漁岬與航燈",
+      "subtitle": "晨潮魚市與引潮燈塔",
+      "tag": "海沒有路，燈替人記得方向。",
+      "lead": "迎風岬角連著漁澳、海蝕崖與避風灣。晨潮魚市、引潮燈塔與聽潮臺一起維繫漁業、返航與相互救援的生活。",
+      "symbol": "≋",
+      "accent": "#4E8394",
+      "sky": "#A6D9DB",
+      "dark": "#285D70",
+      "governance": "岬燈航路聯議制",
+      "safety": "高浪、暴潮、海難救援或漁場休養可能啟動封航、封岸與封場；維護與救援優先於觀光。",
+      "centers": "迎潮鎮",
+      "meaning": "漁業・海象・救援",
+      "sector": "海岬",
+      "id": "REGION-005",
+      "name": "白浪岬",
+      "schema": "1.6-draft",
+      "version": "0.1",
+      "updated": "2026-08-06",
+      "canonicalStatus": "confirmed",
+      "sourceYaml": "REGION-005_whitewave-cape_v0.1_schema-aligned.yaml",
+      "sourceMarkdown": "REGION-005_白浪岬區域主檔_v0.1_敘事與Schema說明版.md",
+      "geography": {
+        "terrain": [
+          "岬角向外海伸出，形成迎風海崖與背風港澳",
+          "海岸包含海蝕崖、岩棚、礫灘、潮池與狹窄沙灣",
+          "天然漁澳與避風灣分布於岬角兩側",
+          "燈塔及觀測設施設於穩定山脊與高岩台",
+          "魚市、冷鏈與大型裝卸設於較平緩港灣腹地",
+          "居民住宅避開直接巨浪及最強鹽風帶",
+          "部分海蝕地形與潮池僅在安全潮窗開放"
+        ],
+        "climate": [
+          "全年受海風及鹽霧影響",
+          "秋冬外海風浪及長浪更強",
+          "天候與能見度可能快速改變",
+          "暴風、暴潮及高浪會影響港灣和道路",
+          "夏季日照、曝曬及海面反光明顯",
+          "背風灣與迎風岬角體感差異很大"
+        ],
+        "water": [
+          "生活用水來自山坡泉井、屋頂集水及公共蓄水設施",
+          "漁獲清洗、製冰與生活飲水使用不同管線及標準",
+          "避風灣需保留消防、救援及醫療用淡水",
+          "海水倒灌、暴潮及鹽害期間須保護低地水源",
+          "魚市與加工排水不得直接污染漁澳及潮池"
+        ],
+        "waterStatus": "confirmed",
+        "vegetation": [
+          "耐鹽草本及低矮灌木",
+          "岬角風剪林",
+          "岩縫海岸植物",
+          "背風坡的小型果園與香草",
+          "潮池與岩岸藻類",
+          "居民防風牆內的庭院作物"
+        ],
+        "vegetationStatus": "confirmed",
+        "settlement": [
+          "迎潮鎮位於主要港灣與陸路交會處",
+          "網汐庄依漁澳、曬網場及小型泊位形成",
+          "照角庄位於引潮燈塔下方的背風山肩",
+          "泊風庄位於天然避風灣及修船岸線",
+          "聽潮臺位於能觀測外海與岬角兩側的高岩台",
+          "生活區、魚市冷鏈、救援碼頭與旅人海岸路線分區管理"
+        ],
+        "namedWater": []
+      },
+      "culture": {
+        "themes": [
+          "辨潮",
+          "守燈",
+          "相援"
+        ],
+        "summary": "白浪岬居民不把海視為一條固定道路，而是每天重新閱讀風、浪、潮、雲與燈。地方文化重視辨識變化、維持引航之光，並在任何船隻或岸際居民遇險時互相支援。",
+        "sayings": [
+          "海沒有路，燈替人記得方向。",
+          "出海看潮，回岸看燈。"
+        ],
+        "customs": [
+          {
+            "name": "守燈交班",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "風後巡標",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "共補網日",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "留岸燈",
+            "description": "",
+            "status": "confirmed"
+          }
+        ],
+        "belief": "潮路觀",
+        "beliefNote": "潮路觀是地方自然觀與航海倫理，不確認海洋或潮汐具有超自然意志。",
+        "beliefPrinciples": [
+          "海上沒有永遠固定的道路，航路必須依當日海況重新判讀",
+          "燈塔與航標不是征服海洋，而是協助人安全往返",
+          "漁獲來自可變動的海域，必須保留休養與繁殖時間",
+          "能返回岸上與讓他人返回同樣重要",
+          "海難、失聯與救援記憶不能被浪漫觀光敘事取代"
+        ],
+        "residentValues": [
+          "出海與沿岸行動前先確認潮窗、風浪及返程",
+          "燈塔、浮標與海象資料屬於公共安全，不只是技術設施",
+          "魚市交易必須保留船隻、航路及批次來源",
+          "封航、封岸與漁場休養不是怯懦，而是負責",
+          "救援優先於漁獲、交易、觀光及拍攝",
+          "未歸者、救援者及海上勞動記憶都應被留下"
+        ],
+        "valuesStatus": "confirmed",
+        "draft": []
+      },
+      "settlements": [
+        {
+          "id": "SETTLEMENT-013",
+          "name": "迎潮鎮",
+          "functions": [
+            "行政與岬燈航路聯議",
+            "晨潮魚市及居民生活商業",
+            "郵政、醫療、金融及海洋教育",
+            "漁產交易與冷鏈協調",
+            "海岸應變與居民撤離",
+            "旅客服務及跨區交通"
+          ],
+          "location": [
+            "位於背風港灣及對外道路交會處",
+            "港市生活核心高於最易受暴潮影響的低地",
+            "連接網汐庄、照角庄與泊風庄沿岸道路"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-014",
+          "name": "網汐庄",
+          "functions": [
+            "近海漁業",
+            "網具、浮標及繩索維護",
+            "漁獲初步分類與保鮮",
+            "潮池及沿岸生態觀察",
+            "漁業技藝傳承"
+          ],
+          "location": [
+            "位於可供小型漁船進出的天然漁澳",
+            "鄰近曬網、理網及漁獲初步處理空間",
+            "居民區避開低窪浪濺帶及大型冷鏈作業"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-015",
+          "name": "照角庄",
+          "functions": [
+            "燈塔與航標維護",
+            "守燈交班及備援照明",
+            "山脊道路與觀測設施維護",
+            "浮標、反射標及霧號保養",
+            "燈塔生活與航路知識傳承"
+          ],
+          "location": [
+            "位於引潮燈塔下方的背風山肩",
+            "連接燈塔山脊、浮標維護碼頭及迎潮鎮道路",
+            "住宅與迎風崖緣保持安全距離"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-016",
+          "name": "泊風庄",
+          "functions": [
+            "船隻避風與臨時停泊",
+            "小型船具及船體修繕",
+            "海難救護與醫療轉送",
+            "救援船、繩索及潛水裝備維護",
+            "風暴期間跨聚落支援"
+          ],
+          "location": [
+            "位於岬角背風側的天然避風灣",
+            "具有小型船塢、修船岸線及救援集結空間",
+            "與外海浪帶之間有天然岩岬或防浪設施"
+          ],
+          "status": "confirmed"
+        }
+      ],
+      "cityZones": [],
+      "features": [
+        {
+          "id": "MARKET-002",
+          "name": "晨潮魚市",
+          "kind": "市場／夜市",
+          "zone": "迎潮魚市碼頭",
+          "functions": [
+            "居民日常漁獲採買",
+            "小型漁獲拍賣與分級",
+            "船員、餐館及加工者交易",
+            "海產早餐與地方飲食",
+            "漁獲來源及潮簿批次核對"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "OUTPOST-002",
+          "name": "聽潮臺",
+          "kind": "觀測據點",
+          "zone": "聽潮觀測崖",
+          "functions": [
+            "風向、風速、浪高、潮位及能見度監測",
+            "暴潮、高浪、封岸與封航警戒",
+            "海漂物、油污、異常船隻及沿岸事件通報",
+            "向引潮燈塔、泊風庄及迎潮鎮提供海象資料"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "LANDMARK-004",
+          "name": "引潮燈塔",
+          "kind": "安全與觀測",
+          "zone": "照角燈塔山脊",
+          "functions": [
+            "沿岸與外海航路辨識",
+            "高浪、暗礁及岬角警示",
+            "守燈交班及備援照明",
+            "浮標、岸標與霧號維護協調",
+            "經管制的燈塔文化導覽"
+          ],
+          "status": "confirmed",
+          "constraint": "航路警示、維護與救援需求優先於觀光參訪。",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-034",
+          "name": "海路學舍",
+          "kind": "教育與研究",
+          "zone": "迎潮港灣生活核心",
+          "functions": [
+            "海圖、潮汐、海象及燈標教育",
+            "潮簿、船難、救援及漁村記憶保存",
+            "船員、學徒及居民安全訓練",
+            "海岸保育、漁具及海洋觀察課程"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-035",
+          "name": "微光郵舍白浪分舍",
+          "kind": "郵政通信",
+          "zone": "迎潮港灣生活核心",
+          "functions": [
+            "港鎮、漁村及跨區郵件",
+            "船員與家屬信件",
+            "封航、失聯、救援及返航通知",
+            "潮簿、魚市與冷鏈文書轉送",
+            "留岸燈名冊及公共通信協助"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-036",
+          "name": "百川集白浪漁貨場",
+          "kind": "物流與集貨",
+          "zone": "迎潮外緣冷鏈區",
+          "functions": [
+            "漁獲批次分級、秤重與批發",
+            "冷藏、製冰及保鮮用品",
+            "網具、浮標、繩索與漁業工料",
+            "潮簿來源及冷鏈紀錄核對",
+            "餐館、加工及跨區供應"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-037",
+          "name": "風行社白浪冷鏈站",
+          "kind": "物流與集貨",
+          "zone": "迎潮外緣冷鏈區",
+          "functions": [
+            "低溫裝卸、分揀及跨區配送",
+            "魚市、加工及餐館物流",
+            "暖谷農產與赤岩工具回程載運",
+            "暴風、封路及救援期間物資調度",
+            "冷鏈溫度與交接紀錄"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-038",
+          "name": "尋風旅會迎潮服務所",
+          "kind": "旅行資訊",
+          "zone": "迎潮旅人入口",
+          "functions": [
+            "岬角、漁村、燈塔及避風灣路線",
+            "潮窗、浪況、封岸及能見度資訊",
+            "旅宿、交通、魚市及海岸裝備協助",
+            "燈塔、潮池及海岸導覽預約",
+            "高浪或救援期間取消旅遊活動"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-039",
+          "name": "尋風旅會引潮導覽站",
+          "kind": "旅行資訊",
+          "zone": "照角燈塔山脊",
+          "functions": [
+            "引潮燈塔參訪及守燈文化說明",
+            "山脊道路、風勢及能見度提醒",
+            "潮池與岬角路線安全說明",
+            "航標、海圖及救援歷史介紹",
+            "維護或救援期間停止參訪"
+          ],
+          "status": "confirmed",
+          "constraint": "導覽活動服從燈塔維護、海象警戒及救援需求。",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-040",
+          "name": "白羽院迎潮診療所",
+          "kind": "醫療照護",
+          "zone": "迎潮港灣生活核心",
+          "functions": [
+            "一般診療與家庭健康",
+            "海上外傷、日曬、噪音及長期勞動健康",
+            "失溫、溺水、骨折及船具傷害後續照護",
+            "事故後復健與心理支持轉介",
+            "船難、高浪及暴潮醫療協調",
+            "重症跨區轉送"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-041",
+          "name": "白羽院泊風救護站",
+          "kind": "醫療照護",
+          "zone": "泊風避風灣",
+          "functions": [
+            "海難及落海傷者初步處置",
+            "復甦、保暖、止血及骨折固定",
+            "鹽水吸入、失溫與溺水處置",
+            "救援隊醫療支援",
+            "轉送迎潮診療所或跨區醫院"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-042",
+          "name": "白浪海援所",
+          "kind": "安全與觀測",
+          "zone": "泊風避風灣",
+          "functions": [
+            "船難、落海、失聯及岸際救援指揮",
+            "聽潮臺、引潮燈塔與各港澳資訊整合",
+            "高浪、暴潮、封航與封岸發布",
+            "救援船、繩索、潛水及照明裝備管理",
+            "居民撤離、避風及跨區支援"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-043",
+          "name": "星契所迎潮分所",
+          "kind": "金融服務",
+          "zone": "迎潮港灣生活核心",
+          "functions": [
+            "居民存提款與跨區匯款",
+            "船具、網具、安全設備及季節營運資金",
+            "魚市、加工、餐館及冷鏈交易結算",
+            "船隻、碼頭、住宅及商業風災修復資金",
+            "漁場休養或封航期間轉型與生活支持",
+            "事故補償及救援相關款項管理"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        }
+      ],
+      "commerce": {
+        "industries": [
+          "近海漁業",
+          "漁獲分級、加工與低溫保存",
+          "網具、浮標、繩索及漁具維修",
+          "小型船體、引擎及船具修繕",
+          "燈塔、霧號及航標維護",
+          "海象觀測與海岸救援",
+          "海產餐飲與居民魚市",
+          "岬角、潮池及燈塔觀光",
+          "海洋教育與航路知識保存"
+        ],
+        "shopTypes": [
+          "居民雜貨店",
+          "海產早餐店",
+          "魚貨及乾貨店",
+          "網具繩索店",
+          "雨具與防曬用品店",
+          "船具及引擎修理店",
+          "製冰及保冷用品店",
+          "海岸鞋具與救生用品店",
+          "漁村食堂",
+          "小型旅宿",
+          "海洋書店",
+          "燈塔及船木工藝店"
+        ],
+        "uncommonTypes": [
+          "大型山地工料市場",
+          "大型溫泉設施",
+          "重型礦業機具商場",
+          "大型夜間娛樂場所",
+          "內陸農產批發市場"
+        ],
+        "patterns": [
+          {
+            "name": "迎潮鎮",
+            "activities": [
+              "行政公共服務",
+              "晨潮魚市",
+              "生活零售",
+              "海產餐飲",
+              "醫療金融",
+              "旅客服務"
+            ]
+          },
+          {
+            "name": "網汐庄",
+            "activities": [
+              "近海漁業",
+              "網具浮標",
+              "漁獲初分",
+              "漁村食堂",
+              "沿岸生態服務"
+            ]
+          },
+          {
+            "name": "照角庄",
+            "activities": [
+              "燈塔航標",
+              "照明與維修用品",
+              "守燈生活",
+              "管制導覽"
+            ]
+          },
+          {
+            "name": "泊風庄",
+            "activities": [
+              "避風停泊",
+              "船具修繕",
+              "救援用品",
+              "海難救護",
+              "船員食宿"
+            ]
+          },
+          {
+            "name": "晨潮魚市",
+            "activities": [
+              "居民魚貨",
+              "拍賣",
+              "海產早餐",
+              "船員與餐館交易"
+            ]
+          }
+        ],
+        "brands": [
+          {
+            "id": "BRAND-002",
+            "name": "一盞燈",
+            "role": "提供飲水、熱食、雨具、防曬、簡易保冷、照明及暴風緊急補給。",
+            "primary": [
+              "迎潮港灣生活核心",
+              "迎潮旅人入口",
+              "泊風避風灣"
+            ],
+            "limited": [
+              "網汐庄主要入口",
+              "照角庄山脊道路入口"
+            ],
+            "absent": [
+              "聽潮觀測崖",
+              "危險海蝕崖與封岸區"
+            ],
+            "offerings": [
+              "岬鹽米餅",
+              "泊風船粥小杯",
+              "白浪魚羹",
+              "海菜飯糰",
+              "山霧薑茶"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-003",
+            "name": "晨食堂",
+            "role": "服務漁戶、魚市、冷鏈、修船、救援及守燈早班人員。",
+            "primary": [
+              "迎潮鎮",
+              "晨潮魚市周邊",
+              "網汐庄早班漁澳",
+              "泊風庄修船岸線"
+            ],
+            "limited": [
+              "照角庄守燈交班區"
+            ],
+            "absent": [
+              "聽潮臺及封岸區"
+            ],
+            "offerings": [
+              "泊風船粥",
+              "白浪魚羹",
+              "網汐曬魚飯",
+              "海菜蛋餅",
+              "岬鹽米糰"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-004",
+            "name": "茶露舖",
+            "role": "以暖谷茶、海鹽、柑果與香草發展地方飲品，但不取代魚市茶攤及漁村熱湯。",
+            "primary": [
+              "迎潮港灣生活核心",
+              "迎潮旅人入口"
+            ],
+            "limited": [
+              "引潮燈塔旅人服務區"
+            ],
+            "absent": [
+              "網汐作業漁澳",
+              "泊風修船區",
+              "聽潮臺"
+            ],
+            "offerings": [
+              "白浪鹽茶",
+              "岬果冰茶",
+              "潮霧焙茶",
+              "海草蜜飲"
+            ],
+            "status": "confirmed"
+          }
+        ]
+      },
+      "architecture": {
+        "core": "海岸建築先處理鹽風、排水、暴潮、救援動線及生活作業分流，再談景觀與觀光。",
+        "materials": [
+          "灰白海岸石",
+          "洗石與灰泥牆",
+          "深色耐鹽木材",
+          "陶瓦與波紋金屬屋面",
+          "防鹽金屬構件",
+          "船木與再生木料",
+          "粗繩、漁網及浮標",
+          "石製或陶製蓄水器"
+        ],
+        "forms": [
+          "背風側開口較大的低矮海岸建築",
+          "迎風側小窗、風牆及可關閉百葉",
+          "深屋簷、雨棚及快速排水屋頂",
+          "高於浪濺及暴潮線的住宅門檻",
+          "魚市與冷鏈區可沖洗、防滑且分流排水",
+          "漁澳常見曬網架、浮標牆及船具棚",
+          "避風灣設修船坡道、救援裝備庫及淡水補給",
+          "燈塔山脊設低矮維護建築與受管制步道"
+        ],
+        "street": [
+          "港市道路保留救援車、冷鏈及居民通行",
+          "魚市營運不得阻塞救援碼頭",
+          "沿岸步道依潮窗、浪況及能見度封閉",
+          "住宅巷道設防風轉折、排水及鹽害維修記號",
+          "觀光區與漁業作業區使用不同入口及標示",
+          "燈塔路線必須保留維護人員優先通行"
+        ]
+      },
+      "products": {
+        "foods": [
+          {
+            "name": "白浪魚羹",
+            "description": "以當日可取得魚肉、根莖與清湯製作的港市日常羹湯。",
+            "status": "confirmed"
+          },
+          {
+            "name": "網汐曬魚",
+            "description": "依魚種、鹽度、風向及乾燥時間製作的漁村保存食。",
+            "status": "confirmed"
+          },
+          {
+            "name": "泊風船粥",
+            "description": "供返航、修船、救援及避風人員食用的溫熱米粥。",
+            "status": "confirmed"
+          },
+          {
+            "name": "岬鹽米餅",
+            "description": "以暖谷米與海鹽製作、耐攜帶的薄脆米餅。",
+            "status": "confirmed"
+          },
+          {
+            "name": "海菜蛋餅",
+            "description": "使用可食海菜、蛋與麵糊製作的魚市早餐。",
+            "status": "confirmed"
+          }
+        ],
+        "crafts": [
+          {
+            "name": "潮路燈",
+            "description": "依船用、岸用及旅人用途分級的耐鹽照明；正式航行版本須有檢查紀錄。",
+            "status": "confirmed"
+          },
+          {
+            "name": "引潮燈罩",
+            "description": "減少鹽霧眩光並提升遠距辨識的燈罩及航標配件。",
+            "status": "confirmed"
+          },
+          {
+            "name": "浪標牌",
+            "description": "標記潮窗、浪區、撤離及救援方向的耐候牌。",
+            "status": "confirmed"
+          },
+          {
+            "name": "漁網提袋",
+            "description": "使用回收且清潔處理的廢網製作，不得再作正式漁具。",
+            "status": "confirmed"
+          },
+          {
+            "name": "船木食盒",
+            "description": "使用可追溯退役船木製作的耐用食盒及生活器物。",
+            "status": "confirmed"
+          },
+          {
+            "name": "潮紋錫器",
+            "description": "以風浪與潮線為紋樣的小型金屬器物。",
+            "status": "confirmed"
+          }
+        ],
+        "souvenirs": [
+          {
+            "name": "引潮燈塔紀念章",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "聽潮臺浪高牌",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "晨潮魚市魚籤",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "網汐浮標結飾",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "泊風修船木牌",
+            "description": "",
+            "status": "confirmed"
+          }
+        ]
+      },
+      "npc": [
+        "近海漁戶",
+        "船長與船員",
+        "潮簿紀錄員",
+        "魚市拍賣員",
+        "漁獲分級與冷鏈人員",
+        "修網師",
+        "浮標與繩索技師",
+        "小型船體與引擎修復師",
+        "燈塔守燈員",
+        "航標維護員",
+        "海象觀測員",
+        "海岸救援員",
+        "潛水及水域救援技師",
+        "海難救護醫護",
+        "海岸保育巡查員",
+        "魚市食堂主人",
+        "小型旅宿主人",
+        "海路學舍教師",
+        "微光郵舍白浪分舍職員",
+        "星契所漁業金融專員"
+      ],
+      "unresolved": [
+        "白浪岬正式行政邊界及相鄰關係",
+        "主要漁場、漁種、漁季、船數及年漁獲量",
+        "晨潮魚市固定營業日、拍賣時段、攤位及店面數",
+        "引潮燈塔高度、光程、燈質及技術規格",
+        "主要浮標、岸標、霧號及航路名稱",
+        "網汐庄主要曬網場及泊位正式名稱",
+        "泊風庄修船坡道、救援碼頭及淡水補給設施名稱",
+        "迎潮鎮防暴潮設施、撤離道路及公共蓄水名稱",
+        "網汐庄與照角庄巡迴健康據點正式名稱",
+        "各聚落海象、船況與救援回報點正式名稱",
+        "正式代表節慶",
+        "白浪岬居民 Top 15 最終名單、晨潮魚市及引潮燈塔名次"
+      ],
+      "populationStatus": "deferred"
+    },
+    {
+      "english": "GREENFOREST RIDGE",
+      "nature": "溪源與霧林",
+      "subtitle": "林泉鎮與青森嶺步道",
+      "tag": "樹不是只長給今天的人。",
+      "lead": "霧林、溪源、木橋與研究步道環繞山嶺聚落。青森嶺讓林業、木作、水源研究與山難救援共同遵循留生與恢復的節奏。",
+      "symbol": "♧",
+      "accent": "#5D8872",
+      "sky": "#B8D2B3",
+      "dark": "#315947",
+      "governance": "山林水源聯護制",
+      "safety": "封林、火險、豪雨、溪水暴漲、山難與野生動物保護可暫停步道及導覽。",
+      "centers": "林泉鎮",
+      "meaning": "林產・集水・保育",
+      "sector": "山林",
+      "id": "REGION-006",
+      "name": "青森嶺",
+      "schema": "1.7-draft",
+      "version": "0.1",
+      "updated": "2026-08-06",
+      "canonicalStatus": "confirmed",
+      "sourceYaml": "REGION-006_greenforest-ridge_v0.1_schema-aligned.yaml",
+      "sourceMarkdown": "REGION-006_青森嶺區域主檔_v0.1_敘事與Schema說明版.md",
+      "geography": {
+        "terrain": [
+          "連續山脊、霧林坡地與溪源谷地交錯",
+          "森林包含成熟林、次生林、育林區、竹林及山坡灌叢",
+          "山泉、濕地與小溪在林下匯集，形成暖谷領部分水源",
+          "豪雨時可能出現溪水暴漲、坍方、倒木及山路中斷",
+          "林業作業區、研究區、居民採集區與旅人步道分區管理",
+          "木材乾燥與大型轉運集中於較通風、平緩且遠離水源的地帶",
+          "山脊守望點可觀測煙、雷雨、風向及遠距道路狀況"
+        ],
+        "climate": [
+          "全年濕潤，晨霧與午後雲霧常見",
+          "林下陰涼，稜線風勢較強",
+          "雨季土壤含水量高，山路及木橋較易濕滑",
+          "乾季或焚風型天候可能提高森林火險",
+          "局部雷雨可能造成雷擊、倒木及短時溪水暴漲",
+          "不同林型、坡向與高度形成明顯微氣候"
+        ],
+        "water": [
+          "山泉、源頭溪流、濕地與林下土壤是主要集水系統",
+          "居民飲水、林業加工及消防用水分開管理",
+          "溪源及水源緩衝帶禁止一般採伐與污染作業",
+          "豪雨後需檢查濁度、倒木、崩塌及溪岸阻塞",
+          "木材乾燥、塗裝及工坊排水不得進入源頭水系"
+        ],
+        "waterStatus": "confirmed",
+        "vegetation": [
+          "霧林闊葉樹",
+          "針闊混合林",
+          "竹林與次生林",
+          "溪谷蕨類、苔蘚及濕地植物",
+          "居民培育的種苗與藥草",
+          "風倒地及火災跡地的先驅植物",
+          "上坡林緣的小型果木與香草"
+        ],
+        "vegetationStatus": "confirmed",
+        "settlement": [
+          "林泉鎮位於較穩定山肩與主要山路交會處",
+          "木守庄靠近可管理林班及乾燥工坊，但避開溪源緩衝帶",
+          "溪苔庄位於多條源頭溪流與研究步道交會區",
+          "嶺路庄位於山路、轉運、旅人補給及救援入口",
+          "聽林臺位於可觀測山脊、林冠與遠距煙點的高地",
+          "青森嶺步道串連已開放林區，不穿越一般作業林班與核心保護區"
+        ],
+        "namedWater": []
+      },
+      "culture": {
+        "themes": [
+          "觀生",
+          "留蔭",
+          "共護"
+        ],
+        "summary": "青森嶺居民在使用森林之前先觀察其生長、水源與風險；取用木材與山產時保留未來的樹蔭、種源與水土，並將防火、步道及救援視為共同責任。",
+        "sayings": [
+          "樹不是只長給今天的人。",
+          "先聽水，再走林。"
+        ],
+        "customs": [
+          {
+            "name": "留母木",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "巡源日",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "共清防火帶",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "共修徑日",
+            "description": "",
+            "status": "confirmed"
+          }
+        ],
+        "belief": "留生觀",
+        "beliefNote": "留生觀是地方林業與自然倫理，不確認森林具有統一意志或超自然能力。",
+        "beliefPrinciples": [
+          "森林可以被使用，但每次使用都必須留下再生條件",
+          "樹木、土壤、水源、菌類與動物構成互相影響的共同環境",
+          "保留母木、溪岸林及枯立木不等於浪費",
+          "人可以維護與修復森林，但不能假定自己完全控制森林",
+          "地方生活與森林恢復必須同時納入決策"
+        ],
+        "residentValues": [
+          "看見一棵可用的樹，也要看見它周圍的水、土與棲地",
+          "選木、採集與旅遊都必須留下恢復空間",
+          "封林與封徑不是浪費，而是避免更大的損失",
+          "水源與防火屬公共安全，不是單一聚落或產業的私產",
+          "山難救援優先於採收、物流、觀光及拍攝",
+          "地方知識應保存觀察與失敗，不只保存成功技術"
+        ],
+        "valuesStatus": "confirmed",
+        "draft": []
+      },
+      "settlements": [
+        {
+          "id": "SETTLEMENT-017",
+          "name": "林泉鎮",
+          "functions": [
+            "行政與山林水源聯護議事",
+            "居民生活商業",
+            "郵政、醫療與金融",
+            "林業教育與林冊保存",
+            "森林火災與山難應變協調",
+            "旅客服務與跨區交通"
+          ],
+          "location": [
+            "位於穩定山肩與主要山路交會處",
+            "鄰近公共泉井但高於易淹溪谷",
+            "可連接木守庄、溪苔庄及嶺路庄"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-018",
+          "name": "木守庄",
+          "functions": [
+            "選木與育林",
+            "木材乾燥及分類",
+            "木作、修復與建築構件",
+            "竹材及再生木料利用",
+            "林冊批次追溯",
+            "林業學徒及安全訓練"
+          ],
+          "location": [
+            "位於可管理林班與較通風緩坡之間",
+            "木材乾燥場遠離溪源、水井與密集住宅",
+            "連接嶺路庄轉運道路及林泉鎮生活服務"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-019",
+          "name": "溪苔庄",
+          "functions": [
+            "泉源與水質監測",
+            "濕地、苔蘚、植群及土壤研究",
+            "種苗與復育",
+            "溪谷及野生動物觀察",
+            "集水區污染與崩塌預警",
+            "環境教育"
+          ],
+          "location": [
+            "位於數條源頭溪流與濕地外緣",
+            "居民與研究設施避開最脆弱源頭核心",
+            "透過研究步道連接林泉鎮與已開放林區"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-020",
+          "name": "嶺路庄",
+          "functions": [
+            "山路與林道維護",
+            "旅人補給及行李轉運",
+            "迷途、失聯、墜落與溪谷救援",
+            "林產及生活物資轉運",
+            "封路、封徑與天候資訊",
+            "山路住宿與早班餐食"
+          ],
+          "location": [
+            "位於主要山路、林道及對外交通交會處",
+            "鄰近救援集結、車馬轉運與裝備補給空間",
+            "避開溪谷洪水帶及高火險乾燥坡地"
+          ],
+          "status": "confirmed"
+        }
+      ],
+      "cityZones": [],
+      "features": [
+        {
+          "id": "OUTPOST-003",
+          "name": "聽林臺",
+          "kind": "觀測據點",
+          "zone": "聽林守望脊",
+          "functions": [
+            "煙點、火線、乾燥度及風向觀測",
+            "雷擊、能見度與山脊天候通報",
+            "遠距道路、倒木及崩塌狀況觀察",
+            "向青森山林應變所及各聚落發布警戒"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "LANDMARK-005",
+          "name": "青森嶺步道",
+          "kind": "地標與文化",
+          "zone": "青森嶺步道入口",
+          "functions": [
+            "連接已開放森林、山脊與溪源教育區",
+            "提供居民、研究與旅人的步行路線",
+            "展示育林、水源、木橋及山路維護",
+            "作為共修徑日及森林教育場域"
+          ],
+          "status": "confirmed",
+          "constraint": "封林、火險、豪雨、溪水暴漲、救援或野生動物需求優先於步道開放。",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-044",
+          "name": "森脈學舍",
+          "kind": "教育與研究",
+          "zone": "林泉山林生活核心",
+          "functions": [
+            "保存林冊、林班、火災、山難及步道紀錄",
+            "林業、木作、水源、植群及土壤教育",
+            "溪源、降雨、水質與集水區資料彙整",
+            "居民、學徒、研究者及旅人安全訓練"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-045",
+          "name": "微光郵舍青森分舍",
+          "kind": "郵政通信",
+          "zone": "林泉山林生活核心",
+          "functions": [
+            "山林聚落及跨區郵件",
+            "封路、封徑、火險及天候通知",
+            "林冊、研究與交易文書轉送",
+            "失聯、救援及居民聯絡協助"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-046",
+          "name": "百川集青森林產場",
+          "kind": "物流與集貨",
+          "zone": "木守乾燥工坊區",
+          "functions": [
+            "木材、竹材、種苗及山產分類交易",
+            "乾燥、尺寸、來源及林冊核對",
+            "林業安全、修繕及育林用品",
+            "再生木料與公共工程材料"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-047",
+          "name": "風行社青森轉運站",
+          "kind": "物流與集貨",
+          "zone": "嶺路轉運救援口",
+          "functions": [
+            "林產、種苗、山產及修繕材料轉運",
+            "山路、林道與跨區道路銜接",
+            "暖谷農產、月礦設備及居民物資回程載運",
+            "豪雨、火災及封路期間替代物流"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-048",
+          "name": "尋風旅會林泉服務所",
+          "kind": "旅行資訊",
+          "zone": "林泉旅人入口",
+          "functions": [
+            "青森嶺步道、溪苔庄與山路資訊",
+            "火險、雨勢、溪水、封徑及野生動物提醒",
+            "旅宿、交通、裝備及嚮導協助",
+            "研究區、作業林班及禁止進入範圍說明"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-049",
+          "name": "尋風旅會青森步道站",
+          "kind": "旅行資訊",
+          "zone": "青森嶺步道入口",
+          "functions": [
+            "步道入山、返程及人員紀錄",
+            "鞋具、雨具、飲水及基本裝備檢查",
+            "封徑、火險、溪水及倒木資訊",
+            "森林、水源與育林教育說明"
+          ],
+          "status": "confirmed",
+          "constraint": "導覽活動服從封林合議、火險、研究、救援及野生動物需求。",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-050",
+          "name": "白羽院林泉診療所",
+          "kind": "醫療照護",
+          "zone": "林泉山林生活核心",
+          "functions": [
+            "一般診療與家庭健康",
+            "割傷、墜落、噪音、震動及長期勞動健康",
+            "失溫、脫水、蜂螫及野外傷害後續照護",
+            "山難、火災及豪雨醫療協調",
+            "復健及重症跨區轉送"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-051",
+          "name": "白羽院嶺路救護站",
+          "kind": "醫療照護",
+          "zone": "嶺路轉運救援口",
+          "functions": [
+            "山難及失聯救援傷者初步處置",
+            "保暖、止血、固定及補液準備",
+            "墜落、溪谷受困、失溫及蜂螫處置",
+            "救援隊醫療支援",
+            "轉送林泉診療所或跨區醫院"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-052",
+          "name": "青森山林應變所",
+          "kind": "安全與觀測",
+          "zone": "嶺路轉運救援口",
+          "functions": [
+            "森林火災與煙點應變",
+            "迷途、失聯、墜落及溪谷搜索",
+            "豪雨、溪水暴漲、坍方及道路封閉",
+            "防火帶、消防水源及居民撤離",
+            "野生動物衝突與旅人管理",
+            "跨聚落及跨區救援協調"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-053",
+          "name": "星契所林泉分所",
+          "kind": "金融服務",
+          "zone": "林泉山林生活核心",
+          "functions": [
+            "居民存提款與跨區匯款",
+            "種苗、育林、乾燥、木工及安全設備資金",
+            "林產、山產、旅宿及工坊交易結算",
+            "火災、風災、崩塌及道路修復資金",
+            "封林、復育及產業轉型支持",
+            "水源、步道及公共設施改善資金"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        }
+      ],
+      "commerce": {
+        "industries": [
+          "永續林業與育林",
+          "木材乾燥、分類及木作加工",
+          "竹材、再生木料與修復工藝",
+          "種苗、藥草、蕈類及可持續山產",
+          "水源、坡地、步道及木橋維護",
+          "山路補給與林產轉運",
+          "生態研究、森林教育與自然導覽",
+          "小型旅宿、食堂及居民生活商業"
+        ],
+        "shopTypes": [
+          "居民雜貨店",
+          "山路早餐店",
+          "雨具與防滑用品店",
+          "木工工具與修繕店",
+          "種苗及園藝用品店",
+          "竹木器及修復工坊",
+          "山產乾貨店",
+          "藥草與香草店",
+          "戶外裝備及救援用品店",
+          "林間食堂",
+          "小型旅宿",
+          "自然書店及標本教育店"
+        ],
+        "uncommonTypes": [
+          "大型海產市場",
+          "重型礦業商場",
+          "大型夜間娛樂場所",
+          "大型港口冷鏈市場",
+          "高密度平面商場"
+        ],
+        "patterns": [
+          {
+            "name": "林泉鎮",
+            "activities": [
+              "行政公共服務",
+              "居民商業",
+              "教育研究",
+              "醫療金融",
+              "旅客服務",
+              "林產交易協調"
+            ]
+          },
+          {
+            "name": "木守庄",
+            "activities": [
+              "育林",
+              "木材乾燥",
+              "竹木加工",
+              "工具安全",
+              "林產批次"
+            ]
+          },
+          {
+            "name": "溪苔庄",
+            "activities": [
+              "種苗",
+              "研究用品",
+              "水質與復育",
+              "小型山產",
+              "環境教育"
+            ]
+          },
+          {
+            "name": "嶺路庄",
+            "activities": [
+              "山路補給",
+              "林產轉運",
+              "救援裝備",
+              "旅宿餐食",
+              "封路資訊"
+            ]
+          }
+        ],
+        "brands": [
+          {
+            "id": "BRAND-002",
+            "name": "一盞燈",
+            "role": "提供飲水、雨具、防滑、簡易戶外用品、熱食及火災或封路緊急補給。",
+            "primary": [
+              "林泉山林生活核心",
+              "林泉旅人入口",
+              "嶺路轉運救援口"
+            ],
+            "limited": [
+              "木守庄主要入口",
+              "溪苔庄研究區外緣"
+            ],
+            "absent": [
+              "木守育林作業帶",
+              "溪苔源頭研究核心",
+              "聽林臺"
+            ],
+            "offerings": [
+              "林泉飯糰",
+              "木守炊餅",
+              "溪苔菇湯",
+              "山薑熱飲",
+              "簡易防雨套"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-003",
+            "name": "晨食堂",
+            "role": "服務林業、木工、研究、山路維護、救援與轉運早班工作者。",
+            "primary": [
+              "林泉鎮",
+              "木守庄早班工坊區",
+              "嶺路庄轉運區"
+            ],
+            "limited": [
+              "溪苔庄研究與巡源集合區"
+            ],
+            "absent": [
+              "作業林班、封林區及聽林臺"
+            ],
+            "offerings": [
+              "林泉飯糰",
+              "木守炊餅",
+              "溪苔菇湯",
+              "嶺路燉菜",
+              "山薑茶"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-004",
+            "name": "茶露舖",
+            "role": "以暖谷茶、山薑、香草、果物及可持續林產發展地方飲品，但不取代地方草茶及食堂。",
+            "primary": [
+              "林泉山林生活核心",
+              "林泉旅人入口"
+            ],
+            "limited": [
+              "青森嶺步道入口"
+            ],
+            "absent": [
+              "木守庄工坊核心",
+              "溪苔庄源頭核心",
+              "嶺路庄救援核心",
+              "聽林臺"
+            ],
+            "offerings": [
+              "青森露茶",
+              "苔泉冷茶",
+              "山薑蜜飲",
+              "林果焙茶"
+            ],
+            "status": "confirmed"
+          }
+        ]
+      },
+      "architecture": {
+        "core": "山林建築先處理水源、坡地、火險、排水、救援與生態干擾，再談景觀與木質美感。",
+        "materials": [
+          "可追溯木材",
+          "深色山石",
+          "竹材",
+          "灰白灰泥",
+          "陶瓦與金屬屋面",
+          "耐濕金屬構件",
+          "再生木料",
+          "石製與陶製蓄水器"
+        ],
+        "forms": [
+          "順應坡地與等高線的木石混合建築",
+          "深屋簷、通風夾層與快速排水屋頂",
+          "高於濕地及地表逕流的架高地板",
+          "木材乾燥棚與住宅、水源保持距離",
+          "林間木橋、石階、排水溝及避雨平台",
+          "可拆換的木構件與清楚維修記號",
+          "消防水槽、防火工具庫及山難裝備間",
+          "研究區使用低干擾、可回復的建築方式"
+        ],
+        "street": [
+          "居民山路、林產運輸、救援及旅人步道分流",
+          "步道依火險、雨勢、溪水及野生動物狀況封閉",
+          "木橋及步道設防滑、排水、距離及返程標記",
+          "生活區保留泉井、水槽及消防通道",
+          "作業林班、研究核心與旅人區使用不同入口和標記",
+          "照明以方向辨識及安全為主，避免干擾夜間動物"
+        ]
+      },
+      "products": {
+        "foods": [
+          {
+            "name": "溪苔菇湯",
+            "description": "使用可持續栽培蕈類、根莖及香草製作的林間熱湯。",
+            "status": "confirmed"
+          },
+          {
+            "name": "木守炊餅",
+            "description": "供林業、木工及山路工作者攜帶的蒸烤餅食。",
+            "status": "confirmed"
+          },
+          {
+            "name": "林泉飯糰",
+            "description": "以暖谷米、山菜與醃漬食材製作的居民朝食。",
+            "status": "confirmed"
+          },
+          {
+            "name": "嶺路燉菜",
+            "description": "供轉運、救援及長途旅人食用的根莖與豆類燉食。",
+            "status": "confirmed"
+          },
+          {
+            "name": "山薑蜜飲",
+            "description": "以雲林坡地薑、蜂蜜與暖谷茶調製的熱飲。",
+            "status": "confirmed"
+          }
+        ],
+        "crafts": [
+          {
+            "name": "青森木盒",
+            "description": "使用可追溯木材及可替換構件製作的耐用收納盒。",
+            "status": "confirmed"
+          },
+          {
+            "name": "山徑木牌",
+            "description": "標記方向、距離、返程、封徑及救援資訊的耐候木牌。",
+            "status": "confirmed"
+          },
+          {
+            "name": "留木尺",
+            "description": "林業人員記錄樹徑、坡度、緩衝帶及保留樹的測量工具。",
+            "status": "confirmed"
+          },
+          {
+            "name": "苔泉陶杯",
+            "description": "以林泉水色與苔蘚紋理為意象的地方陶器。",
+            "status": "confirmed"
+          },
+          {
+            "name": "竹編雨籃",
+            "description": "使用可追溯竹材製作、適合潮濕山路的透氣提籃。",
+            "status": "confirmed"
+          },
+          {
+            "name": "林脂防水膏",
+            "description": "使用安全且可追溯材料製作，用於木器與鞋具保養，不作醫療用途。",
+            "status": "confirmed"
+          }
+        ],
+        "souvenirs": [
+          {
+            "name": "青森嶺步道章",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "聽林臺火險牌",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "木守林冊木片",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "溪苔水紋標",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "嶺路救援結飾",
+            "description": "",
+            "status": "confirmed"
+          }
+        ]
+      },
+      "npc": [
+        "育林員",
+        "選木與林冊紀錄員",
+        "木材乾燥技師",
+        "木工與建築修復師",
+        "竹材及再生木料工匠",
+        "種苗培育員",
+        "水質與溪源研究員",
+        "苔蘚、植群與土壤研究員",
+        "森林火險觀測員",
+        "防火與山林消防人員",
+        "山難搜索救援員",
+        "山路與木橋維護員",
+        "野生動物巡查員",
+        "林產分級與轉運人員",
+        "林間食堂與旅宿主人",
+        "森林教育嚮導",
+        "微光郵舍青森分舍職員",
+        "白羽院林業健康醫護",
+        "星契所林業與復原金融專員"
+      ],
+      "unresolved": [
+        "青森嶺正式行政邊界及相鄰關係",
+        "主要林班、樹種、林齡、面積及年採收量",
+        "核心保護區、研究區及季節性封林範圍名稱",
+        "青森嶺步道長度、支線、難度、開放時段及承載量",
+        "主要山泉、溪流、濕地及集水區正式名稱",
+        "木守庄乾燥棚、木工街及種苗圃正式名稱",
+        "嶺路庄轉運道路、救援集結場及避難設施名稱",
+        "各聚落消防水槽、防火帶及撤離道路名稱",
+        "木守庄與溪苔庄巡迴健康據點正式名稱",
+        "步道、林班、水源與火險回報點正式名稱",
+        "正式代表節慶",
+        "青森嶺居民 Top 15 最終名單及青森嶺步道名次"
+      ],
+      "populationStatus": "deferred"
+    },
+    {
+      "english": "CLOUDPLAIN",
+      "nature": "原野農牧之境",
+      "subtitle": "四時原市與星風臺",
+      "tag": "先看雲，再決定走多遠。",
+      "lead": "田地、輪牧草場、防風林與長距離道路在開闊高原伸展。居民透過原冊、糧倉、公共水井與觀天的習俗，維持農牧與商隊往來。",
+      "symbol": "✺",
+      "accent": "#B19259",
+      "sky": "#E4D7A8",
+      "dark": "#6E5836",
+      "governance": "原野農牧聯議制",
+      "safety": "休耕、休牧、限水、火災封區與動物疫病隔離具有治理優先權；星風臺不設一般商店。",
+      "centers": "曉原鎮",
+      "meaning": "農牧・糧倉・陸運",
+      "sector": "原野",
+      "id": "REGION-007",
+      "name": "雲原",
+      "schema": "1.8-draft",
+      "version": "0.1",
+      "updated": "2026-08-06",
+      "canonicalStatus": "confirmed",
+      "sourceYaml": "REGION-007_cloudplain_v0.1_schema-aligned.yaml",
+      "sourceMarkdown": "REGION-007_雲原區域主檔_v0.1_敘事與Schema說明版.md",
+      "geography": {
+        "terrain": [
+          "高原平野開闊，地勢以緩坡、淺谷與低丘為主",
+          "耕地、草場、防風林、水井與道路形成大片地景分區",
+          "部分低地雨季積水，乾季則容易出現土壤乾裂與揚塵",
+          "遠距道路缺少明顯遮蔽物，濃霧、雷暴與夜間易迷失方向",
+          "糧倉、乾燥場及大型交易設施集中於通風且排水良好的高地",
+          "牧地、耕地、居民區與疫病隔離區明確分流",
+          "星風臺可觀測雲系、火線、商道與遠方道路狀況"
+        ],
+        "climate": [
+          "天空開闊，雲層與風向變化明顯",
+          "日照強、日夜溫差較大",
+          "春季強風及揚塵可能影響播種與旅行",
+          "夏季雷暴、短時強雨及局部積水風險較高",
+          "乾季可能出現乾旱、草場枯黃及火險升高",
+          "清晨與季節轉換時可能形成大範圍濃霧"
+        ],
+        "water": [
+          "居民依靠深淺水井、蓄水池、雨水收集及季節性溪溝",
+          "生活、牲畜、農業與消防用水分級管理",
+          "旱季依公共程序限制取水並優先保障飲水、醫療與消防",
+          "水井周邊設污染緩衝帶，牲畜與化肥不得直接接近",
+          "雨季需檢查低地積水、道路沖蝕及糧倉防潮"
+        ],
+        "waterStatus": "confirmed",
+        "vegetation": [
+          "穀物與豆類田地",
+          "根莖與飼料作物",
+          "輪牧草場",
+          "防風林及道路樹帶",
+          "水井周邊耐旱草木",
+          "休耕地的花草與土壤覆蓋植物",
+          "居民庭院果木及香草"
+        ],
+        "vegetationStatus": "confirmed",
+        "settlement": [
+          "曉原鎮位於多條道路與市場路線交會的高地",
+          "穗風庄靠近主要耕地、種子圃與穀物乾燥場",
+          "牧雲庄位於草場、水井與動物隔離道路之間",
+          "合路庄位於陸路、商隊、倉儲及對外貨運交會處",
+          "星風臺位於視野開闊且避開主要雷擊高風險點的觀測丘",
+          "四時原市位於曉原鎮外緣，避免大型牲畜及貨車進入居民生活核心"
+        ],
+        "namedWater": []
+      },
+      "culture": {
+        "themes": [
+          "觀天",
+          "養地",
+          "同行"
+        ],
+        "summary": "雲原居民依雲層、風向、季節與土地狀況安排耕作、牧養和旅行；他們讓土地與草場休息，並在距離遙遠、天候多變的原野上為彼此保留道路、水與同行者。",
+        "sayings": [
+          "地要歇，路要留。",
+          "先看雲，再決定走多遠。"
+        ],
+        "customs": [
+          {
+            "name": "看雲定程",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "換種日",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "共巡井",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "留路水",
+            "description": "",
+            "status": "confirmed"
+          }
+        ],
+        "belief": "息地觀",
+        "beliefNote": "息地觀是地方農牧與土地倫理，不確認土地或雲層具有超自然意志。",
+        "beliefPrinciples": [
+          "土地長期生產後需要休息、覆蓋與恢復",
+          "牧地與草場需要輪替，不能只追求當季承載量",
+          "水井、防風林與道路是居民共同生存條件",
+          "雲、風與季節每天都需要重新判讀",
+          "人可以耕作及放牧，但不能假定土地永遠承受同樣使用方式"
+        ],
+        "residentValues": [
+          "播種、放牧與遠行前先觀察雲、風、土與水",
+          "土地與草場長期生產後需要輪作、休耕與休養",
+          "種子、糧食、水井與防風林屬公共生存條件",
+          "動物健康與疫病隔離優先於交易和趕路",
+          "草原火災、雷暴與濃霧時應停留、封路或撤離",
+          "道路開闊不代表距離短，也不代表可以獨自冒險"
+        ],
+        "valuesStatus": "confirmed",
+        "draft": []
+      },
+      "settlements": [
+        {
+          "id": "SETTLEMENT-021",
+          "name": "曉原鎮",
+          "functions": [
+            "行政與原野農牧聯議",
+            "四時原市及居民生活商業",
+            "郵政、醫療、金融與教育",
+            "糧食、種子及緊急儲備協調",
+            "乾旱、火災及道路應變",
+            "旅客服務與跨區交通"
+          ],
+          "location": [
+            "位於多條陸路、田牧道路與公共水井交會的高地",
+            "生活核心避開易積水低地與大型牲畜交易區",
+            "可連接穗風庄、牧雲庄及合路庄"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-022",
+          "name": "穗風庄",
+          "functions": [
+            "穀物、豆類與根莖耕作",
+            "輪作、休耕與土壤維護",
+            "種苗培育與地方品系保存",
+            "穀物乾燥、分級與儲備",
+            "農業技藝及原冊紀錄",
+            "乾旱與病蟲害觀察"
+          ],
+          "location": [
+            "位於排水良好、適合耕作的緩坡與平地",
+            "鄰近種子圃、穀物乾燥場及防風林",
+            "糧倉高於季節積水區並遠離火源"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-023",
+          "name": "牧雲庄",
+          "functions": [
+            "輪牧與草場休養",
+            "乳品、毛料及飼料處理",
+            "牲畜健康、產仔與營養照護",
+            "疫病監測、隔離及移動管理",
+            "牧養技藝與動物紀錄",
+            "牧群及野犬等衝突管理"
+          ],
+          "location": [
+            "位於可輪替草場與公共水井之間",
+            "乳品及毛料處理區與住宅、隔離區分流",
+            "具備外地牲畜檢疫與疑似疫病隔離道路"
+          ],
+          "status": "confirmed"
+        },
+        {
+          "id": "SETTLEMENT-024",
+          "name": "合路庄",
+          "functions": [
+            "陸路貨運與商隊轉運",
+            "旅人、車馬與貨物補給",
+            "道路、橋涵及路標維護",
+            "濃霧、雷暴及原野失聯搜索",
+            "糧食、乳品、毛料及居民物資轉運",
+            "短期住宿與早班餐食"
+          ],
+          "location": [
+            "位於主要陸路、商隊道路及跨區貨運交會處",
+            "鄰近倉儲、修車、換乘與救援集結空間",
+            "具備公共飲水、避雷與濃霧停留設施"
+          ],
+          "status": "confirmed"
+        }
+      ],
+      "cityZones": [],
+      "features": [
+        {
+          "id": "MARKET-003",
+          "name": "四時原市",
+          "kind": "市場／夜市",
+          "zone": "曉原外緣市集區",
+          "functions": [
+            "居民日常農牧產品採買",
+            "種子、穀物、乳品、毛料及加工品交易",
+            "農牧工料與季節物資",
+            "原冊批次及動物檢疫紀錄核對",
+            "農事、天候與道路資訊交換"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "OUTPOST-004",
+          "name": "星風臺",
+          "kind": "觀測據點",
+          "zone": "星風觀測丘",
+          "functions": [
+            "雲層、風向、風速、濕度及雷暴觀測",
+            "乾燥度、煙點、火線與揚塵監測",
+            "濃霧、遠距道路、商隊及牧群狀況觀察",
+            "向雲原應變所及各聚落發布天候與道路資訊"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-054",
+          "name": "雲象學舍",
+          "kind": "教育與研究",
+          "zone": "曉原生活行政核心",
+          "functions": [
+            "保存雲圖、風向、雷暴、旱災及道路紀錄",
+            "農作、牧養、種苗、原冊及糧食教育",
+            "公共水井、火災、濃霧與原野救援訓練",
+            "居民、學徒、商隊與旅人的天候安全教育"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-055",
+          "name": "微光郵舍雲原分舍",
+          "kind": "郵政通信",
+          "zone": "曉原生活行政核心",
+          "functions": [
+            "原野聚落及跨區郵件",
+            "濃霧、雷暴、火災及封路通知",
+            "原冊、檢疫、糧倉與交易文書轉送",
+            "商隊、牧群、失聯及居民聯絡協助"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-056",
+          "name": "百川集雲原糧牧場",
+          "kind": "物流與集貨",
+          "zone": "曉原外緣市集區",
+          "functions": [
+            "穀物、種苗、乳品、毛料及農牧產品分類交易",
+            "乾燥、重量、來源、原冊及檢疫核對",
+            "農具、飼料、包材、水井及防火用品",
+            "緊急糧食、公共儲備及跨區供應協調"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-057",
+          "name": "風行社雲原陸運站",
+          "kind": "物流與集貨",
+          "zone": "合路轉運商隊口",
+          "functions": [
+            "糧食、乳品、毛料、牲畜用品及居民物資轉運",
+            "商隊、車馬、道路及跨區貨運銜接",
+            "暖谷農產、月礦設備及青森林產回程載運",
+            "濃霧、雷暴、火災及封路期間替代物流"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-058",
+          "name": "牧生院牧雲獸護所",
+          "kind": "醫療照護",
+          "zone": "牧雲獸護隔離區",
+          "functions": [
+            "牲畜診療、產仔、營養及疫苗",
+            "群體健康、移動及原冊紀錄",
+            "外地牲畜與商隊動物檢疫",
+            "疑似疫病隔離及追蹤",
+            "人畜共通風險轉介公共醫療與應變所"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-059",
+          "name": "尋風旅會曉原服務所",
+          "kind": "旅行資訊",
+          "zone": "曉原旅人入口",
+          "functions": [
+            "原野道路、四時原市、牧場及觀星路線資訊",
+            "雲層、雷暴、濃霧、火險及封路提醒",
+            "旅宿、交通、飲水、裝備與同行協助",
+            "作物、牧場、隔離及禁止進入區域說明"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-060",
+          "name": "白羽院曉原診療所",
+          "kind": "醫療照護",
+          "zone": "曉原生活行政核心",
+          "functions": [
+            "一般診療與家庭健康",
+            "日曬、熱傷害、農具外傷、粉塵及長期勞動健康",
+            "雷擊、火災、濃霧及道路事故後續照護",
+            "乾旱、草原火災與商隊事故醫療協調",
+            "復健及重症跨區轉送"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-061",
+          "name": "白羽院合路救護站",
+          "kind": "醫療照護",
+          "zone": "合路轉運商隊口",
+          "functions": [
+            "原野失聯、道路事故及火災傷者初步處置",
+            "降溫、保暖、止血、固定及補液準備",
+            "雷擊、熱傷害、脫水及濃霧受困處置",
+            "救援隊與商隊醫療支援",
+            "轉送曉原診療所或跨區醫院"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-062",
+          "name": "雲原原野應變所",
+          "kind": "安全與觀測",
+          "zone": "合路轉運商隊口",
+          "functions": [
+            "草原及農地火災與煙點應變",
+            "乾旱、水井、限水及公共蓄水協調",
+            "濃霧、商隊、旅人及牧群失聯搜索",
+            "雷暴、道路、橋涵與居民撤離",
+            "動物疫病隔離及跨區通行協調",
+            "跨聚落及跨區救援"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-063",
+          "name": "星契所曉原分所",
+          "kind": "金融服務",
+          "zone": "曉原生活行政核心",
+          "functions": [
+            "居民存提款與跨區匯款",
+            "種苗、農具、飼料、牲畜及安全設備資金",
+            "糧食、乳品、毛料、市場、旅宿及商戶交易結算",
+            "水井、糧倉、道路、防風林及住宅修復資金",
+            "乾旱、火災、休原與疫病隔離期間支持",
+            "種子儲備、公共糧食及土地恢復資金"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        },
+        {
+          "id": "FACILITY-064",
+          "name": "穗風公共糧倉",
+          "kind": "地標與文化",
+          "zone": "穗風糧倉乾燥區",
+          "functions": [
+            "公共穀物與種子儲備",
+            "含水、蟲害、通風與批次檢查",
+            "旱災、火災、封路及供應中斷時調度",
+            "地方品系更新與換種日支援"
+          ],
+          "status": "confirmed",
+          "constraint": "",
+          "definition": ""
+        }
+      ],
+      "commerce": {
+        "industries": [
+          "穀物、豆類、根莖及飼料作物",
+          "種苗培育與地方品系保存",
+          "輪牧、乳品、毛料及牲畜照護",
+          "糧食乾燥、倉儲及緊急儲備",
+          "農具、車馬、道路與倉儲維護",
+          "陸路轉運、商隊補給及跨區物流",
+          "天候觀測、農事教育與原野旅遊",
+          "居民市場、食堂、旅宿及生活商業"
+        ],
+        "shopTypes": [
+          "居民雜貨店",
+          "農牧早餐店",
+          "種苗及農具店",
+          "飼料與牧養用品店",
+          "乳品與毛料店",
+          "糧食乾貨店",
+          "雨具、防曬與防塵用品店",
+          "車馬、輪具及道路修繕店",
+          "水井與蓄水用品店",
+          "原野食堂",
+          "商隊旅舍",
+          "天候與農事書店"
+        ],
+        "uncommonTypes": [
+          "大型海產市場",
+          "重型礦業商場",
+          "高密度山城商圈",
+          "大型溫泉療養設施",
+          "大型港口冷鏈市場"
+        ],
+        "patterns": [
+          {
+            "name": "曉原鎮",
+            "activities": [
+              "行政公共服務",
+              "四時原市",
+              "居民商業",
+              "醫療金融",
+              "糧食協調",
+              "旅客服務"
+            ]
+          },
+          {
+            "name": "穗風庄",
+            "activities": [
+              "耕作",
+              "種苗",
+              "乾燥",
+              "糧倉",
+              "農具與土壤服務"
+            ]
+          },
+          {
+            "name": "牧雲庄",
+            "activities": [
+              "輪牧",
+              "乳品",
+              "毛料",
+              "獸護",
+              "飼料與檢疫"
+            ]
+          },
+          {
+            "name": "合路庄",
+            "activities": [
+              "陸路轉運",
+              "倉儲",
+              "商隊補給",
+              "道路修繕",
+              "旅宿與救援"
+            ]
+          },
+          {
+            "name": "四時原市",
+            "activities": [
+              "種子穀物",
+              "乳品毛料",
+              "農牧工料",
+              "季節交易",
+              "天候與道路資訊"
+            ]
+          }
+        ],
+        "brands": [
+          {
+            "id": "BRAND-002",
+            "name": "一盞燈",
+            "role": "提供飲水、熱食、防曬、防塵、雨具、照明及乾旱或封路緊急補給。",
+            "primary": [
+              "曉原生活行政核心",
+              "曉原旅人入口",
+              "合路轉運商隊口"
+            ],
+            "limited": [
+              "穗風庄主要入口",
+              "牧雲庄居民核心"
+            ],
+            "absent": [
+              "輪作耕作帶",
+              "輪牧草場",
+              "獸護隔離區",
+              "星風臺"
+            ],
+            "offerings": [
+              "曉原麥餅",
+              "穗風豆湯",
+              "牧雲乳飲",
+              "合路燉飯",
+              "雲風冷茶"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-003",
+            "name": "晨食堂",
+            "role": "服務農戶、牧戶、糧倉、商隊、道路與早班市場工作者。",
+            "primary": [
+              "曉原鎮",
+              "穗風庄早班耕作區",
+              "牧雲庄擠乳區外緣",
+              "合路庄轉運區"
+            ],
+            "limited": [
+              "四時原市"
+            ],
+            "absent": [
+              "作物區、一般草場、隔離區及星風臺"
+            ],
+            "offerings": [
+              "曉原麥餅",
+              "穗風豆湯",
+              "牧雲乳粥",
+              "合路燉飯",
+              "原野蛋餅"
+            ],
+            "status": "confirmed"
+          },
+          {
+            "id": "BRAND-004",
+            "name": "茶露舖",
+            "role": "以暖谷茶、穀物、乳品、果物及香草發展地方飲品，但不取代原野食堂和牧家飲品。",
+            "primary": [
+              "曉原生活行政核心",
+              "曉原旅人入口"
+            ],
+            "limited": [
+              "四時原市"
+            ],
+            "absent": [
+              "穗風耕作核心",
+              "牧雲草場與隔離區",
+              "合路救援核心",
+              "星風臺"
+            ],
+            "offerings": [
+              "雲原麥茶",
+              "牧雲乳茶",
+              "穗香豆飲",
+              "星風果露"
+            ],
+            "status": "confirmed"
+          }
+        ]
+      },
+      "architecture": {
+        "core": "原野建築先處理風、日照、水、火險、糧食防潮、動物分流與遠距救援，再談開闊景觀。",
+        "materials": [
+          "淺色石材",
+          "夯土與土磚",
+          "可追溯木材",
+          "竹材與蘆葦",
+          "陶瓦與金屬屋面",
+          "防風金屬構件",
+          "毛氈與厚布",
+          "石製及陶製蓄水器"
+        ],
+        "forms": [
+          "低矮、展開式的原野院落",
+          "背風中庭與防風林相互配合",
+          "深屋簷、遮陽廊及快速排水屋頂",
+          "糧倉架高、防潮、通風並與火源分離",
+          "牧舍、乳品處理、隔離區與住宅分流",
+          "商隊旅舍設大門廊、停車與牲畜飲水空間",
+          "公共水井設遮棚、排水及污染緩衝帶",
+          "星風臺使用耐風、避雷與低矮觀測建築"
+        ],
+        "street": [
+          "主要道路設距離、方向、水井與避難標記",
+          "濃霧及雷暴時可封閉長距離路段",
+          "居民道路、農牧作業、牲畜移動與重貨運分流",
+          "四時原市保留消防、醫療、牲畜及車馬通道",
+          "防風林、田埂及排水溝不可為擴路任意拆除",
+          "夜間照明強調遠距辨識與返程，不造成過度光害"
+        ]
+      },
+      "products": {
+        "foods": [
+          {
+            "name": "曉原麥餅",
+            "description": "以雲原穀物製作、耐攜帶的烘烤麥餅。",
+            "status": "confirmed"
+          },
+          {
+            "name": "穗風豆湯",
+            "description": "以豆類、根莖及香草製作的農作熱湯。",
+            "status": "confirmed"
+          },
+          {
+            "name": "牧雲乳酪",
+            "description": "依季節與批次製作、具完整冷藏及原冊紀錄的乳品。",
+            "status": "confirmed"
+          },
+          {
+            "name": "合路燉飯",
+            "description": "供商隊、轉運與原野救援人員食用的穀物燉飯。",
+            "status": "confirmed"
+          },
+          {
+            "name": "原風乾肉",
+            "description": "經衛生、檢疫與批次管理的肉品保存食。",
+            "status": "confirmed"
+          }
+        ],
+        "crafts": [
+          {
+            "name": "雲原種匣",
+            "description": "保存種子、標示品系、年份、發芽率及交換紀錄的木陶容器。",
+            "status": "confirmed"
+          },
+          {
+            "name": "牧雲毛氈",
+            "description": "以可追溯毛料製作的保暖墊、披毯及旅具。",
+            "status": "confirmed"
+          },
+          {
+            "name": "星風旗",
+            "description": "協助遠距辨識風向、道路及聚落位置的耐候旗標。",
+            "status": "confirmed"
+          },
+          {
+            "name": "留路水囊",
+            "description": "用於合法公共補水與旅行的耐用水囊，不代表水源已自動安全。",
+            "status": "confirmed"
+          },
+          {
+            "name": "原路釘",
+            "description": "標記道路距離、方向、封路及救援位置的耐候地標件。",
+            "status": "confirmed"
+          },
+          {
+            "name": "穗紋陶罐",
+            "description": "用於乾貨、種子及居民日常保存的地方陶器。",
+            "status": "confirmed"
+          }
+        ],
+        "souvenirs": [
+          {
+            "name": "星風臺雲圖牌",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "四時原市種籤",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "穗風原冊木片",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "牧雲毛氈結飾",
+            "description": "",
+            "status": "confirmed"
+          },
+          {
+            "name": "合路遠程路牌",
+            "description": "",
+            "status": "confirmed"
+          }
+        ]
+      },
+      "npc": [
+        "農戶與輪作規劃員",
+        "種苗培育及原冊紀錄員",
+        "糧食乾燥與糧倉管理員",
+        "牧戶與草場規劃員",
+        "乳品與毛料技師",
+        "獸醫與動物檢疫員",
+        "公共水井與限水管理員",
+        "天候觀測員",
+        "草原消防與原野救援員",
+        "道路、橋涵及防風林維護員",
+        "商隊調度與倉儲人員",
+        "四時原市交易與分級人員",
+        "原野食堂及商隊旅舍主人",
+        "農事與天候教師",
+        "微光郵舍雲原分舍職員",
+        "白羽院農業健康醫護",
+        "星契所農牧與旱災金融專員"
+      ],
+      "unresolved": [
+        "雲原正式行政邊界及相鄰關係",
+        "主要作物、地方品系、耕地面積及年產量",
+        "牲畜種類、群體數量、乳品與毛料產量",
+        "水井深度、蓄水量、旱季限水門檻及公共取水時段",
+        "穗風公共糧倉容量、緊急儲備量及輪替週期",
+        "四時原市固定營業日、交易時段、攤位及牲畜區規模",
+        "主要道路、橋涵、商隊停留點及遠距路標名稱",
+        "防風林、防火帶、撤離道路及消防水槽名稱",
+        "穗風庄與牧雲庄巡迴健康據點正式名稱",
+        "各聚落火險、水井、道路與動物健康回報點名稱",
+        "正式代表節慶",
+        "雲原居民 Top 15 最終名單、四時原市及星風臺名次"
+      ],
+      "populationStatus": "deferred"
+    }
+  ],
+  "brandNames": [
+    "一盞燈",
+    "晨食堂",
+    "茶露舖"
+  ],
+  "sources": [
+    "WORLD-001_朝霧大陸專案上層概覽_v0.1.md",
+    "朝霧大陸世界資料庫_Schema與詞彙規範_v0.9.md"
+  ]
+}</script>
+<script>
+(() => {
+  'use strict';
+  const world = JSON.parse(document.getElementById('worldData').textContent);
+  const regions = world.regions;
+  const regionById = Object.fromEntries(regions.map(r => [r.id,r]));
+  const palette = {
+    'REGION-001':['#557D90','#DFE8E5','#29495A'], 'REGION-002':['#648465','#EAF0DE','#395B48'],
+    'REGION-003':['#B06D51','#F4E6D8','#754732'], 'REGION-004':['#9574A1','#EDE7EE','#584660'],
+    'REGION-005':['#4E8394','#E1F0EB','#285D70'], 'REGION-006':['#5D8872','#E5EFE1','#315947'],
+    'REGION-007':['#B19259','#F3EBD8','#6E5836']
+  };
+  const brandIntro = {
+    '一盞燈':['日常補給','生活用品、雨具、熱食及旅行／緊急補給。品項依聚落與工作型態調整。','✺'],
+    '晨食堂':['早班餐食','供應居民早餐，照顧農戶、港工、工匠、漁市與商隊等不同作息。','☼'],
+    '茶露舖':['地方飲品','結合地方茶葉、農產與風土飲品，分布較克制，保留獨立地方茶館。','♧']
+  };
+  const marketIds = {
+    'REGION-001':['雨市街'],'REGION-002':['合溪渡'],'REGION-003':[],
+    'REGION-004':['微燈巷','燈階夜集'],'REGION-005':['晨潮魚市'],'REGION-006':[],
+    'REGION-007':['四時原市']
+  };
+  let state = { region: null, tab:'overview', directoryQuery:'', directoryKind:'全部'};
+  const $ = (q,el=document)=>el.querySelector(q), $$ = (q,el=document)=>[...el.querySelectorAll(q)];
+  const esc = (x='')=>String(x ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const txt = v => esc(typeof v === 'string' ? v : v==null ? '' : JSON.stringify(v));
+  const max = (s,n=130)=>{const v=String(s||'');return v.length>n ? v.slice(0,n-1)+'…' : v};
+  const t = (a,cl='tag')=>(a||[]).map(x=>`<span class="${cl}">${txt(x)}</span>`).join('');
+  const ul = (a,limit=0) => `<ul class="flow-list">${(limit?a.slice(0,limit):a).map(x=>`<li>${txt(x)}</li>`).join('')}</ul>`;
+  const fieldStyle = r => `--region-accent:${palette[r.id][0]};--region-pale:${palette[r.id][1]};--region-dark:${palette[r.id][2]}`;
+  const subtitle = (a,b='')=>`<div class="section-title"><h2>${esc(a)}</h2><span>${esc(b)}</span></div>`;
+  const none = label=>`<div class="empty">${esc(label)}</div>`;
+  const role = a=>(a||[]).slice(0,4).join('・');
+  const localeInfo = r => r.id==='REGION-001' ? '都市分區' : '主要聚落';
+  const groupKinds = ['郵政通信','醫療照護','教育與研究','安全與觀測','旅行資訊','物流與集貨','金融服務'];
+  const kindLabel = feature => {
+    if(feature.kind==='觀測據點') return '安全與觀測';
+    if(feature.kind==='地標與文化' && /燈塔/.test(feature.name))return '安全與觀測';
+    return feature.kind;
+  };
+  const serviceItems = r=>r.features.filter(f=>groupKinds.includes(kindLabel(f)));
+  const slug = t=>String(t||'').replace(/\s+/g,' ').trim();
+
+  // Decorative, illustrated landscape; not a geographic map or a statement of regional adjacency.
+  const landArt = id => {
+    const common = `<circle cx="602" cy="62" r="39" fill="#FFF7D7" opacity=".82"/><path d="M0 215 Q130 175 235 218 T470 208 T720 203 V360 H0Z" fill="#D9E5D3" opacity=".52"/>`;
+    const v={
+      'REGION-001':`<path d="M0 215 L75 139 L116 176 L174 127 L263 222 L390 177 L465 214 L557 133 L640 192 L720 178 V360 H0Z" fill="#698B91"/><path d="M0 244 Q100 224 215 244 T450 243 T720 231 V360 H0Z" fill="#3D6574"/><path d="M0 281 Q120 270 245 282 T485 277 T720 280" stroke="#C7DAD8" stroke-width="3" fill="none" opacity=".65"/><path d="M448 195 h17 l-6 -55 h-7z" fill="#E9E8D8"/><rect x="446" y="134" width="20" height="12" fill="#364E58"/><path d="M454 132 l-39 -20 h78z" fill="#FCE6AE" opacity=".28"/><path d="M160 269 h82 l-18 17 h-41z" fill="#F0E6D3"/><path d="M203 227 v42 M206 231 l30 30 h-30z" stroke="#E9E7DB" stroke-width="4" fill="#E9E7DB"/><path d="M505 272 h89 l-17 14 h-56z" fill="#E8D9C9"/><path d="M534 253 h29 v20 h-29z" fill="#E8D9C9"/><path d="M0 287 Q200 302 398 289 T720 290" stroke="#B4CED0" stroke-width="2" fill="none"/>`,
+      'REGION-002':`<path d="M0 160 Q130 66 285 169 T720 150 V360 H0Z" fill="#93B091"/><path d="M0 217 Q150 119 300 218 Q470 139 720 194 V360 H0Z" fill="#6E967A"/><path d="M0 276 Q170 232 360 267 T720 246 V360 H0Z" fill="#7F9F6A"/><path d="M311 201 Q380 242 357 280 Q328 306 386 360 H527 Q422 301 435 269 Q449 238 390 213 Z" fill="#B7D8CE"/><path d="M0 247 l210 -18 M0 269 l198 -22 M520 246 l200 -15 M545 268 l175 -12" stroke="#D5DBAE" stroke-width="5" opacity=".9"/><path d="M90 224 h78 v-44 h-78z" fill="#F0E3CA"/><path d="M80 182 l49 -29 49 29z" fill="#7F6755"/><path d="M626 241 h68 v-36 h-68z" fill="#E9DEC2"/><path d="M618 209 l42 -24 42 24z" fill="#6A785F"/>`,
+      'REGION-003':`<path d="M0 137 L155 98 L213 141 L305 111 L381 165 L488 120 L582 153 L720 106 V360 H0Z" fill="#B77F65"/><path d="M0 198 L70 189 L120 166 L191 196 L253 187 L330 216 L428 160 L485 183 L598 156 L720 203 V360 H0Z" fill="#956452"/><path d="M0 251 L100 208 L180 256 L309 221 L420 254 L567 223 L720 255 V360 H0Z" fill="#79574B"/><path d="M80 225 H640 M107 220 v14 M606 220 v14" stroke="#DEBFA2" stroke-width="6"/><path d="M494 139 h47 v-42 h-47z" fill="#D8B694"/><path d="M489 95 h57 l-28 -18z" fill="#EED8BC"/><rect x="507" y="104" width="14" height="16" fill="#785448"/><path d="M267 238 h112 l-10 29 h-97z" fill="#BC8764"/><path d="M257 239 l66 -31 64 31z" fill="#EAC39E"/>`,
+      'REGION-004':`<path d="M0 180 L89 129 L167 167 L279 94 L375 172 L488 93 L577 158 L720 99 V360 H0Z" fill="#8F849B"/><path d="M0 245 L99 177 L183 225 L315 156 L413 236 L540 158 L720 230 V360 H0Z" fill="#665D7A"/><path d="M78 216 h62 v-37 H78z M218 190 h68 v-39 h-68z M385 226 h62 v-46 h-62z M530 196 h81 v-38 h-81z" fill="#D9C8B5"/><path d="M70 179 l39 -21 39 21 M209 151 l43 -22 43 22 M377 180 l39 -21 39 21 M521 158 l49 -28 49 28" fill="#AF7866"/><path d="M0 268 h82 v-17 h92 v-18 h101 v-17 h99 v-18 h112" fill="none" stroke="#F7E4C1" stroke-width="9" opacity=".75"/><circle cx="82" cy="253" r="5" fill="#FFF0A8"/><circle cx="170" cy="237" r="5" fill="#FFF0A8"/><circle cx="273" cy="219" r="5" fill="#FFF0A8"/><circle cx="368" cy="204" r="5" fill="#FFF0A8"/>`,
+      'REGION-005':`<path d="M0 216 L123 157 L191 215 L296 169 L373 214 L495 143 L574 214 L720 175 V360 H0Z" fill="#7BA0A1"/><path d="M0 249 Q115 237 213 243 L294 219 L390 253 L514 241 L720 255 V360 H0Z" fill="#3F7182"/><path d="M0 283 Q112 268 231 285 T460 283 T720 279" stroke="#B4DBD8" stroke-width="4" fill="none"/><path d="M462 196 l23 -95 h21 l20 95z" fill="#F2EADF"/><rect x="478" y="92" width="31" height="18" fill="#AC6259"/><path d="M478 91 l15 -18 16 18z" fill="#E9E6D7"/><rect x="492" y="134" width="13" height="31" fill="#9C6959"/><path d="M265 267 h94 l-16 15 h-60z" fill="#F1E1C7"/><path d="M301 224 v43 l-30 0z" fill="#F9E7CB"/><path d="M336 223 v44" stroke="#F9E7CB" stroke-width="3"/><path d="M0 308 Q150 293 305 307 T720 302" stroke="#ABD0CD" stroke-width="3" fill="none"/>`,
+      'REGION-006':`<path d="M0 177 Q96 100 209 169 T440 162 T720 147 V360 H0Z" fill="#86A592"/><path d="M0 240 Q105 158 205 226 T428 220 T720 192 V360 H0Z" fill="#4C7866"/><path d="M0 278 Q210 250 330 283 T720 260 V360 H0Z" fill="#3E6B53"/><path d="M0 323 Q155 272 265 301 T500 308 T720 292" stroke="#C7E1C6" fill="none" stroke-width="15" opacity=".8"/>${[100,150,240,300,398,492,578,641].map((x,i)=>`<path d="M${x} ${230+(i%3)*19} v-78 m-28 56 l28 -60 28 60 m-31 -24 l31 -64 31 64" stroke="#C5DDC2" stroke-width="9" fill="none" opacity=".7"/>`).join('')}<path d="M469 251 h82 v-39 h-82z" fill="#C9B79C"/><path d="M460 212 l50 -29 51 29z" fill="#7E6655"/>`,
+      'REGION-007':`<path d="M0 191 Q156 139 298 188 T720 177 V360 H0Z" fill="#B7BD86"/><path d="M0 230 Q155 185 332 225 T720 213 V360 H0Z" fill="#D0BD82"/><path d="M0 276 Q140 248 302 279 T720 253 V360 H0Z" fill="#A5AD72"/><path d="M280 214 Q335 253 317 283 Q288 310 380 360 H485 Q375 297 404 272 Q423 255 384 224" fill="#E9D8A5" opacity=".95"/><path d="M0 277 l238 23 M0 309 l213 17 M481 291 l239 -19 M518 321 l202 -14" stroke="#ECDDAA" stroke-width="4" opacity=".9"/><rect x="486" y="194" width="81" height="60" fill="#E1CDA5"/><path d="M479 193 l49 -26 47 26z" fill="#9D7E62"/><path d="M582 202 h40 v51 h-40z" fill="#EAD5A7"/><path d="M580 201 q20 -20 42 0" fill="#9D7E62"/>`
+    };
+    return `<svg viewBox="0 0 720 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${esc(regionById[id].name)}的風景意象插畫，並非地圖"><rect width="720" height="360" fill="${esc(regionById[id].sky)}"/>${common}${v[id]}</svg>`;
+  };
+  const worldArt = `<svg viewBox="0 0 710 430" preserveAspectRatio="xMidYMid slice" role="img" aria-label="港灣、河谷、森林與原野的藝術意象圖，非地理地圖"><rect width="710" height="430" fill="#42675c"/><circle cx="528" cy="96" r="46" fill="#eedaa4" opacity=".85"/><path d="M0 200 L97 139 L159 181 L260 103 L354 185 L441 135 L566 205 L643 164 L710 193 V430 H0Z" fill="#729280"/><path d="M0 262 Q145 174 250 235 T491 229 T710 222 V430 H0Z" fill="#4e7564"/><path d="M0 327 Q200 279 334 331 Q431 280 710 300 V430 H0Z" fill="#2c5a53"/><path d="M270 234 Q325 285 301 338 Q282 367 357 430 H502 Q382 365 404 336 Q427 303 366 271Z" fill="#94b4a4"/><path d="M488 235 l20 -106 h25 l21 106z" fill="#e9e6d7"/><rect x="505" y="119" width="31" height="17" fill="#bb886c"/><path d="M505 117 l15 -14 16 14z" fill="#f4e8bb"/><path d="M105 305 h103 v-67 H105z" fill="#e1d1a8"/><path d="M95 238 l61 -36 62 36z" fill="#9d7566"/><path d="M157 263 h22 v42 h-22z" fill="#6a8f78"/><path d="M50 380 H240" stroke="#c3d3ba" stroke-width="9" opacity=".7"/><path d="M531 331 h114 l-22 20 h-75z" fill="#e1d6bd"/><path d="M568 296 v35 l-35 0z" fill="#f1e4c7"/><path d="M572 297 v34" stroke="#f1e4c7" stroke-width="3"/></svg>`;
+
+  function sidebar(){
+    const el=$('#sidebar-list');
+    el.innerHTML=`<button class="aside-all ${!state.region?'current':''}" data-action="home"><span style="font-size:17px">⌂</span> 大陸總覽</button>`+
+      regions.map((r,i)=>`<button class="region-btn ${state.region===r.id?'current':''}" style="${fieldStyle(r)}" data-region="${r.id}" aria-current="${state.region===r.id?'page':'false'}"><span class="region-number">${String(i+1).padStart(2,'0')}</span><span><strong>${esc(r.name)}</strong><small>${esc(r.nature)}</small></span></button>`).join('');
+    $$('[data-action="home"]',document).forEach(b=>b.classList.toggle('is-active',!state.region));
+  }
+  function navigate(id=null,tab='overview',scroll=true){
+    state.region=id;state.tab=tab;state.directoryQuery='';state.directoryKind='全部';
+    sidebar();renderMain();
+    if(scroll)window.scrollTo({top:0,behavior:'auto'});
+    if(id)document.title=`${regionById[id].name}｜朝霧大陸生活百科`;
+    else document.title='朝霧大陸｜七大行政區生活百科';
+    if(history && history.replaceState)history.replaceState(null,'',id?`#${id.replace('REGION-','region-').toLowerCase()}-${tab}`:'#world');
+  }
+  function selectTab(tab){
+    state.tab=tab;state.directoryQuery='';state.directoryKind='全部';renderMain();
+    const tabs=$('.tab-scroll');if(tabs)tabs.scrollIntoView({block:'start',behavior:'smooth'});
+    if(state.region&&history.replaceState)history.replaceState(null,'',`#${state.region.replace('REGION-','region-').toLowerCase()}-${tab}`);
+  }
+  function renderMain(){const main=$('#main');main.innerHTML=state.region?regionPage(regionById[state.region]):worldPage();if(state.tab==='places')bindDirectory();}
+  function regionTile(r,i){
+    return `<button class="region-card" style="${fieldStyle(r)}" data-region="${r.id}" aria-label="探索${esc(r.name)}"><div class="card-art">${landArt(r.id)}</div><div class="rc-body"><div class="rc-top"><span>REGION · ${String(i+1).padStart(2,'0')} / 07</span><span class="go">↗</span></div><h3>${esc(r.name)}</h3><p class="rc-desc">${esc(r.nature)} · ${esc(r.subtitle)}</p><div class="pill-line">${t(r.culture.themes,'pill')}</div></div></button>`;
+  }
+  function worldPage(){
+    return `<section class="world-hero"><div class="world-copy"><span class="overline">THE LIVING ATLAS · WORLD 001</span><h1>風起之處，<br>皆有人間。</h1><p>循著一封信，從港都走進河谷、海崖、礦山、岬角、森林與原野。這裡不只有景色，還有每天開門的店、辛勤工作的人，以及讓生活延續的公共服務。</p><button class="cta" data-action="explore">開始探索七大行政區 <span aria-hidden="true">↗</span></button></div><div class="world-illustration">${worldArt}<span class="scene-note">世界意象插畫 · 非精確地圖</span></div></section>
+    <div class="stats"><div class="stat"><strong>07</strong><span>正式行政區</span></div><div class="stat"><strong>03</strong><span>跨區生活品牌</span></div><div class="stat"><strong>05</strong><span>代表市集與商街節點</span></div><div class="stat"><strong>${regions.reduce((n,r)=>n+r.features.length,0)}</strong><span>具名地點與設施索引</span></div></div>
+    <div id="explore" class="section-head"><div><div class="overline">A CONTINENT OF PLACES</div><h2>七座風景，七種生活。</h2></div><p>選擇一個行政區，翻閱當地的生活誌與商鋪。</p></div><div class="region-grid">${regions.map(regionTile).join('')}</div>
+    <div id="brandSection" class="section-head"><div><div class="overline">COMMON LIFE · LOCAL FLAVORS</div><h2>相同的招牌，不同的日常。</h2></div></div>
+    <div class="compare-grid">${Object.entries(brandIntro).map(([name,details])=>`<div class="brand-card"><div class="brand-glyph">${details[2]}</div><span class="small-caps">${esc(details[0])}</span><h3>${esc(name)}</h3><p>${esc(details[1])}</p></div>`).join('')}</div>
+    ${subtitle('七區生活一眼看','點選行政區開啟詳細資料')}
+    <div class="content-card"><div class="service-stack">${regions.map(r=>`<button class="mini-card with-arrow" data-region="${r.id}" style="${fieldStyle(r)}"><h4>${esc(r.name)} <span class="count-badge">${esc(r.nature)}</span></h4><p><b>${esc(r.culture.themes.join('・'))}</b><br>${esc(role(r.commerce.industries))}</p><span class="clickline">詳閱生活誌 <span>↗</span></span></button>`).join('')}</div></div>
+    <div class="world-note"><span style="font-size:20px" aria-hidden="true">ⓘ</span><div><strong>這是一份世界設定的導覽網頁，不是即時地圖。</strong><p>本頁依七區正式 YAML 與說明文件整理，保留各項設定狀態。行政邊界、人口、精確店數、攤位與營業時間、交通距離目前仍未確定，並未虛構補值。商鋪品牌、批發場與公共服務也分別呈現，避免混淆。</p></div></div>`;
+  }
+  function warmAdministration(r){return `<div class="page-intro">${esc(r.governance)}。四個主要聚落為映川鎮、泉霧庄、青芽庄、禾川庄。各聚落保有地方自治，以河谷聚落聯議制處理水利、道路、教育及災害應變。映川鎮是協調中心，合溪渡隸屬映川鎮。</div>${subtitle('行政層級','四個主要聚落與一個鎮內節點')}<div class="content-card"><h3>朝霧大陸 → 暖谷領</h3><p>映川鎮（行政中心，內含合溪渡）／泉霧庄／青芽庄／禾川庄。</p></div>${subtitle('河流與渠道','天然水系與人工水圳分開說明')}<div class="mini-grid">${r.geography.namedWater.map(w=>`<div class="mini-card"><h4>${esc(w.name)}</h4><p>${esc(w.note)}</p></div>`).join('')}</div>${subtitle('公共設施的服務位置','服務分區不等於新增行政區')}<div class="mini-grid">${r.cityZones.map(z=>`<div class="mini-card"><h4>${esc(z.name)}</h4>${ul(z.functions)}</div>`).join('')}</div><div class="world-note"><p>地圖輪廓、河道走向與建築圖示位置是目前視覺配置；正式邊界與精確地址尚未設定。牧生院為後續地圖新增內容，舊版區域主檔沒有暖谷據點；圖上的應變設施不直接當成潤川河安站同一實體。</p></div>`}
+function regionPage(r){
+    const tabs=[...(r.id==='REGION-002'?[['administration','地理行政']]:[]),['overview','區域概覽'],['culture','地理人文'],['commerce','商鋪市場'],['services','生活服務'],['places','地點名錄'],['canon','資料註記']];
+    const body={administration:warmAdministration,overview:overviewPage,culture:culturePage,commerce:commercePage,services:servicesPage,places:placesPage,canon:canonPage};
+    return `<div style="${fieldStyle(r)}"><section class="region-hero"><div class="hero-copy"><div class="crumb">WORLD 001　/　${esc(r.english)}　/　${esc(r.id)}</div><h1>${esc(r.name)}</h1><p class="subtitle">${esc(r.nature)}　·　${esc(r.subtitle)}</p><p class="tagline">「${esc(r.tag)}」</p><div class="hero-spirit">${r.culture.themes.map(s=>`<span>${esc(s)}</span>`).join('')}</div></div><div class="hero-art">${landArt(r.id)}<span class="art-disclaimer">風土意象・非地理測繪</span></div></section>
+      <nav class="tab-scroll" aria-label="${esc(r.name)}資料分類">${tabs.map(([id,label])=>`<button class="tab-btn ${state.tab===id?'active':''}" data-tab="${id}" aria-selected="${state.tab===id}" role="tab">${esc(label)}</button>`).join('')}</nav>
+      <section class="tab-content" role="tabpanel">${(body[state.tab]||overviewPage)(r)}</section></div>`;
+  }
+  function overviewPage(r){
+    const market=marketIds[r.id]||[];
+    const important=market.length?market.join('、'):r.settlements.map(s=>s.name).slice(0,2).join('、');
+    return `<div class="page-intro">${esc(r.lead)}</div>
+    <div class="stats"><div class="stat"><strong>${String(r.settlements.length).padStart(2,'0')}</strong><span>${localeInfo(r)}</span></div><div class="stat"><strong>${String(r.features.length).padStart(2,'0')}</strong><span>具名地點設施</span></div><div class="stat"><strong>${String(r.commerce.shopTypes.length).padStart(2,'0')}</strong><span>常見商鋪類型</span></div><div class="stat"><strong>03</strong><span>跨區生活品牌</span></div></div>
+    <div class="summary-row"><div class="content-card"><div class="micro-label">REGIONAL LIVING · 人文與地方精神</div><h3>${esc(r.culture.themes.join('・'))}</h3><div class="long-quote">${esc((r.culture.sayings||[])[0]||r.tag)}</div><p>${esc(r.culture.summary||r.tag)}</p><button class="cta" data-tab="culture" style="margin-top:12px;background:#e6eee1">閱讀地理人文 ↗</button></div>
+    <div class="content-card"><div class="micro-label">LIVING ESSENTIALS · 生活摘要</div><h3>在 ${esc(r.name)} 生活</h3><h4>行政及居民核心</h4><p>${esc(r.centers)}</p><h4>主要產業</h4><p>${esc(role(r.commerce.industries.slice(0,5)))}</p><h4>聚落與代表節點</h4><p>${esc(important)}</p></div></div>
+    ${subtitle('從哪裡開始認識這一區？','聚落 × 商業 × 公共生活')}
+    <div class="grid3"><button class="mini-card with-arrow" data-tab="culture"><div class="micro-label">01 / LANDSCAPE</div><h4>走進聚落</h4><p>地貌、季節、聚落分工、居民習俗與建築風格。</p><span class="clickline">地理人文 <span>↗</span></span></button>
+    <button class="mini-card with-arrow" data-tab="commerce"><div class="micro-label">02 / COMMERCE</div><h4>逛一間地方商店</h4><p>從一盞燈與晨食堂，到地方工坊、市集與特產。</p><span class="clickline">商鋪市場 <span>↗</span></span></button>
+    <button class="mini-card with-arrow" data-tab="services"><div class="micro-label">03 / EVERYDAY LIFE</div><h4>讓生活運作的設施</h4><p>郵政、學舍、醫療、旅宿資訊、物流、金融與安全。</p><span class="clickline">生活服務 <span>↗</span></span></button></div>
+    ${subtitle('重要聚落','正式聚落及其主要分工')}<div class="mini-grid">${r.settlements.map(s=>`<div class="mini-card"><div class="micro-label">${esc(s.id)}</div><h4>${esc(s.name)}</h4><p>${esc(s.functions.slice(0,4).join('、'))}</p></div>`).join('')}</div>
+    <div class="world-note"><span style="font-size:19px" aria-hidden="true">◌</span><div><strong>需要注意的環境與安全</strong><p>${esc(r.safety)}</p></div></div>`;
+  }
+  function geoCard(title,arr,stat='confirmed'){
+    return `<div class="content-card"><div class="micro-label">${stat==='confirmed'?'已確認資訊':stat==='provisional'?'部分暫定資訊':'設定資訊'}</div><h3>${esc(title)} ${stat==='provisional'?'<span class="state provisional">暫定</span>':''}</h3>${arr&&arr.length?ul(arr):`<p>目前尚未正式設定。</p>`}</div>`;
+  }
+  function culturePage(r){
+    const arch=r.architecture;
+    return `${subtitle('風土地理','地形、氣候與水源')}<div class="grid2">${geoCard('地貌與地形',r.geography.terrain)}${geoCard('天候與季節',r.geography.climate)}${geoCard('水系與取水',r.geography.namedWater.length?r.geography.namedWater.map(w=>r.id==='REGION-002'?w.name+'：'+w.note:w.name):r.geography.water,r.geography.waterStatus)}${geoCard('居民聚落型態',r.geography.settlement)}</div>
+    ${subtitle('聚落與居民','地方生活需要的不只是美景')}<div class="mini-grid">${r.settlements.map(s=>`<div class="mini-card"><div class="micro-label">${esc(s.id)}</div><h4>${esc(s.name)}</h4>${ul(s.functions.slice(0,5))}</div>`).join('')}</div>
+    ${r.cityZones.length?`${subtitle('城市功能分區','城市分區並非次級行政區')}<div class="mini-grid">${r.cityZones.map(z=>`<div class="mini-card"><h4>${esc(z.name)}</h4><p>${esc(z.functions.join('、'))}</p></div>`).join('')}</div>`:''}
+    ${subtitle('文化與生活習俗','文化傾向不代表所有居民都相同')}<div class="summary-row"><div class="content-card"><div class="micro-label">CORE SPIRIT</div><h3>${esc(r.culture.themes.join('・'))}</h3><div class="long-quote">${esc((r.culture.sayings||[])[0]||r.tag)}</div><p>${esc(r.culture.summary)}</p>${r.culture.belief?`<h4>地方共同世界觀｜${esc(r.culture.belief)}</h4>${ul(r.culture.beliefPrinciples.slice(0,6))}<p style="font-size:11px;color:#87958a;margin-top:8px">地方倫理不自動等於統一宗教或超自然事實。</p>`:''}</div><div class="content-card"><h3>地方習俗</h3>${r.culture.customs.length?r.culture.customs.map(x=>`<div style="padding:10px 0;border-bottom:1px solid #edf0e8"><strong style="color:#2e5641;font-size:13px">${esc(x.name)}</strong><p style="margin:5px 0 0">${esc(x.description)}</p></div>`).join(''):'<p>目前無具名正式習俗。</p>'}</div></div>
+    ${subtitle('街巷與建築','居民每天使用的空間')}<div class="grid2"><div class="content-card"><h3>建築材料與形式</h3>${arch.core?`<div class="note-block">${esc(arch.core)}</div>`:''}<h4>常見材料</h4><div class="inline-tags">${t(arch.materials)}</div><h4>常見建築形式</h4>${ul(arch.forms.slice(0,11))}</div><div class="content-card"><h3>居民生活與職業</h3><p>常見職業原型是創作參考，不是固定人格，也不代表每位居民都從事這些工作。</p><div class="inline-tags">${t(r.npc.slice(0,24))}</div>${r.culture.residentValues.length?`<h4>地方重視的價值 ${r.culture.valuesStatus==='provisional'?'<span class="state provisional">暫定</span>':''}</h4>${ul(r.culture.residentValues.slice(0,8))}`:''}</div></div>`;
+  }
+  function distribution(title,list){return list&&list.length?`<span class="detail">${esc(title)}</span><div class="mini-text">${esc(list.join('、'))}</div>`:'';}
+  function commercePage(r){
+    const market=r.features.filter(f=>(marketIds[r.id]||[]).includes(f.name));
+    return `<div class="page-intro">${esc(r.name)}的主要產業包括：${esc(role(r.commerce.industries.slice(0,8)))}。本區商業資訊區分「生活品牌」、「獨立地方商鋪」與「產業批發及物流」，精確店數與營業時間並未設定。</div>
+    ${subtitle('跨區生活品牌','同一品牌，在各地供應不同商品')}
+    <div class="brand-region">${r.commerce.brands.map(b=>`<div class="brand-card"><div class="small-caps">${esc(brandIntro[b.name]?.[0]||'生活品牌')}</div><h3>${esc(b.name)}</h3><p>${esc(b.role||brandIntro[b.name]?.[1]||'服務當地居民生活')}</p>${distribution('主要分布',b.primary)}${distribution('有限分布',b.limited)}${distribution('不設一般門市',b.absent)}${b.offerings.length?`<span class="detail">地方商品與餐飲</span><div class="offerings">${b.offerings.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}${!b.primary.length&&!b.limited.length?`<div class="mini-text" style="margin-top:12px">分布以文字角色說明；本版未登錄精確分店位置。</div>`:''}</div>`).join('')}</div>
+    ${subtitle('在地商鋪圖鑑',`${r.commerce.shopTypes.length} 種常見商店類型`)}<div class="content-card"><h3>地方生活不只有連鎖店</h3><p>以下是正式區域資料中列出的常見店型，並非所有商店都有獨立店名或已確認地址。</p><div class="inline-tags">${t(r.commerce.shopTypes)}</div></div>
+    ${subtitle('代表市集・商街',market.length+' 個具名節點')}
+    ${market.length?`<div class="market-strip">${market.map(f=>`<div class="market-item"><span class="place-type">${esc(f.kind)}</span><h3>${esc(f.name)}</h3><p>${esc(f.functions.slice(0,4).join('、'))}</p>${f.zone?`<small>位置：${esc(f.zone)}</small>`:''}${r.id==='REGION-004'&&f.name==='燈階夜集'?'<p style="margin-top:11px;font-size:11px">正式層級：月照鎮 → 微燈巷 → 燈階夜集；商圈與夜市不是同一實體。</p>':''}</div>`).join('')}</div>`:none('本區尚未建立獨立具名的代表綜合市集；地方商業以聚落分工及工坊商店為主。')}
+    ${subtitle('各聚落的商業分工','依正式商業空間模式整理')}<div class="mini-grid">${r.commerce.patterns.map(p=>`<div class="mini-card"><h4>${esc(p.name)}</h4><p>${esc(p.activities.join('、'))}</p></div>`).join('')}</div>
+    ${subtitle('地方食物與工藝','可以出現在書信裡的生活物件')}<div class="grid2"><div class="content-card"><h3>地方食物・飲品</h3><div class="product-list">${r.products.foods.map(p=>`<span class="product-chip" title="${esc(p.description)}">${esc(p.name)}</span>`).join('')}</div></div><div class="content-card"><h3>工藝・生活物件</h3><div class="product-list">${r.products.crafts.map(p=>`<span class="product-chip" title="${esc(p.description)}">${esc(p.name)}</span>`).join('')}</div></div></div>${r.products.souvenirs.length?`<div class="content-card" style="margin-top:16px"><h3>地方紀念品</h3><div class="product-list">${r.products.souvenirs.map(p=>`<span class="product-chip">${esc(p.name)}</span>`).join('')}</div></div>`:''}`;
+  }
+  function servicesPage(r){
+    let items=serviceItems(r);
+    const categories=groupKinds.filter(g=>items.some(f=>kindLabel(f)===g));
+    return `<div class="alert"><span aria-hidden="true" style="font-size:22px">⚑</span><div><strong>營運狀態不是即時資訊</strong><br>${esc(r.safety)}<br>下列設施的「已確認」只代表世界設定已確認，不表示當下有營業、開放或可通行。</div></div>
+    ${r.id==='REGION-001'?`<div class="content-card" style="margin-top:16px"><h3>霧港領醫療與金融</h3><p>區域具首都級醫療與金融功能，但首都級具名醫療設施與星契所分所目前尚未補齊，因此不以虛構名稱展示。</p></div>`:''}
+    ${categories.map(g=>`${subtitle(g,`${items.filter(f=>kindLabel(f)===g).length} 個具名設施`)}<div class="service-stack">${items.filter(f=>kindLabel(f)===g).map(f=>`<div class="service-item"><strong>${esc(f.name)}</strong><small>${f.zone?`${esc(f.zone)} · `:''}世界設定：已確認</small><p>${esc(f.functions.slice(0,4).join('、'))}</p></div>`).join('')}</div>`).join('')}
+    ${subtitle('產業與跨區往來','物流、集貨與金融各司其職')}<div class="content-card"><p>百川集負責商品分級、批次與集貨交易；風行社負責實際轉運；星契所提供居民金融、交易結算與地方產業支持。公共安全、醫療與地方治理決定不受市場交易要求取代。</p><div class="inline-tags">${t(r.commerce.industries.slice(0,10))}</div></div>`;
+  }
+  function placesPage(r){
+    const kinds=[...new Set(r.features.map(kindLabel))].sort((a,b)=>a.localeCompare(b,'zh-Hant'));
+    return `<div class="page-intro">所有具名地點與設施，分別標示所在功能區、類型及已確認的職能。這是世界觀名錄，不代表可以直接到訪或預約。</div>
+    <div class="section-title"><h2>地點與機構名錄 <span class="count-badge" id="dirCount">${r.features.length} 筆</span></h2><div class="head-tools"><input id="dirSearch" type="search" placeholder="在本區搜尋地點…" aria-label="在本區搜尋地點"><select id="dirKind" aria-label="地點類型"><option value="全部">全部類型</option>${kinds.map(k=>`<option value="${esc(k)}">${esc(k)}</option>`).join('')}</select></div></div>
+    <div class="place-list" id="dirList">${r.features.map(f=>`<details class="place-details" data-find="${esc([f.name,f.kind,kindLabel(f),f.zone,...f.functions].join(' ').toLowerCase())}" data-kind="${esc(kindLabel(f))}"><summary><span><strong>${esc(f.name)}</strong><small>${esc(kindLabel(f))}${f.zone?' · '+esc(f.zone):''}</small></span></summary><div class="place-inner">${f.definition?`<p>${esc(f.definition)}</p>`:''}<span class="small-caps">主要功能</span>${ul(f.functions)}${f.constraint?`<div class="note-block" style="margin-top:13px">${esc(f.constraint)}</div>`:''}</div></details>`).join('')}</div><div class="empty" id="dirEmpty" hidden>沒有符合條件的地點，請改用其他搜尋字詞。</div>`;
+  }
+  function canonPage(r){
+    const drafts=r.culture.draft||[];
+    return `<div class="page-intro"><strong>資料不是故事的空白支票。</strong> 網頁只彙整目前正式來源已記載的名稱、事物與生活脈絡。尚未決定的資料保留原狀，不以看似合理的數值與地名填滿。</div>
+    ${subtitle('資料來源與成熟度','世界設定的可追溯性')}<div class="grid2"><div class="content-card"><h3>行政區正式版本</h3><p>設定狀態 <span class="state">${esc(r.canonicalStatus)}｜已確認</span></p><p>資料更新：${esc(r.updated)}<br>主檔版本：v${esc(r.version)}<br>Schema 版本：${esc(r.schema)}</p><h4>結構化正式來源</h4><div class="source-code">${esc(r.sourceYaml)}</div><h4>敘事及人文閱讀版</h4><div class="source-code">${esc(r.sourceMarkdown)}</div></div><div class="content-card"><h3>狀態如何解讀</h3>${ul(['confirmed｜已由專案確認，可作為世界內正式設定。','provisional｜暫定內容，可能調整，需明示。','draft｜只供提案參考，不可視為已存在。','unset｜目前尚未設定，不得自行補值。','deferred｜刻意延後，等待比例尺、制度等前置條件。'])}</div></div>
+    ${subtitle('尚未設定 / 延後處理',r.unresolved.length+' 項具體待決議題')}<div class="content-card"><ul class="unresolved">${r.unresolved.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="note-block" style="margin-top:17px">全大陸共同未定資料：行政邊界與相鄰關係、比例尺與交通時間、人口與密度、精確商店數及攤位數、市場營業時段、部分節慶及排行榜。這些資料不會因展示網頁而自動成為正式世界觀。</div></div>
+    ${drafts.length?`${subtitle('文化草案','尚未升級為正式設定')}<div class="content-card"><div class="inline-tags">${drafts.map(x=>`<span class="tag" style="background:#fcf2e9;color:#92683f;border-color:#e9d6c1">${esc(x)} · 草案</span>`).join('')}</div></div>`:''}
+    <div class="world-note"><span style="font-size:22px">ⓘ</span><div><strong>Canon 與營運狀態分開</strong><p>一間已確認存在的店舖，不代表它此刻「營業中」；一處已確認的步道，不代表它在高風險天候可進入。本站不含即時狀態資料與精確地圖座標。新名稱及新增數字，應先經專案確認再回寫正式 YAML。</p></div></div>`;
+  }
+  function bindDirectory(){
+    const q=$('#dirSearch'),kind=$('#dirKind');if(!q||!kind)return;
+    q.value=state.directoryQuery;kind.value=state.directoryKind;
+    const update=()=>{
+      state.directoryQuery=q.value;state.directoryKind=kind.value;
+      const query=slug(q.value).toLowerCase();let visible=0;
+      $$('.place-details', $('#dirList')).forEach(el=>{const ok=(!query||el.dataset.find.includes(query))&&(kind.value==='全部'||el.dataset.kind===kind.value);el.hidden=!ok;if(ok)visible++;});
+      $('#dirCount').textContent=`${visible} 筆`;$('#dirEmpty').hidden=visible!==0;
+    };
+    q.addEventListener('input',update);kind.addEventListener('change',update);update();
+  }
+  const searchIndex=[];
+  function addSearch(region,tab,kind,name,detail=''){
+    if(!name)return;
+    searchIndex.push({rid:region.id,region:region.name,tab,kind,name:slug(name),detail:slug(detail),
+      key:(String(name)+' '+String(detail)+' '+region.name+' '+kind).toLocaleLowerCase()});
+  }
+  regions.forEach(r=>{
+    addSearch(r,'overview','行政區',r.name,`${r.nature} ${r.culture.themes.join(' ')} ${r.subtitle}`);
+    r.settlements.forEach(x=>addSearch(r,'culture','聚落',x.name,x.functions.join(' ')));
+    r.features.forEach(x=>addSearch(r,'places',kindLabel(x),x.name,x.functions.join(' ')));
+    r.commerce.shopTypes.forEach(x=>addSearch(r,'commerce','商鋪種類',x,'在地商店'));
+    r.commerce.brands.forEach(x=>addSearch(r,'commerce','生活品牌',x.name,x.role+' '+x.offerings.join(' ')));
+    r.products.foods.forEach(x=>addSearch(r,'commerce','地方食物',x.name,x.description));
+    r.products.crafts.forEach(x=>addSearch(r,'commerce','地方工藝',x.name,x.description));
+    r.culture.customs.forEach(x=>addSearch(r,'culture','生活習俗',x.name,x.description));
+    r.culture.themes.forEach(x=>addSearch(r,'culture','文化精神',x,'地方文化核心'));
+  });
+  function showSearch(){const l=$('#searchLayer');l.hidden=false;document.body.style.overflow='hidden';const input=$('#searchInput');input.value='';paintSearch();requestAnimationFrame(()=>input.focus());}
+  function hideSearch(){const l=$('#searchLayer');l.hidden=true;document.body.style.overflow='';}
+  function paintSearch(){
+    const q=slug($('#searchInput').value).toLocaleLowerCase();const el=$('#searchResults');
+    if(!q){el.innerHTML='<div class="search-hint">全站收錄 <b>7 個行政區</b>的商鋪、產物、文化、具名地點與服務機構。<br>試試「<b>晨食堂</b>」、「<b>風</b>」、「<b>暖谷</b>」或「<b>白羽院</b>」。</div>';$('#searchMeta').textContent='輸入關鍵字，跨七區搜尋';return;}
+    const parts=q.split(/\s+/).filter(Boolean);const matched=searchIndex.filter(a=>parts.every(word=>a.key.includes(word))).sort((a,b)=>{
+      const rank=x=>(x.name.toLocaleLowerCase()===q?0:x.name.toLocaleLowerCase().startsWith(q)?1:x.name.toLocaleLowerCase().includes(q)?2:3);
+      return rank(a)-rank(b)||a.region.localeCompare(b.region,'zh-Hant');
+    });
+    $('#searchMeta').textContent=`符合「${q}」的結果：${matched.length} 筆${matched.length>65?'（先顯示前 65 筆）':''}`;
+    el.innerHTML=matched.length?matched.slice(0,65).map(x=>`<button class="result" data-result-region="${esc(x.rid)}" data-result-tab="${esc(x.tab)}"><span><strong>${esc(x.name)}</strong><small>${esc(x.region)} · ${esc(max(x.detail,95))}</small></span><span class="result-kind">${esc(x.kind)}</span></button>`).join(''):'<div class="search-hint">沒有找到相關資料。世界資料若尚未設定，就不會出現在搜尋結果中。</div>';
+  }
+  document.addEventListener('click',ev=>{
+    const target=ev.target.closest('button');if(!target)return;
+    if(target.dataset.region){navigate(target.dataset.region);return;}
+    if(target.dataset.tab){selectTab(target.dataset.tab);return;}
+    if(target.dataset.resultRegion){const rid=target.dataset.resultRegion,tab=target.dataset.resultTab;hideSearch();navigate(rid,tab);return;}
+    switch(target.dataset.action){
+      case 'home':navigate();break;
+      case 'explore':navigate();requestAnimationFrame(()=>$('#explore')?.scrollIntoView({behavior:'smooth'}));break;
+      case 'brands':navigate();requestAnimationFrame(()=>$('#brandSection')?.scrollIntoView({behavior:'smooth'}));break;
+      case 'search':showSearch();break;
+      case 'close-search':hideSearch();break;
+    }
+  });
+  $('#searchLayer').addEventListener('click',ev=>{if(ev.target.id==='searchLayer')hideSearch();});
+  $('#searchInput').addEventListener('input',paintSearch);
+  document.addEventListener('keydown',ev=>{
+    if((ev.metaKey||ev.ctrlKey)&&ev.key.toLowerCase()==='k'){ev.preventDefault();if($('#searchLayer').hidden)showSearch();else hideSearch();}
+    if(ev.key==='Escape'&&!$('#searchLayer').hidden){hideSearch();}
+    if(ev.key==='Enter'&&!$('#searchLayer').hidden&&document.activeElement===$('#searchInput')){const first=$('.result');if(first)first.click();}
+  });
+  let hash=location.hash||'';
+  const match=hash.match(/^#region-(\d{3})-(overview|administration|culture|commerce|services|places|canon)$/i);
+  if(match&&regionById['REGION-'+match[1]]){state.region='REGION-'+match[1];state.tab=match[2];}
+  sidebar();renderMain();
+})();
+</script>
+</body></html>
